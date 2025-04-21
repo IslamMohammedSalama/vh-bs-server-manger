@@ -29,7 +29,10 @@ body,
 	transition: 0.5s;
 	padding: 10px;
 }
-
+.screen > .header {
+    display: flex;
+    align-items: center;
+}
 .screen > .header > .back {
 	width: 35px;
 	height: 35px;

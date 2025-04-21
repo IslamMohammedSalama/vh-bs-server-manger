@@ -1,4 +1,1 @@
-body {
-  color: white;
-  background-color: #222222;
-}/*# sourceMappingURL=style.css.map */
+body,.screen{color:#fff;background-color:#222;font-family:"Cairo",sans-serif}.container>ul>li{display:flex;justify-content:space-between;background-color:#555;margin-bottom:10px;padding:10px 20px;border-radius:10px;align-items:center;transition:.5s}.container>ul>li:hover{background-color:#666;cursor:pointer}.screen{position:fixed;width:100dvw;height:100dvh;left:100dvw;top:0;transition:.5s;padding:10px}.screen>.header>.back{width:35px;height:35px;border:none;border-radius:50%;background-color:#555;color:#fff;transition:.5s}.screen>.header>.back:hover{background-color:#666}.screen>.header>.back+span{position:absolute;left:50%;transform:translateX(-50%)}/*# sourceMappingURL=style.css.map */

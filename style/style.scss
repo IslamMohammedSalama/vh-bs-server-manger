@@ -1,4 +1,49 @@
-body {
-    color: white;
-    background-color: #222222;
+body,
+.screen {
+	color: white;
+	background-color: #222222;
+	font-family: "Cairo", sans-serif;
+}
+
+.container > ul > li {
+	display: flex;
+	justify-content: space-between;
+	background-color: #555555;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	align-items: center;
+	transition: 0.5s;
+	&:hover {
+		background-color: #666666;
+		cursor: pointer;
+	}
+}
+
+.screen {
+	position: fixed;
+	width: 100dvw;
+	height: 100dvh;
+	left: 100dvw;
+	top: 0;
+	transition: 0.5s;
+	padding: 10px;
+}
+
+.screen > .header > .back {
+	width: 35px;
+	height: 35px;
+	border: none;
+	border-radius: 50%;
+	background-color: #555555;
+	color: white;
+	transition: 0.5s;
+	&:hover {
+		background-color: #666666;
+	}
+	& + span {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }

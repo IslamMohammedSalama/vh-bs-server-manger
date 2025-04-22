@@ -148,6 +148,10 @@ a {
 			border-radius: 50px;
 		}
 	}
+	.messeges {
+		max-height: 300px;
+		overflow:auto;
+	}
 	.write-messeges {
 		> form {
 			gap: 10px;
@@ -164,6 +168,9 @@ a {
 			&:focus,
 			&:hover {
 				background-color: #777;
+			}
+			&::placeholder {
+				color: #cccccc;
 			}
 		}
 		> form button {

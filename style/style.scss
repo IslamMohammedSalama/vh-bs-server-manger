@@ -1,5 +1,12 @@
+@use "./sass/mixns/media";
+$animation-duration: 0.5s;
+
 * {
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+.container {
+	transition: $animation-duration;
 }
 
 body,
@@ -7,6 +14,11 @@ body,
 	color: white;
 	background-color: #222222;
 	font-family: "Cairo", sans-serif;
+}
+
+a {
+	color: white;
+	text-decoration-line: none;
 }
 
 .container > ul > li {
@@ -17,7 +29,7 @@ body,
 	padding: 10px 20px;
 	border-radius: 10px;
 	align-items: center;
-	transition: 0.5s;
+	transition: $animation-duration;
 	&:hover {
 		background-color: #666666;
 		cursor: pointer;
@@ -31,7 +43,8 @@ body,
 	height: 100dvh;
 	left: 100dvw;
 	top: 0;
-	transition: 0.5s;
+	opacity: 0;
+	transition: left $animation-duration;
 	padding: 10px;
 	> .header {
 		margin-bottom: 10px;
@@ -44,7 +57,7 @@ body,
 			border-radius: 50%;
 			background-color: #555555;
 			color: white;
-			transition: 0.5s;
+			transition: $animation-duration;
 			&:hover {
 				background-color: #666666;
 			}
@@ -60,63 +73,63 @@ body,
 .service-container {
 	border-radius: 10px;
 	background-color: #555555;
-	padding: 10px;
+	padding: 15px;
 }
-
-.current-and-next-game {
-	gap: 10px;
-	> div {
-		border-radius: 15px;
-		padding: 10px;
-	}
-	.current-map {
-		background-color: #0075ff;
-		@media (min-width: 1200px) {
-			width: calc(50% - 0.5%);
-		}
-	}
-	.next-map {
-		margin-left: auto;
-		background-color: #0075ff;
-		@media (min-width: 1200px) {
-			width: calc(50% - 0.5%);
-		}
-	}
-	@media (max-width: 1199px) {
+.overview-screen {
+	.current-and-next-game {
+		gap: 10px;
 		> div {
-			width: 100%;
+			gap: 10px;
+			> div {
+				border-radius: 15px;
+				padding: 10px;
+				background-color: #0075ff;
+				width: 100%;
+				// @include media.large-screens {
+				// 	width: 49%;
+				// }
+			}
 		}
 	}
-}
 
-.overview-screen table {
-	border-spacing: 5px;
-	border-collapse: separate;
-	min-width: 500px;
-	td,
-	th {
-		transition: 0.5s;
-		background-color: #454545;
-		padding: 20px;
-		border-radius: 10px;
-		text-align: center;
-		border: 1px solid transparent;
-	}
-	th {
-		background-color: #333;
-	}
-	tr:hover td {
-		background-color: #4e4e4e;
-	}
-	td:hover {
-		border: 1px solid #eee;
-	}
-	@for $i from 1 through 4 {
-		&:has(tbody > tr > *:nth-child(#{$i}):hover)
-			tbody
-			> tr
-			> *:nth-child(#{$i}) {
+	table {
+		border-spacing: 5px;
+		border-collapse: separate;
+		min-width: 500px;
+		td,
+		th {
+			transition: $animation-duration;
+			background-color: #454545;
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			border: 1px solid transparent;
+		}
+		th {
+			background-color: #333;
+		}
+		tr:hover td {
 			background-color: #4e4e4e;
+		}
+		td:hover {
+			border: 1px solid #eee;
+		}
+		@for $i from 1 through 4 {
+			&:has(tbody > tr > *:nth-child(#{$i}):hover)
+				tbody
+				> tr
+				> *:nth-child(#{$i}) {
+				background-color: #4e4e4e;
+			}
+		}
+	}
+	.stats > div {
+		gap: 10px;
+		> div {
+			background-color: #0075ff;
+			border-radius: 15px;
+			width: 100%;
+			padding: 10px 0;
 		}
 	}
 }

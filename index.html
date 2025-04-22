@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="A Bs Server Settings Editer" />
-		<title>Server Manger - Beta</title>
+		<title>Server Manger (Alpha)</title>
 		<!-- Normalize Library -->
 		<!-- <link rel="stylesheet" href="style/normelize.css" /> -->
 		<!-- Font Awsome icons -->
@@ -64,9 +64,22 @@
 					<span>Import/Export Server Settings</span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
+				<li class="change-server">
+					<span> Change Server </span>
+					<i class="fa-solid fa-angle-right"></i>
+				</li>
 				<li class="website-settings">
 					<span> Website Settings </span>
 					<i class="fa-solid fa-angle-right"></i>
+				</li>
+				<li class="discord">
+					<a
+						href=""
+						class="d-flex justify-content-between align-items-center w-100"
+					>
+						<span>Discord</span>
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -79,51 +92,79 @@
 			</div>
 			<div class="container">
 				<div class="service-container d-flex flex-wrap current-and-next-game">
-					<div class="current-map text-center">
-						Current Map : <span>Game @ Map</span>
-					</div>
-					<div class="next-map text-center">
-						Next Map : <span>Game @ Map</span>
+					<h4 class="mx-auto text-center w-100">Current And Next Map</h4>
+					<div
+						class="d-flex justify-content-between flex-column w-100 flex-lg-row"
+					>
+						<div class="current-map text-center">
+							Current Map : <span>Game @ Map</span>
+						</div>
+						<div class="next-map text-center">
+							Next Map : <span>Game @ Map</span>
+						</div>
 					</div>
 				</div>
-					<div class="service-container mt-2 overflow-x-auto overflow-y-hidden p-relative d-lg-flex justify-content-center">
-						<table>
-							<thead>
-								<tr>
-									<th>No.</th>
-									<th>Name</th>
-									<th>Score</th>
-									<th>Kills</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>Islam</td>
-									<td>200</td>
-									<td>200</td>
-								</tr>
-								<tr>
-									<td>2.</td>
-									<td>Test</td>
-									<td>200</td>
-									<td>200</td>
-								</tr>
-								<tr>
-									<td>3.</td>
-									<td>AnyOne</td>
-									<td>20000</td>
-									<td>20000</td>
-								</tr>
-								<tr>
-									<td>4.</td>
-									<td>Testing </td>
-									<td>200000</td>
-									<td>27685756700</td>
-								</tr>
-							</tbody>
-						</table>
+				<div
+					class="service-container mt-2 overflow-x-auto overflow-y-hidden p-relative"
+				>
+					<h4 class="text-center mx-auto w-100">Top Players</h4>
+					<table class="mx-auto">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Name</th>
+								<th>Score</th>
+								<th>Kills</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1.</td>
+								<td>Islam</td>
+								<td>200</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>2.</td>
+								<td>Test</td>
+								<td>200</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>3.</td>
+								<td>AnyOne</td>
+								<td>20000</td>
+								<td>20000</td>
+							</tr>
+							<tr>
+								<td>4.</td>
+								<td>Testing</td>
+								<td>200000</td>
+								<td>27685756700</td>
+							</tr>
+							<tr>
+								<td>5.</td>
+								<td>Testing</td>
+								<td>200000</td>
+								<td>27685756700</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="service-container mt-2 stats p-2">
+					<h3 class="text-center">Server Name : AnyThing</h3>
+					<p class="text-center">Dual Team Session</p>
+					<div class="d-flex align-center justify-content-between">
+						<div class="text-center">
+							<p fs-3>Islam :</p>
+							<p class="fs-1">0</p>
+						</div>
+						<div class="text-center">
+							<p fs-3>Rocky :</p>
+							<p class="fs-1">0</p>
+						</div>
 					</div>
+				</div>
 			</div>
 		</div>
 		<div class="chat-screen screen">
@@ -132,6 +173,19 @@
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Chat</span>
+			</div>
+			<div class="contaiener">
+				<div class="service-container">
+					<h4 class="text-center">Live Players</h4>
+					<div class="d-grid">
+						<div>Vortex</div>
+						<div>Zad</div>
+						<div>Islam</div>
+						<div>AnyOne You Want</div>
+						<div>Test</div>
+					</div>
+				</div>
+				<!-- <div class="service-container"></div> -->
 			</div>
 		</div>
 		<div class="player-management-screen screen">
@@ -188,6 +242,14 @@
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Import/Export Server Settings</span>
+			</div>
+		</div>
+		<div class="change-server-screen screen">
+			<div class="header">
+				<button class="back" aria-label="Back">
+					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
+				</button>
+				<span>Change Server</span>
 			</div>
 		</div>
 		<div class="website-settings-screen screen">

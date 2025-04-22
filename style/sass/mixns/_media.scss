@@ -1,0 +1,26 @@
+@mixin mobile-screens {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin small-screens {
+	@media (min-width: 767px) {
+		@content;
+	}
+}
+@mixin middim-screens {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+@mixin large-screens {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin middim-screens-only {
+	@media (min-width: 992px) and (max-width: 1299px) {
+		@content;
+	}
+}

@@ -1,7 +1,11 @@
-let navs = document.querySelectorAll(".container > ul > li");
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+let navs = document.querySelectorAll(".container > ul > li:not(.discord)");
 navs.forEach((li) => {
 	li.onclick = () => {
-		document.querySelector(`.${li.className}-screen`).style.left = "0";
+		let tScreen = document.querySelector(`.${li.className}-screen`);
+		tScreen.style.opacity = "1";
+		tScreen.style.left = "0";
 	};
 });
 
@@ -9,7 +13,10 @@ navs.forEach((li) => {
 let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
-	theScreen.children[0].children[0].onclick = () => {
+	console.log(theScreen);
+	theScreen.children[0].children[0].onclick = async () => {
 		theScreen.style.left = "100dvw";
+		await delay(500);
+		theScreen.style.opacity = "0";
 	};
 });

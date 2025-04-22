@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A Bs Server Settings Editer">
+		<meta name="description" content="A Bs Server Settings Editer" />
 		<title>Server Manger - Beta</title>
 		<!-- Normalize Library -->
 		<link rel="stylesheet" href="style/normelize.css" />
 		<!-- Font Awsome icons -->
 		<link rel="stylesheet" href="style/all.min.css" />
-		<!-- Bootstrap Library -->
+		<!-- Css Bootstrap Library -->
 		<link rel="stylesheet" href="style/bootstrap.min.css" />
 		<!-- Main Css File -->
 		<link rel="stylesheet" href="style/style.css" />
@@ -24,28 +24,47 @@
 
 	<body>
 		<div class="container">
-			<ul class="list-unstyled pt-5">
-				<li>
+			<header class="w-100 text-center fs-5 fw-bold pt-3 pb-3">
+				Welcome To Server Settings Manger
+			</header>
+			<ul class="list-unstyled">
+				<li class="overview">
 					<span>OverView</span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
-				<li>
-					<span> Chat </span>
+				<li class="chat">
+					<span>Chat </span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
-				<li>
+				<li class="player-management">
 					<span> Player Management </span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
-				<li>
+				<li class="server-settings">
 					<span> Server Settings </span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
-				<li>
+				<li class="rules-management">
 					<span> Rules Management </span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
-				<li>
+				<li class="quick-tools">
+					<span>Quick Tools</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</li>
+				<li class="server-logs">
+					<span>Server Logs</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</li>
+				<li class="effects-and-tag-management">
+					<span>Player's Effects & Tags Mangement</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</li>
+				<li class="import-and-export-settings">
+					<span>Import/Export Server Settings</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</li>
+				<li class="website-settings">
 					<span> Website Settings </span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
@@ -67,7 +86,7 @@
 				<span>Chat</span>
 			</div>
 		</div>
-		<div class="pm-screen screen">
+		<div class="player-management-screen screen">
 			<div class="header">
 				<button class="back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
@@ -75,7 +94,7 @@
 				<span>Player Management</span>
 			</div>
 		</div>
-		<div class="ss-screen screen">
+		<div class="server-settings-screen screen">
 			<div class="header">
 				<button class="back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
@@ -83,7 +102,7 @@
 				<span>Server Settings</span>
 			</div>
 		</div>
-		<div class="rm-screen screen">
+		<div class="rules-management-screen screen">
 			<div class="header">
 				<button class="back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
@@ -91,7 +110,39 @@
 				<span>Rules Management</span>
 			</div>
 		</div>
-		<div class="ws-screen screen">
+		<div class="quick-tools-screen screen">
+			<div class="header">
+				<button class="back">
+					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
+				</button>
+				<span>Quick Tools</span>
+			</div>
+		</div>
+		<div class="server-logs-screen screen">
+			<div class="header">
+				<button class="back">
+					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
+				</button>
+				<span>Server Logs</span>
+			</div>
+		</div>
+		<div class="effects-and-tag-management-screen screen">
+			<div class="header">
+				<button class="back">
+					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
+				</button>
+				<span>Player's Effects & Tags Mangement</span>
+			</div>
+		</div>
+		<div class="import-and-export-settings-screen screen">
+			<div class="header">
+				<button class="back">
+					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
+				</button>
+				<span>Import/Export Server Settings</span>
+			</div>
+		</div>
+		<div class="website-settings-screen screen">
 			<div class="header">
 				<button class="back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
@@ -104,6 +155,6 @@
 	<script src="js/script.js"></script>
 	<!-- Font Awsome Icons -->
 	<script src="js/all.min.js"></script>
-	<!-- Font Awsome Icons -->
+	<!-- Java Script Bootstrap Libraray -->
 	<script src="js/bootstrap.bundle.min.js"></script>
 </html>

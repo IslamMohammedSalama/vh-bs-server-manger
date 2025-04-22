@@ -6,7 +6,7 @@
 		<meta name="description" content="A Bs Server Settings Editer" />
 		<title>Server Manger - Beta</title>
 		<!-- Normalize Library -->
-		<link rel="stylesheet" href="style/normelize.css" />
+		<!-- <link rel="stylesheet" href="style/normelize.css" /> -->
 		<!-- Font Awsome icons -->
 		<link rel="stylesheet" href="style/all.min.css" />
 		<!-- Css Bootstrap Library -->
@@ -29,7 +29,7 @@
 			</header>
 			<ul class="list-unstyled">
 				<li class="overview">
-					<span>OverView</span>
+					<span>Overview</span>
 					<i class="fa-solid fa-angle-right"></i>
 				</li>
 				<li class="chat">
@@ -72,15 +72,63 @@
 		</div>
 		<div class="overview-screen screen">
 			<div class="header p-relative">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
-				<span>OverView</span>
+				<span>Overview</span>
+			</div>
+			<div class="container">
+				<div class="service-container d-flex flex-wrap current-and-next-game">
+					<div class="current-map text-center">
+						Current Map : <span>Game @ Map</span>
+					</div>
+					<div class="next-map text-center">
+						Next Map : <span>Game @ Map</span>
+					</div>
+				</div>
+					<div class="service-container mt-2 overflow-x-auto overflow-y-hidden p-relative d-lg-flex justify-content-center">
+						<table>
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Name</th>
+									<th>Score</th>
+									<th>Kills</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Islam</td>
+									<td>200</td>
+									<td>200</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td>Test</td>
+									<td>200</td>
+									<td>200</td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td>AnyOne</td>
+									<td>20000</td>
+									<td>20000</td>
+								</tr>
+								<tr>
+									<td>4.</td>
+									<td>Testing </td>
+									<td>200000</td>
+									<td>27685756700</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 			</div>
 		</div>
 		<div class="chat-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Chat</span>
@@ -88,7 +136,7 @@
 		</div>
 		<div class="player-management-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Player Management</span>
@@ -96,7 +144,7 @@
 		</div>
 		<div class="server-settings-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Server Settings</span>
@@ -104,7 +152,7 @@
 		</div>
 		<div class="rules-management-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Rules Management</span>
@@ -112,7 +160,7 @@
 		</div>
 		<div class="quick-tools-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Quick Tools</span>
@@ -120,7 +168,7 @@
 		</div>
 		<div class="server-logs-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Server Logs</span>
@@ -128,7 +176,7 @@
 		</div>
 		<div class="effects-and-tag-management-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Player's Effects & Tags Mangement</span>
@@ -136,7 +184,7 @@
 		</div>
 		<div class="import-and-export-settings-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Import/Export Server Settings</span>
@@ -144,7 +192,7 @@
 		</div>
 		<div class="website-settings-screen screen">
 			<div class="header">
-				<button class="back">
+				<button class="back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Website Settings</span>

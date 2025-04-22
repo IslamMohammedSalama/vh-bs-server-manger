@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body,
 .screen {
 	color: white;
@@ -21,6 +25,7 @@ body,
 }
 
 .screen {
+	overflow-y: auto;
 	position: fixed;
 	width: 100dvw;
 	height: 100dvh;
@@ -28,25 +33,90 @@ body,
 	top: 0;
 	transition: 0.5s;
 	padding: 10px;
-}
-.screen > .header {
-	display: flex;
-	align-items: center;
-}
-.screen > .header > .back {
-	width: 35px;
-	height: 35px;
-	border: none;
-	border-radius: 50%;
-	background-color: #555555;
-	color: white;
-	transition: 0.5s;
-	&:hover {
-		background-color: #666666;
+	> .header {
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		> .back {
+			width: 35px;
+			height: 35px;
+			border: none;
+			border-radius: 50%;
+			background-color: #555555;
+			color: white;
+			transition: 0.5s;
+			&:hover {
+				background-color: #666666;
+			}
+			& + span {
+				text-align: center;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
 	}
-	& + span {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
+}
+.service-container {
+	border-radius: 10px;
+	background-color: #555555;
+	padding: 10px;
+}
+
+.current-and-next-game {
+	gap: 10px;
+	> div {
+		border-radius: 15px;
+		padding: 10px;
+	}
+	.current-map {
+		background-color: #0075ff;
+		@media (min-width: 1200px) {
+			width: calc(50% - 0.5%);
+		}
+	}
+	.next-map {
+		margin-left: auto;
+		background-color: #0075ff;
+		@media (min-width: 1200px) {
+			width: calc(50% - 0.5%);
+		}
+	}
+	@media (max-width: 1199px) {
+		> div {
+			width: 100%;
+		}
+	}
+}
+
+.overview-screen table {
+	border-spacing: 5px;
+	border-collapse: separate;
+	min-width: 500px;
+	td,
+	th {
+		transition: 0.5s;
+		background-color: #454545;
+		padding: 20px;
+		border-radius: 10px;
+		text-align: center;
+		border: 1px solid transparent;
+	}
+	th {
+		background-color: #333;
+	}
+	tr:hover td {
+		background-color: #4e4e4e;
+	}
+	td:hover {
+		border: 1px solid #eee;
+	}
+	@for $i from 1 through 4 {
+		&:has(tbody > tr > *:nth-child(#{$i}):hover)
+			tbody
+			> tr
+			> *:nth-child(#{$i}) {
+			background-color: #4e4e4e;
+		}
 	}
 }

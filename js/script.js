@@ -13,7 +13,6 @@ navs.forEach((li) => {
 let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
-	console.log(theScreen);
 	theScreen.children[0].children[0].onclick = async () => {
 		theScreen.style.left = "100dvw";
 		await delay(500);

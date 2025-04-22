@@ -35,7 +35,6 @@ a {
 		cursor: pointer;
 	}
 }
-
 .screen {
 	overflow-y: auto;
 	position: fixed;
@@ -129,7 +128,56 @@ a {
 			background-color: #0075ff;
 			border-radius: 15px;
 			width: 100%;
-			padding: 10px 0;
+			padding: 20px 0;
+			> p:last-child {
+				line-height: 1;
+			}
+		}
+	}
+}
+.chat-screen {
+	.active-players {
+		display: flex;
+		justify-content: center;
+		gap: 7.5px;
+		flex-wrap: wrap;
+		> span {
+			display: block;
+			background-color: #0075ff;
+			padding: 7.5px;
+			border-radius: 50px;
+		}
+	}
+	.write-messeges {
+		> form {
+			gap: 10px;
+		}
+		> form input[type="text"] {
+			flex: 1;
+			border: none;
+			outline: none;
+			background-color: #666;
+			padding: 5px 10px;
+			border-radius: 50px;
+			color: white;
+			transition: $animation-duration;
+			&:focus,
+			&:hover {
+				background-color: #777;
+			}
+		}
+		> form button {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: none;
+			outline: none;
+			color: white;
+			background-color: #666;
+			transition: $animation-duration;
+			&:hover {
+				background-color: #777;
+			}
 		}
 	}
 }

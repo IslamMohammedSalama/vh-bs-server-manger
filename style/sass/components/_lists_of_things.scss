@@ -5,7 +5,7 @@ ul > li {
 	justify-content: space-between;
 	background-color: #555555;
 	margin-bottom: 1px;
-	padding: 10px 20px;
+	padding: 12.5px 20px;
 	border-radius: 0px;
 	align-items: center;
 	transition: $animation-duration;
@@ -14,9 +14,11 @@ ul > li {
 		cursor: pointer;
 	}
 	&:first-child {
-		border-radius: $main-border-radius $main-border-radius 0 0;
+		border-top-right-radius: $main-border-radius;
+		border-top-left-radius: $main-border-radius;
 	}
 	&:last-child {
-		border-radius: 0 0 $main-border-radius $main-border-radius;
+		border-bottom-right-radius: $main-border-radius;
+		border-bottom-left-radius: $main-border-radius;
 	}
 }

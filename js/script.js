@@ -31,7 +31,7 @@ let sendBtn = document.querySelector(
 );
 sendBtn.onclick = (e) => {
 	e.preventDefault();
-	let input = document.querySelector(".chat-screen .write-messeges input");
+	let input = document.querySelector(".chat-screen .write-messeges textarea");
 	sendMessege(input.value);
 	input.value = "";
 };

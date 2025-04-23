@@ -1,0 +1,41 @@
+@use "../helpers/variables" as *;
+
+label.switch {
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	.toggle-checkbox {
+		appearance: none;
+		display: none;
+	}
+	.toggle-checkbox:checked + .toggle-switch {
+		background-color: $main-color;
+		&::after {
+			left: 35px;
+		}
+	}
+	.toggle-switch {
+		transition: $animation-duration;
+		position: relative;
+		background-color: #777;
+		width: 60px;
+		height: 30px;
+		border-radius: 50px;
+		cursor: pointer;
+		&::after {
+			content: "\f00c";
+			font-family: "Font Awsome 6 Free";
+			color: $main-color;
+			transition: $animation-duration;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: white;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 5px;
+		}
+	}
+}

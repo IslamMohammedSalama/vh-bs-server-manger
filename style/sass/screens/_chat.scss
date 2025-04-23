@@ -1,0 +1,57 @@
+@use "../helpers/variables" as * ;
+
+.chat-screen {
+	.active-players {
+		display: flex;
+		justify-content: center;
+		gap: 7.5px;
+		flex-wrap: wrap;
+		> span {
+			display: block;
+			background-color: $main-color;
+			padding: 7.5px;
+			border-radius: 50px;
+		}
+	}
+	.messeges {
+		max-height: 300px;
+		overflow: auto;
+	}
+	.write-messeges {
+		> form {
+			gap: 10px;
+		}
+		> form textarea {
+			height: 40px;
+			resize: none;
+			flex: 1;
+			border: none;
+			outline: none;
+			background-color: #666;
+			padding: 5px 10px;
+			border-radius: 50px;
+			color: white;
+			transition: $animation-duration;
+			&:focus,
+			&:hover {
+				background-color: #777;
+			}
+			&::placeholder {
+				color: #cccccc;
+			}
+		}
+		> form button {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: none;
+			outline: none;
+			color: white;
+			background-color: #666;
+			transition: $animation-duration;
+			&:hover {
+				background-color: #777;
+			}
+		}
+	}
+}

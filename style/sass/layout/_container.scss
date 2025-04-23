@@ -1,0 +1,4 @@
+@use "../helpers/variables" as *;
+.container {
+	transition: $animation-duration;
+}

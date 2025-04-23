@@ -1,0 +1,61 @@
+@use "../helpers/variables" as * ;
+
+.overview-screen {
+	.current-and-next-game {
+		gap: 10px;
+		> div {
+			gap: 10px;
+			> div {
+				border-radius: $main-border-radius;
+				padding: 10px;
+				background-color: $main-color;
+				width: 100%;
+			}
+		}
+	}
+
+	table {
+		border-spacing: 5px;
+		border-collapse: separate;
+		min-width: 500px;
+		td,
+		th {
+			transition: $animation-duration;
+			background-color: #454545;
+			padding: 20px;
+			border-radius: $main-border-radius;
+			text-align: center;
+			border: 1px solid transparent;
+		}
+		th {
+			background-color: #333;
+		}
+		tr:hover td {
+			background-color: #4e4e4e;
+		}
+		td:hover {
+			border: 1px solid $main-color;
+			color: $main-color;
+		}
+		@for $i from 1 through 4 {
+			&:has(tbody > tr > *:nth-child(#{$i}):hover)
+				tbody
+				> tr
+				> *:nth-child(#{$i}) {
+				background-color: #4e4e4e;
+			}
+		}
+	}
+	.stats > div {
+		gap: 10px;
+		> div {
+			background-color: $main-color;
+			border-radius: $main-border-radius;
+			width: 100%;
+			padding: 20px 0;
+			> p:last-child {
+				line-height: 1;
+			}
+		}
+	}
+}

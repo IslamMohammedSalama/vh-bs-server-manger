@@ -1,0 +1,22 @@
+@use "../helpers/variables" as *;
+
+ul > li {
+	display: flex;
+	justify-content: space-between;
+	background-color: #555555;
+	margin-bottom: 1px;
+	padding: 10px 20px;
+	border-radius: 0px;
+	align-items: center;
+	transition: $animation-duration;
+	&:hover {
+		background-color: #666666;
+		cursor: pointer;
+	}
+	&:first-child {
+		border-radius: $main-border-radius $main-border-radius 0 0;
+	}
+	&:last-child {
+		border-radius: 0 0 $main-border-radius $main-border-radius;
+	}
+}

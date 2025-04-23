@@ -6,7 +6,7 @@ function sendMessege(msg) {
 	messegsBox.appendChild(newMsg);
 }
 // Navgtaite To Screens
-let navs = document.querySelectorAll(".container > ul > li:not(.discord)");
+let navs = document.querySelectorAll("body > .container > ul > li:not(.discord)");
 navs.forEach((li) => {
 	li.onclick = () => {
 		let tScreen = document.querySelector(`.${li.className}-screen`);

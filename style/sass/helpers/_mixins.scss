@@ -19,8 +19,3 @@
 		@content;
 	}
 }
-@mixin middim-screens-only {
-	@media (min-width: 992px) and (max-width: 1299px) {
-		@content;
-	}
-}

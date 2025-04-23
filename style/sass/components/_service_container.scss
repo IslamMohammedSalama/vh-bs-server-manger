@@ -1,0 +1,6 @@
+@use "../helpers/variables" as *;
+.service-container {
+	border-radius: $main-border-radius;
+	background-color: #555555;
+	padding: 15px;
+}

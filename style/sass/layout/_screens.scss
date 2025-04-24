@@ -1,4 +1,5 @@
-@use "../helpers/variables" as * ;
+@use "../helpers/variables" as *;
+@use "../components/custom-buttons" as *;
 
 .screen {
 	overflow-y: auto;
@@ -14,23 +15,11 @@
 		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
-		> .back {
-			width: 35px;
-			height: 35px;
-			border: none;
-			border-radius: 50%;
-			background-color: #555555;
-			color: white;
-			transition: $animation-duration;
-			&:hover {
-				background-color: #666666;
-			}
-			& + span {
-				text-align: center;
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
-			}
+		> .back + span {
+			text-align: center;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 }

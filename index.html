@@ -83,7 +83,7 @@
 		</div>
 		<div class="overview-screen screen">
 			<div class="header p-relative">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Overview</span>
@@ -167,7 +167,7 @@
 		</div>
 		<div class="chat-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Chat</span>
@@ -211,7 +211,7 @@
 		</div>
 		<div class="player-management-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Player Management</span>
@@ -219,7 +219,7 @@
 		</div>
 		<div class="server-settings-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Server Settings</span>
@@ -227,17 +227,32 @@
 			<div class="container">
 				<ul>
 					<li>
+						<label class="form">
+							<span>Server Name:</span>
+							<textarea placeholder="Type Your Server Name Here"></textarea>
+						</label>
+					</li>
+					<li>
 						<label class="switch">
 							<span>Anti Id Revealer</span>
 							<div>
-								<input
-									type="checkbox"
-									name=""
-									id=""
-									class="toggle-checkbox"
-								/>
+								<input type="checkbox" name="" id="" class="toggle-checkbox" />
 								<div class="toggle-switch"></div>
 							</div>
+						</label>
+					</li>
+					<li>
+						<label class="form">
+							<span>Host Device Name :</span>
+							<textarea
+								placeholder="Type Your Host Device Name Here"
+							></textarea>
+						</label>
+					</li>
+					<li>
+						<label class="form">
+							<span>Host Name :</span>
+							<textarea placeholder="Type Your Host Name Here"></textarea>
 						</label>
 					</li>
 				</ul>
@@ -245,7 +260,7 @@
 		</div>
 		<div class="rules-management-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Rules Management</span>
@@ -253,7 +268,7 @@
 		</div>
 		<div class="quick-tools-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Quick Tools</span>
@@ -261,7 +276,7 @@
 		</div>
 		<div class="server-logs-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Server Logs</span>
@@ -269,7 +284,7 @@
 		</div>
 		<div class="effects-and-tag-management-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Player's Effects & Tags Mangement</span>
@@ -277,15 +292,28 @@
 		</div>
 		<div class="import-and-export-settings-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Import/Export Server Settings</span>
 			</div>
+			<ul class="container">
+				<li>
+					<span>Upload Your Settings</span>
+					<form action="">
+						<button class="upload-btn">Upload</button>
+						<input type="file" name="json-file" id="" accept=".json" hidden>
+					</form>
+				</li>
+				<li>
+					<span>Export Your Settings</span>
+					<button class="export-btn">Export</button>
+				</li>
+			</u>
 		</div>
 		<div class="change-server-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Change Server</span>
@@ -293,7 +321,7 @@
 		</div>
 		<div class="website-settings-screen screen">
 			<div class="header">
-				<button class="back" aria-label="Back">
+				<button class="circle back" aria-label="Back">
 					<i class="fa-solid fa-chevron-right fa-rotate-180 fa-sm"></i>
 				</button>
 				<span>Website Settings</span>

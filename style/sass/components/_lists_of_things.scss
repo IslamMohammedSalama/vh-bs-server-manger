@@ -1,13 +1,14 @@
 @use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
 
 ul > li {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background-color: #555555;
 	margin-bottom: 1px;
 	padding: 12.5px 20px;
 	border-radius: 0px;
-	align-items: center;
 	transition: $animation-duration;
 	&:hover {
 		background-color: #666666;
@@ -20,5 +21,27 @@ ul > li {
 	&:last-child {
 		border-bottom-right-radius: $main-border-radius;
 		border-bottom-left-radius: $main-border-radius;
+	}
+	> label.form {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		@include small-screens {
+			align-items: center;
+			> {
+				textarea {
+					width: 500px;
+				}
+				span {
+					margin-bottom: 2.5px;
+				}
+			}
+		}
+		@include mobile-screens {
+			flex-direction: column;
+			> textarea {
+				width: 100%;
+			}
+		}
 	}
 }

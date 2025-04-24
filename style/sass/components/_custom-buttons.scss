@@ -1,0 +1,27 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+button {
+	padding: 10px;
+	&:not(.circle) {
+		border-radius: 50px;
+	}
+	&.circle {
+		@include circle(35px);
+	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	color: white;
+	background-color: #666;
+	transition: $animation-duration;
+	&:hover {
+		background-color: #777;
+	}
+	> {
+		i,
+		svg {
+			font-size: 14px;
+		}
+	}
+}

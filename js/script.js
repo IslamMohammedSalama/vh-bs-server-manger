@@ -105,22 +105,29 @@ let exportSettingsButton = document.querySelector(
 );
 exportSettingsButton.onclick = (ev) => {
 	ev.preventDefault();
-	let jsonFileToExport;
-	fetch("../assets/json/config.json").then(
-		(res) => {
-			jsonFileToExport = res;
-			console.log(res)
-		},
-		(rej) => console.log(rej)
-	);
-	console.log(jsonFileToExport);
-	// let link = document.createElement("a");
-	// // let textToSave = document.querySelector("import-and-export-settings-screen li:last-child").value;
-	// let newFile = new Blob([JSON.stringify(jsonFileToExport, null, 2)], {
-	// 	type: "application/json",
+	let haha = "Not Assignmend";
+	// fetch("https://api.github.com/users/elzerowebschool/repos").then(
+	// (res) => {
+	// 	jsonFileToExport = res.json();
+	// 	console.log();
 	// });
-	// link.href = URL.createObjectURL(newFile);
-	// link.download = "config.json";
-	// link.click();
-	// URL.revokeObjectURL(link.href);
+	// console.log(jsonFileToExport);
+	fetch("../assets/json/config.json")
+		.then((result) => {
+			// console.log(result.json());
+			return result.json();
+			// console.log(myData);
+			// return myData;
+		})
+		.then((jsonFileToExport) => {
+			let link = document.createElement("a");
+			// let textToSave = document.querySelector("import-and-export-settings-screen li:last-child").value;
+			let newFile = new Blob([JSON.stringify(jsonFileToExport, null, 2)], {
+				type: "application/json",
+			});
+			link.href = URL.createObjectURL(newFile);
+			link.download = "config.json";
+			link.click();
+			URL.revokeObjectURL(link.href);
+		});
 };

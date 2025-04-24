@@ -105,23 +105,12 @@ let exportSettingsButton = document.querySelector(
 );
 exportSettingsButton.onclick = (ev) => {
 	ev.preventDefault();
-	let haha = "Not Assignmend";
-	// fetch("https://api.github.com/users/elzerowebschool/repos").then(
-	// (res) => {
-	// 	jsonFileToExport = res.json();
-	// 	console.log();
-	// });
-	// console.log(jsonFileToExport);
 	fetch("../assets/json/config.json")
 		.then((result) => {
-			// console.log(result.json());
 			return result.json();
-			// console.log(myData);
-			// return myData;
 		})
 		.then((jsonFileToExport) => {
 			let link = document.createElement("a");
-			// let textToSave = document.querySelector("import-and-export-settings-screen li:last-child").value;
 			let newFile = new Blob([JSON.stringify(jsonFileToExport, null, 2)], {
 				type: "application/json",
 			});
@@ -129,5 +118,6 @@ exportSettingsButton.onclick = (ev) => {
 			link.download = "config.json";
 			link.click();
 			URL.revokeObjectURL(link.href);
+			link.remove();
 		});
 };

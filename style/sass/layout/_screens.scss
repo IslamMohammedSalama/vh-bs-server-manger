@@ -8,7 +8,8 @@
 	height: 100dvh;
 	left: 100dvw;
 	top: 0;
-	opacity: 0;
+	// opacity: 0;
+	display: none;
 	transition: left $animation-duration;
 	padding: 10px;
 	> .header {

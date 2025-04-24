@@ -12,9 +12,11 @@ let navs = document.querySelectorAll(
 	"body > .container > ul > li:not(.discord)"
 );
 navs.forEach((li) => {
-	li.onclick = () => {
+	li.onclick = async () => {
 		let tScreen = document.querySelector(`.${li.className}-screen`);
-		tScreen.style.opacity = "1";
+		// tScreen.style.opacity = "1";
+		tScreen.style.display = "block";
+		await delay(0);
 		tScreen.style.left = "0";
 		document.body.classList.add("disable-scrolling");
 	};
@@ -28,7 +30,8 @@ screens.forEach((theScreen) => {
 		theScreen.style.left = "100dvw";
 		document.body.classList.remove("disable-scrolling");
 		await delay(500);
-		theScreen.style.opacity = "0";
+		// theScreen.style.opacity = "0";
+		theScreen.style.display = "none";
 	};
 });
 

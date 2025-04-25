@@ -108,7 +108,7 @@ let exportSettingsButton = document.querySelector(
 );
 exportSettingsButton.onclick = (ev) => {
 	ev.preventDefault();
-	fetch("../assets/json/config.json")
+	fetch("assets/json/config.json")
 		.then((result) => {
 			return result.json();
 		})

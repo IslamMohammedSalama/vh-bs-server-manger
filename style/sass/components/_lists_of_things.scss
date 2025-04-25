@@ -44,4 +44,7 @@ ul > li {
 			}
 		}
 	}
+	&:hover button:not(button:hover){
+		background-color: #717171;
+	}
 }

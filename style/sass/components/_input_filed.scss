@@ -1,14 +1,17 @@
 @use "../helpers/variables" as *;
 textarea,
 input:not(input[type="submit"]) {
-	height: 35px;
+	height: 40px;
 	resize: none;
 	border: none;
 	outline: none;
 	background-color: #666;
-	padding: 5px 10px;
+	padding: 7.5px 10px 7.5px 10px;
 	border-radius: 50px;
 	color: white;
+	white-space: pre; /* Prevent text wrapping */
+	overflow-x: auto; /* Enable horizontal scrollbar */
+	overflow-y: hidden;
 	transition: $animation-duration;
 	&:focus,
 	&:hover {

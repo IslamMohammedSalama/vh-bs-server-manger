@@ -18,6 +18,11 @@
 			href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="shortcut icon"
+			href="assets/imgs/VORTEXS_AND_HONORS_PARADISE.gif"
+			type="image/x-icon"
+		/>
 	</head>
 
 	<body>
@@ -172,11 +177,11 @@
 					<p class="text-center">Dual Team Session</p>
 					<div class="d-flex align-center justify-content-between">
 						<div class="text-center">
-							<p fs-3>Islam :</p>
+							<p class="fs-3">Islam :</p>
 							<p class="fs-1">0</p>
 						</div>
 						<div class="text-center">
-							<p fs-3>Rocky :</p>
+							<p class="fs-3">Rocky :</p>
 							<p class="fs-1">0</p>
 						</div>
 					</div>
@@ -216,12 +221,11 @@
 					</div>
 					<!-- Messeges Sender -->
 					<div class="write-messeges">
-						<form action class="d-flex">
+						<form class="d-flex">
 							<textarea
 								class="w-100"
-								type="text"
-								name=""
-								id=""
+								name="messege"
+								id="messege"
 								placeholder="Type Your Messege Here"
 								autofocus
 							></textarea>
@@ -266,10 +270,15 @@
 					<li>
 						<label class="switch">
 							<span>Anti Id Revealer</span>
-							<div>
-								<input type="checkbox" name="" id="" class="toggle-checkbox" />
-								<div class="toggle-switch"></div>
-							</div>
+							<span>
+								<input
+									type="checkbox"
+									name="anti-id-revealer"
+									id="anti-id-revealer"
+									class="toggle-checkbox"
+								/>
+								<label class="toggle-switch" for="anti-id-revealer"></label>
+							</span>
 						</label>
 					</li>
 					<!-- Host Device Name -->
@@ -309,6 +318,20 @@
 				</button>
 				<span>Quick Tools</span>
 			</div>
+			<ul class="container">
+				<!-- Upload Screen -->
+				<li>
+					<span>Restart Your Server</span>
+					<form>
+						<button class="restart-btn">Restart</button>
+					</form>
+				</li>
+				<!-- Export Btn -->
+				<li>
+					<span>Close Your Server</span>
+					<button class="close-btn">Close</button>
+				</li>
+			</ul>
 		</div>
 		<!-- Server Logs Screen -->
 		<div class="server-logs-screen screen">
@@ -344,9 +367,15 @@
 				<!-- Upload Screen -->
 				<li>
 					<span>Upload Your Settings</span>
-					<form action="">
+					<form>
 						<button class="upload-btn">Upload</button>
-						<input type="file" name="json-file" id="" accept=".json" hidden>
+						<input
+							type="file"
+							name="json-file"
+							id="json-file"
+							accept=".json"
+							hidden
+						/>
 					</form>
 				</li>
 				<!-- Export Btn -->
@@ -354,7 +383,7 @@
 					<span>Export Your Settings</span>
 					<button class="export-btn">Export</button>
 				</li>
-			</u>
+			</ul>
 		</div>
 		<!-- Change Server Screen -->
 		<div class="change-server-screen screen">
@@ -376,11 +405,11 @@
 				<span>Website Settings</span>
 			</div>
 		</div>
+		<!-- Main Java Script File -->
+		<script src="js/script.js"></script>
+		<!-- Font Awsome Icons -->
+		<script src="js/all.min.js"></script>
+		<!-- Java Script Bootstrap Libraray -->
+		<script src="js/bootstrap.bundle.min.js"></script>
 	</body>
-	<!-- Main Java Script File -->
-	<script src="js/script.js"></script>
-	<!-- Font Awsome Icons -->
-	<script src="js/all.min.js"></script>
-	<!-- Java Script Bootstrap Libraray -->
-	<script src="js/bootstrap.bundle.min.js"></script>
 </html>

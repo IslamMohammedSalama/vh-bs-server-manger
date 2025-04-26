@@ -7,6 +7,11 @@ function sendMessege(msg) {
 	newMsg.textContent = `ServerName : ${msg}`;
 	messegsBox.appendChild(newMsg);
 }
+
+// Reset Button Function
+document.querySelectorAll
+
+
 // Navgtaite To Screens
 let navs = document.querySelectorAll(
 	"body > .container > ul > li:not(.discord)"

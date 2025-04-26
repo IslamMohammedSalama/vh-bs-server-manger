@@ -28,23 +28,27 @@ ul > li {
 		justify-content: space-between;
 		@include small-screens {
 			align-items: center;
-			> {
-				textarea {
-					width: 500px;
-				}
-				span {
-					margin-bottom: 2.5px;
-				}
+			> textarea {
+				width: 500px;
 			}
 		}
 		@include mobile-screens {
 			flex-direction: column;
-			> textarea {
-				width: 100%;
+			> {
+				textarea , input {
+					// height: 35px;
+					width: 100%;
+					&::placeholder {
+						// font-size: 14px;
+					}
+				}
+				span {
+					margin-bottom: 5px;
+				}
 			}
 		}
 	}
-	&:hover button:not(button:hover){
+	&:hover button:not(button:hover) {
 		background-color: #717171;
 	}
 }

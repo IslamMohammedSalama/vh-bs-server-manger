@@ -20,8 +20,16 @@
 	}
 }
 
-@mixin circle($diameter) {
-	width: $diameter;
-	height: $diameter;
+@mixin circle($diameter, $force: "false") {
 	border-radius: 50%;
+	@if $force == "false" {
+		width: $diameter;
+		height: $diameter;
+	}@else if $force == "true"{
+		min-width: $diameter;
+		min-height: $diameter;
+	}
+	@else {
+		@error "Not Valid"
+	}
 }

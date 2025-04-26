@@ -20,6 +20,7 @@ label.switch {
 		}
 	}
 	.toggle-switch {
+		display: block;
 		transition: $animation-duration;
 		position: relative;
 		background-color: #777;

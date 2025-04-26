@@ -1,1 +1,10 @@
- 
+@use "variables" as * ;
+
+@function toggle-theme($theme-name) {
+	@if $theme-name == "dark" {
+        
+	} @else if $theme-name == "light" {
+	} @else {
+		@error "Theme Not Avilable";
+	}
+}

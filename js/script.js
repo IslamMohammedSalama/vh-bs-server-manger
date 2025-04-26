@@ -9,8 +9,9 @@ function sendMessege(msg) {
 }
 
 // Reset Button Function
-document.querySelectorAll
-
+document
+	.querySelectorAll("button")
+	.forEach((btn) => (btn.onclick = (ev) => ev.preventDefault()));
 
 // Navgtaite To Screens
 let navs = document.querySelectorAll(

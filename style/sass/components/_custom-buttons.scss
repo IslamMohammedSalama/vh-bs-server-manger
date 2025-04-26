@@ -1,20 +1,22 @@
 @use "../helpers/variables" as *;
 @use "../helpers/mixins" as *;
-button {
+button,
+input[type="submit"] {
 	padding: 10px;
-	&:not(.circle) {
-		border-radius: 50px;
-	}
-	&.circle {
-		@include circle(35px);
-	}
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: none;
-	color: white;
+	color: $main-text-color;
 	background-color: #666;
 	transition: $animation-duration;
+	&:not(.circle) {
+		border-radius: 50px;
+	}
+	&.circle {
+		@include circle(40px,"true");
+	}
+
 	&:hover {
 		background-color: #777;
 	}

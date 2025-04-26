@@ -1,3 +1,4 @@
+@use "variables" as * ;
 * {
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
@@ -5,13 +6,13 @@
 
 body,
 .screen {
-	color: white;
+	color: $main-text-color;
 	background-color: #222222;
 	font-family: "Cairo", sans-serif;
 }
 
 a {
-	color: white;
+	color: $main-text-color;
 	text-decoration-line: none;
 }
 

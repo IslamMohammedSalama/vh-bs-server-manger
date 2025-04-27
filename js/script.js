@@ -131,18 +131,18 @@ exportSettingsButton.onclick = (ev) => {
 		});
 };
 
-// Check players Size
-let playersSizeControl = document.querySelector(
-	".players-size > span:last-of-type"
-);
-playersSizeControl.children[0].onclick = (ev) => {
-	playersSizeControl.children[1].textContent++;
-};
-
-playersSizeControl.children[2].onclick = (ev) => {
-	if (playersSizeControl.children[1].textContent <= 2) {
-		return;
-	} else {
-		playersSizeControl.children[1].textContent--;
-	}
-};
+// Number Chooser: Minimum Limit and Decrement And Increment Function
+document
+	.querySelectorAll(".number-chooser > span:last-of-type")
+	.forEach((ele) => {
+		ele.children[0].onclick = (ev) => {
+			ele.children[1].textContent++;
+		};
+		ele.children[2].onclick = (ev) => {
+			if (ele.children[1].textContent <= +ele.children[1].dataset.min) {
+				return;
+			} else {
+				ele.children[1].textContent--;
+			}
+		};
+	});

@@ -130,3 +130,19 @@ exportSettingsButton.onclick = (ev) => {
 			link.remove();
 		});
 };
+
+// Check players Size
+let playersSizeControl = document.querySelector(
+	".players-size > span:last-of-type"
+);
+playersSizeControl.children[0].onclick = (ev) => {
+	playersSizeControl.children[1].textContent++;
+};
+
+playersSizeControl.children[2].onclick = (ev) => {
+	if (playersSizeControl.children[1].textContent <= 2) {
+		return;
+	} else {
+		playersSizeControl.children[1].textContent--;
+	}
+};

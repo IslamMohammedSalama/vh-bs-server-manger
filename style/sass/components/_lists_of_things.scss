@@ -23,7 +23,7 @@ ul > li {
 		border-bottom-left-radius: $main-border-radius;
 	}
 	> label.form {
-		flex: 1;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		@include small-screens {
@@ -38,9 +38,6 @@ ul > li {
 				textarea , input {
 					// height: 35px;
 					width: 100%;
-					&::placeholder {
-						// font-size: 14px;
-					}
 				}
 				span {
 					margin-bottom: 5px;

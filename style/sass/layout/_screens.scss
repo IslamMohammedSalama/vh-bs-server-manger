@@ -1,5 +1,5 @@
 @use "../helpers/variables" as *;
-@use "../components/custom-buttons" as *;
+@use "../helpers/mixins" as *;
 
 .screen {
 	overflow-y: auto;
@@ -21,6 +21,15 @@
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+	}
+	@include mobile-screens {
+		> ul > li {
+			align-items: flex-start;
+			flex-direction: column;
+			> span:first-of-type {
+				margin-bottom: 10px;
+			}
 		}
 	}
 }

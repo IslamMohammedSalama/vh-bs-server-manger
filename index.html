@@ -257,104 +257,228 @@
 				<span>Server Settings</span>
 			</div>
 			<!-- Body -->
-			<div class="container">
-				<ul>
-					<!-- Sever Name -->
-					<li>
-						<label class="form">
-							<span>Server Name:</span>
-							<textarea placeholder="Type Your Server Name Here"></textarea>
-						</label>
-					</li>
-					<!-- Anti Id Revealer Switch Toggleer -->
-					<li>
-						<label class="switch">
-							<span>Anti Id Revealer</span>
-							<span>
-								<input
-									type="checkbox"
-									name="anti-id-revealer"
-									id="anti-id-revealer"
-									class="toggle-checkbox"
-								/>
-								<span class="toggle-switch"></span>
-							</span>
-						</label>
-					</li>
-					<!-- Host Device Name -->
-					<li>
-						<label class="form">
-							<span>Host Device Name :</span>
-							<textarea
-								placeholder="Type Your Host Device Name Here"
-							></textarea>
-						</label>
-					</li>
-					<!-- Host Name -->
-					<li>
-						<label class="form">
-							<span>Host Name :</span>
-							<textarea placeholder="Type Your Host Name Here"></textarea>
-						</label>
-					</li>
-					<!-- Players Size -->
-					<li class="number-chooser">
-						<span>Player Size :</span>
-						<span class="d-flex justify-content-between align-items-center">
-							<button class="circle">
-								<i class="fa-solid fa-plus"></i>
-							</button>
-							<span class="counter" data-min="2">2</span>
-							<button class="circle">
-								<i class="fa-solid fa-minus"></i>
-							</button>
+			<!-- <div class="container"> -->
+			<ul class="container">
+				<!-- Sever Name -->
+				<li>
+					<label class="form">
+						<span>Server Name:</span>
+						<textarea placeholder="Type Your Server Name Here"></textarea>
+					</label>
+				</li>
+				<!-- Anti Id Revealer Switch Toggleer -->
+				<li>
+					<label class="switch">
+						<span>Anti Id Revealer</span>
+						<span>
+							<input
+								type="checkbox"
+								name="anti-id-revealer"
+								id="anti-id-revealer"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
 						</span>
-					</li>
-					<!-- Show Kick Vote Starter Name -->
-					<li>
-						<label class="switch">
-							<span>Show Kick Vote Starter Name</span>
-							<span>
-								<input
-									type="checkbox"
-									name="show-kick-vote-starter-name"
-									id="show-kick-vote-starter-name"
-									class="toggle-checkbox"
-								/>
-								<span class="toggle-switch"></span>
-							</span>
-						</label>
-					</li>
-					<!-- Stumbled Score Screen -->
-					<li>
-						<label class="switch">
-							<span>Stumbled Score Screen</span>
-							<span>
-								<input
-									type="checkbox"
-									name="stumbled-score-screen"
-									id="stumbled-score-screen"
-									class="toggle-checkbox"
-								/>
-								<span class="toggle-switch"></span>
-							</span>
-						</label>
-					</li>
-					<!-- Warn Cooldown -->
-					<li class="number-chooser">
-						<span>Player Size :</span>
-						<span class="d-flex justify-content-between align-items-center">
-							<button class="circle">
-								<i class="fa-solid fa-plus"></i>
-							</button>
-							<span class="counter" data-min="1">30</span>
-							<button class="circle">
-								<i class="fa-solid fa-minus"></i>
-							</button>
+					</label>
+				</li>
+				<!-- Host Device Name -->
+				<li>
+					<label class="form">
+						<span>Host Device Name :</span>
+						<textarea placeholder="Type Your Host Device Name Here"></textarea>
+					</label>
+				</li>
+				<!-- Host Name -->
+				<li>
+					<label class="form">
+						<span>Host Name :</span>
+						<textarea placeholder="Type Your Host Name Here"></textarea>
+					</label>
+				</li>
+				<!-- Players Size -->
+				<li class="number-chooser">
+					<span>Player Size :</span>
+					<span class="d-flex justify-content-between align-items-center">
+						<button class="circle">
+							<i class="fa-solid fa-plus"></i>
+						</button>
+						<span class="counter" data-min="2">2</span>
+						<button class="circle">
+							<i class="fa-solid fa-minus"></i>
+						</button>
+					</span>
+				</li>
+				<!-- Show Kick Vote Starter Name -->
+				<li>
+					<label class="switch">
+						<span>Show Kick Vote Starter Name</span>
+						<span>
+							<input
+								type="checkbox"
+								name="show-kick-vote-starter-name"
+								id="show-kick-vote-starter-name"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
 						</span>
-					</li>
-				</ul>
-			</div>
+					</label>
+				</li>
+				<!-- Stumbled Score Screen -->
+				<li>
+					<label class="switch">
+						<span>Stumbled Score Screen</span>
+						<span>
+							<input
+								type="checkbox"
+								name="stumbled-score-screen"
+								id="stumbled-score-screen"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Warn Cooldown -->
+				<li class="number-chooser">
+					<span>Player Size :</span>
+					<span class="d-flex justify-content-between align-items-center">
+						<button class="circle">
+							<i class="fa-solid fa-plus"></i>
+						</button>
+						<span class="counter" data-min="1">30</span>
+						<button class="circle">
+							<i class="fa-solid fa-minus"></i>
+						</button>
+					</span>
+				</li>
+				<!-- After Warn Kick Msg -->
+				<li>
+					<label class="form">
+						<span>After Warn Kick Msg :</span>
+						<textarea placeholder="Type Your Msg Here"></textarea>
+					</label>
+				</li>
+				<!-- Allow In Game Chat -->
+				<li>
+					<label class="switch">
+						<span>Allow In Game Chat</span>
+						<span>
+							<input
+								type="checkbox"
+								name="allow-in-game-chat"
+								id="allow-in-game-chat"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Allow Team Chat -->
+				<li>
+					<label class="switch">
+						<span>Allow Team Chat</span>
+						<span>
+							<input
+								type="checkbox"
+								name="allow-team-chat"
+								id="allow-team-chat"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Allow Votes -->
+				<li>
+					<label class="switch">
+						<span>Allow Votes</span>
+						<span>
+							<input
+								type="checkbox"
+								name="allow-votes"
+								id="allow-votes"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Auto Team Balance -->
+				<li>
+					<label class="switch">
+						<span>Auto Team Balance</span>
+						<span>
+							<input
+								type="checkbox"
+								name="auto-team-balance"
+								id="auto-team-balance"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Character Chooser -->
+				<li>
+					<label class="switch">
+						<span>Character Chooser</span>
+						<span>
+							<input
+								type="checkbox"
+								name="character-chooser"
+								id="character-chooser"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Colorful Explosions -->
+				<li>
+					<label class="switch">
+						<span>Colorful Explosion</span>
+						<span>
+							<input
+								type="checkbox"
+								name="colorful-explosion"
+								id="colorful-explosion"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Colorful Maps -->
+				<li>
+					<label class="switch">
+						<span>Colorful Maps</span>
+						<span>
+							<input
+								type="checkbox"
+								name="colorful-maps"
+								id="colorful-maps"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Contribute Data -->
+				<li>
+					<label class="switch">
+						<span>Contribute Data</span>
+						<span>
+							<input
+								type="checkbox"
+								name="contribute-data"
+								id="contribute-data"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+			</ul>
 		</div>
 		<!-- Rules Management Screen -->
 		<div class="rules-management-screen screen">
@@ -382,7 +506,7 @@
 						<button class="restart-btn">Restart</button>
 					</form>
 				</li>
-				<!-- Export Btn -->
+				<!-- Close Btn -->
 				<li>
 					<span>Close Your Server</span>
 					<button class="close-btn">Close</button>

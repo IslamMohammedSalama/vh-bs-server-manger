@@ -33,14 +33,14 @@ ul > li {
 			}
 		}
 		@include mobile-screens {
-			flex-direction: column;
 			> {
-				textarea , input {
+				textarea,
+				input {
 					// height: 35px;
 					width: 100%;
 				}
-				span {
-					margin-bottom: 5px;
+				span:first-of-type {
+					margin-bottom: 10px;
 				}
 			}
 		}
@@ -49,3 +49,14 @@ ul > li {
 		background-color: #717171;
 	}
 }
+
+.screen > ul > li:not(li:is(:has(> button),:has(form>button))) {
+	@include mobile-screens {
+		align-items: flex-start;
+		flex-direction: column;
+		label:not(.switch) {
+			flex-direction: column;
+		}
+	}
+}
+

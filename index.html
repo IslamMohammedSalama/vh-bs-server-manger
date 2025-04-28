@@ -6,11 +6,11 @@
 		<meta name="description" content="A Bs Server Settings Editer" />
 		<title>Server Manger (Beta)</title>
 		<!-- Font Awsome icons -->
-		<link rel="stylesheet" href="style/all.min.css" />
+		<link rel="stylesheet" href="css/all.min.css" />
 		<!-- Css Bootstrap Library -->
-		<link rel="stylesheet" href="style/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<!-- Main Css File -->
-		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -257,28 +257,12 @@
 				<span>Server Settings</span>
 			</div>
 			<!-- Body -->
-			<!-- <div class="container"> -->
 			<ul class="container">
 				<!-- Sever Name -->
 				<li>
 					<label class="form">
 						<span>Server Name:</span>
 						<textarea placeholder="Type Your Server Name Here"></textarea>
-					</label>
-				</li>
-				<!-- Anti Id Revealer Switch Toggleer -->
-				<li>
-					<label class="switch">
-						<span>Anti Id Revealer</span>
-						<span>
-							<input
-								type="checkbox"
-								name="anti-id-revealer"
-								id="anti-id-revealer"
-								class="toggle-checkbox"
-							/>
-							<span class="toggle-switch"></span>
-						</span>
 					</label>
 				</li>
 				<!-- Host Device Name -->
@@ -295,6 +279,20 @@
 						<textarea placeholder="Type Your Host Name Here"></textarea>
 					</label>
 				</li>
+				<!-- Frist Time Join Msg -->
+				<li>
+					<label class="form">
+						<span>Frist Time Join Msg :</span>
+						<textarea placeholder="Type Your Join Msg Here"></textarea>
+					</label>
+				</li>
+				<!-- After Warn Kick Msg -->
+				<li>
+					<label class="form">
+						<span>After Warn Kick Msg :</span>
+						<textarea placeholder="Type Your Msg Here"></textarea>
+					</label>
+				</li>
 				<!-- Players Size -->
 				<li class="number-chooser">
 					<span>Player Size :</span>
@@ -308,39 +306,9 @@
 						</button>
 					</span>
 				</li>
-				<!-- Show Kick Vote Starter Name -->
-				<li>
-					<label class="switch">
-						<span>Show Kick Vote Starter Name</span>
-						<span>
-							<input
-								type="checkbox"
-								name="show-kick-vote-starter-name"
-								id="show-kick-vote-starter-name"
-								class="toggle-checkbox"
-							/>
-							<span class="toggle-switch"></span>
-						</span>
-					</label>
-				</li>
-				<!-- Stumbled Score Screen -->
-				<li>
-					<label class="switch">
-						<span>Stumbled Score Screen</span>
-						<span>
-							<input
-								type="checkbox"
-								name="stumbled-score-screen"
-								id="stumbled-score-screen"
-								class="toggle-checkbox"
-							/>
-							<span class="toggle-switch"></span>
-						</span>
-					</label>
-				</li>
 				<!-- Warn Cooldown -->
 				<li class="number-chooser">
-					<span>Player Size :</span>
+					<span>Warn Cooldown Time :</span>
 					<span class="d-flex justify-content-between align-items-center">
 						<button class="circle">
 							<i class="fa-solid fa-plus"></i>
@@ -350,13 +318,6 @@
 							<i class="fa-solid fa-minus"></i>
 						</button>
 					</span>
-				</li>
-				<!-- After Warn Kick Msg -->
-				<li>
-					<label class="form">
-						<span>After Warn Kick Msg :</span>
-						<textarea placeholder="Type Your Msg Here"></textarea>
-					</label>
 				</li>
 				<!-- Allow In Game Chat -->
 				<li>
@@ -472,6 +433,171 @@
 								type="checkbox"
 								name="contribute-data"
 								id="contribute-data"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Hit Text -->
+				<li>
+					<label class="switch">
+						<span>Enable Hit Text</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-hit-text"
+								id="enable-hit-text"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Tag Animation -->
+				<li>
+					<label class="switch">
+						<span>Enable Tag Animation</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-tag-animation"
+								id="enable-tag-animation"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Top 5 Effects -->
+				<li>
+					<label class="switch">
+						<span>Enable Top 5 Effects</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-top-5-effects"
+								id="enable-top-5-effects"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Effects -->
+				<li>
+					<label class="switch">
+						<span>Enable Effects</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-effects"
+								id="enable-effects"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable HP Tag -->
+				<li>
+					<label class="switch">
+						<span>Enable HP Tag</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-hp-tag"
+								id="enable-hp-tag"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Rank -->
+				<li>
+					<label class="switch">
+						<span>Enable Rank</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-rank"
+								id="enable-rank"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Stats -->
+				<li>
+					<label class="switch">
+						<span>Enable Stats</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-stats"
+								id="enable-stats"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Anti Id Revealer Switch Toggleer -->
+				<li>
+					<label class="switch">
+						<span>Anti Id Revealer</span>
+						<span>
+							<input
+								type="checkbox"
+								name="anti-id-revealer"
+								id="anti-id-revealer"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Show Kick Vote Starter Name -->
+				<li>
+					<label class="switch">
+						<span>Show Kick Vote Starter Name</span>
+						<span>
+							<input
+								type="checkbox"
+								name="show-kick-vote-starter-name"
+								id="show-kick-vote-starter-name"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Stumbled Score Screen -->
+				<li>
+					<label class="switch">
+						<span>Stumbled Score Screen</span>
+						<span>
+							<input
+								type="checkbox"
+								name="stumbled-score-screen"
+								id="stumbled-score-screen"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
+				<!-- Enable Tags -->
+				<li>
+					<label class="switch">
+						<span>Enable Tags</span>
+						<span>
+							<input
+								type="checkbox"
+								name="enable-tags"
+								id="enable-tags"
 								class="toggle-checkbox"
 							/>
 							<span class="toggle-switch"></span>

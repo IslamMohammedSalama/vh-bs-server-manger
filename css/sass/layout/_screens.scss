@@ -21,14 +21,8 @@
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
-		}
-	}
-	@include mobile-screens {
-		> ul > li {
-			align-items: flex-start;
-			flex-direction: column;
-			> span:first-of-type {
-				margin-bottom: 10px;
+			@include mobile-screens {
+				font-size: 15px;
 			}
 		}
 	}

@@ -30,7 +30,7 @@
 			<h1 class="text-center fs-5 pt-3 pb-3">
 				Welcome To Server Settings Manger
 			</h1>
-			<ul class="list-unstyled">
+			<ul>
 				<!-- Overview Navigator -->
 				<li class="overview">
 					<span>Overview</span>
@@ -262,35 +262,55 @@
 				<li>
 					<label class="form">
 						<span>Server Name:</span>
-						<textarea placeholder="Type Your Server Name Here"></textarea>
+						<textarea
+							placeholder="Type Your Server Name Here"
+							name="server-name"
+							id="server-name"
+						></textarea>
 					</label>
 				</li>
 				<!-- Host Device Name -->
 				<li>
 					<label class="form">
 						<span>Host Device Name :</span>
-						<textarea placeholder="Type Your Host Device Name Here"></textarea>
+						<textarea
+							placeholder="Type Your Host Device Name Here"
+							name="host-device-name"
+							id="host-device-name"
+						></textarea>
 					</label>
 				</li>
 				<!-- Host Name -->
 				<li>
 					<label class="form">
 						<span>Host Name :</span>
-						<textarea placeholder="Type Your Host Name Here"></textarea>
+						<textarea
+							placeholder="Type Your Host Name Here"
+							name="host-name"
+							id="host-name"
+						></textarea>
 					</label>
 				</li>
-				<!-- Frist Time Join Msg -->
+				<!-- Frist Time Join Messege -->
 				<li>
 					<label class="form">
-						<span>Frist Time Join Msg :</span>
-						<textarea placeholder="Type Your Join Msg Here"></textarea>
+						<span>Frist Time Join Messege :</span>
+						<textarea
+							placeholder="Type Your Join Messege Here"
+							name="join-msg"
+							id="join-msg"
+						></textarea>
 					</label>
 				</li>
-				<!-- After Warn Kick Msg -->
+				<!-- After Warn Kick Messege -->
 				<li>
 					<label class="form">
-						<span>After Warn Kick Msg :</span>
-						<textarea placeholder="Type Your Msg Here"></textarea>
+						<span>After Warn Kick Messege :</span>
+						<textarea
+							placeholder="Type Your Kick Messege Here"
+							class="kick-msg"
+							id="kick-msg"
+						></textarea>
 					</label>
 				</li>
 				<!-- Players Size -->
@@ -574,6 +594,21 @@
 						</span>
 					</label>
 				</li>
+				<!-- Chat Commands Or Brodcast Commands -->
+				<li>
+					<label class="switch">
+						<span>Chat Commands (Or Brodcast Commands)</span>
+						<span>
+							<input
+								type="checkbox"
+								name="chat-commands"
+								id="chat-commands"
+								class="toggle-checkbox"
+							/>
+							<span class="toggle-switch"></span>
+						</span>
+					</label>
+				</li>
 				<!-- Stumbled Score Screen -->
 				<li>
 					<label class="switch">
@@ -603,6 +638,187 @@
 							<span class="toggle-switch"></span>
 						</span>
 					</label>
+				</li>
+				<!--Teams Settings -->
+				<li class="popup">
+					<div class="d-flex justify-content-between w-100">
+						<span>Teams Settings</span>
+						<i class="fa-solid fa-angle-right"></i>
+					</div>
+					<!--Popup -->
+					<div class="popup-window">
+						<div class="popup-header">
+							<h5>Teams</h5>
+							<button class="close circle">
+								<i class="fa fa-close"></i>
+							</button>
+						</div>
+						<div class="body mt-2">
+							<!-- Frist Team -->
+							<ul>
+								<li>
+									<label class="form">
+										<span>Frist Team Name :</span>
+										<textarea
+											placeholder="Type Your Frist Team Name Here"
+											name="frist-team-name"
+											id="frist-team-name"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Frist Team Color :</span>
+										<input
+											type="color"
+											name="frist-team-color"
+											id="frist-team-color"
+										/>
+									</label>
+								</li>
+							</ul>
+							<!-- Secound Team -->
+							<ul class="mt-2">
+								<li>
+									<label class="form">
+										<span>Secound Team Name :</span>
+										<textarea
+											placeholder="Type Your Secound Team Name Here"
+											name="secound-team-name"
+											id="secound-team-name"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Secound Team Color :</span>
+										<input
+											type="color"
+											name="secound-team-color"
+											id="secound-team-color"
+										/>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="overley"></div>
+				</li>
+				<!--Score Screen Announcement -->
+				<li class="popup">
+					<div class="d-flex justify-content-between w-100">
+						<span>Score Screen Announcement</span>
+						<i class="fa-solid fa-angle-right"></i>
+					</div>
+					<div class="popup-window">
+						<div class="popup-header">
+							<h5>Score Screen Announcement</h5>
+							<button class="close circle">
+								<i class="fa fa-close"></i>
+							</button>
+						</div>
+						<div class="body mt-2">
+							<ul>
+								<!-- Enable Score Screen Announcement -->
+								<li>
+									<label class="switch">
+										<span>Enable </span>
+										<span>
+											<input
+												type="checkbox"
+												name="enable-score-screen-announcement"
+												id="enable-score-screen-announcement"
+												class="toggle-checkbox"
+											/>
+											<span class="toggle-switch"></span>
+										</span>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 1 :</span>
+										<textarea
+											placeholder="Type Your Messege 1 Here"
+											name="messege-1"
+											id="messege-1"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 2 :</span>
+										<textarea
+											placeholder="Type Your Messege 2 Here"
+											name="messege-2"
+											id="messege-2"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 3 :</span>
+										<textarea
+											placeholder="Type Your Messege 3 Here"
+											name="messege-3"
+											id="messege-3"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 4 :</span>
+										<textarea
+											placeholder="Type Your Messege 4 Here"
+											name="messege-4"
+											id="messege-4"
+										></textarea>
+									</label>
+								</li>
+
+								<li>
+									<label class="form">
+										<span>Messege 5 :</span>
+										<textarea
+											placeholder="Type Your Messege 5 Here"
+											name="messege-5"
+											id="messege-5"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 6 :</span>
+										<textarea
+											placeholder="Type Your Messege 6 Here"
+											name="messege-6"
+											id="messege-6"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 7 :</span>
+										<textarea
+											placeholder="Type Your Messege 7 Here"
+											name="messege-7"
+											id="messege-7"
+										></textarea>
+									</label>
+								</li>
+								<li>
+									<label class="form">
+										<span>Messege 8 :</span>
+										<textarea
+											placeholder="Type Your Messege 8 Here"
+											name="messege-8"
+											id="messege-8"
+										></textarea>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="overley"></div>
 				</li>
 			</ul>
 		</div>
@@ -728,11 +944,11 @@
 				</li>
 			</ul>
 		</div>
-		<!-- Main Java Script File -->
-		<script src="js/script.js"></script>
-		<!-- Font Awsome Icons -->
-		<script src="js/all.min.js"></script>
 		<!-- Java Script Bootstrap Libraray -->
 		<script src="js/bootstrap.bundle.min.js"></script>
+		<!-- Font Awsome Icons -->
+		<script src="js/all.min.js"></script>
+		<!-- Main Java Script File -->
+		<script src="js/script.js"></script>
 	</body>
 </html>

@@ -3,10 +3,12 @@
 @use "./sass/helpers/mixins" as *;
 @use "./sass/helpers/global_rules" as *;
 
+@use "./sass/components/custom-button" as *;
 @use "./sass/components/input_filed" as *;
 @use "./sass/components/service_container" as *;
 @use "./sass/components/switch" as *;
 @use "./sass/components/lists_of_things" as *;
+@use "./sass/components/popup" as *;
 
 @use "./sass/layout/container" as *;
 @use "./sass/layout/screens" as *;

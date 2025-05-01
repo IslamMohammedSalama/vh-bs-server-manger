@@ -2,10 +2,10 @@
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 // Send Msg Function
 function sendMessege(msg) {
-	let messegsBox = document.querySelector(".chat-screen .messeges");
+	let msgsBox = document.querySelector(".chat-screen .messeges");
 	let newMsg = document.createElement("p");
 	newMsg.textContent = `ServerName : ${msg}`;
-	messegsBox.appendChild(newMsg);
+	msgsBox.appendChild(newMsg);
 }
 
 // Reset Button Function
@@ -146,3 +146,35 @@ document
 			}
 		};
 	});
+
+// Setup Popups
+let popupOpeners = document.querySelectorAll("li.popup > div:first-child");
+popupOpeners.forEach((popupOpener) => {
+	popupOpener.onclick = async () => {
+		let popupWin = popupOpener.nextElementSibling;
+		let overley = popupWin.nextElementSibling;
+		popupWin.style.display = "block";
+		overley.style.display = "block";
+		await delay(0);
+		popupWin.style.opacity = "1";
+		overley.style.opacity = "1";
+		popupWin.style.transform = "translate(-50%, -50%) scale(1)";
+		popupWin.querySelector(" .popup-header .close ").onclick = async () => {
+			popupWin.style.opacity = "0";
+			overley.style.opacity = "0";
+			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
+			await delay(300);
+			// console.log("waited");
+			popupWin.style.display = "none";
+			overley.style.display = "none";
+		};
+		overley.onclick = async () => {
+			popupWin.style.opacity = "0";
+			overley.style.opacity = "0";
+			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
+			await delay(300);
+			popupWin.style.display = "none";
+			overley.style.display = "none";
+		};
+	};
+});

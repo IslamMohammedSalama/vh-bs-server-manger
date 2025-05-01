@@ -6,6 +6,7 @@ function sendMessege(msg) {
 	let newMsg = document.createElement("p");
 	newMsg.textContent = `ServerName : ${msg}`;
 	msgsBox.appendChild(newMsg);
+	newMsg.scrollIntoView({ behavior: 'smooth' })
 }
 
 // Reset Button Function

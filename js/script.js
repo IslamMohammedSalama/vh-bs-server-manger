@@ -6,9 +6,61 @@ function sendMessege(msg) {
 	let newMsg = document.createElement("p");
 	newMsg.textContent = `ServerName : ${msg}`;
 	msgsBox.appendChild(newMsg);
-	newMsg.scrollIntoView({ behavior: 'smooth' })
+	newMsg.scrollIntoView({ behavior: "smooth" });
 }
 
+// Update URL without page reload
+function updateURL(screenClass) {
+	// Get the screen name from class (remove '-screen' suffix)
+	const screenName = screenClass.replace("-screen", "");
+
+	// Create a state object
+	const stateObj = { screen: screenName };
+
+	// Change the URL without reloading the page
+	history.pushState(stateObj, "", `#${screenName}`);
+}
+
+// Handle browser back/forward buttons
+window.addEventListener("popstate", function (event) {
+	if (event.state && event.state.screen) {
+		navigateToScreen(event.state.screen + "-screen");
+	} else {
+		// Default to home if no state is available
+		document.querySelectorAll(".screen").forEach((screen) => {
+			screen.style.left = "100dvw";
+			screen.style.display = "none";
+		});
+		document.body.classList.remove("disable-scrolling");
+	}
+});
+
+// Function to handle navigation to a specific screen
+async function navigateToScreen(screenClass) {
+	const tScreen = document.querySelector("." + screenClass);
+
+	// Exit if the screen doesn't exist
+	if (!tScreen) return;
+
+	// Show the screen
+	tScreen.style.display = "block";
+	await delay(10);
+	tScreen.style.left = 0;
+	document.body.classList.add("disable-scrolling");
+	// Update URL
+	updateURL(screenClass);
+}
+
+// Initialize navigation on page load
+function initializeFromURL() {
+	// Get the hash from the URL (if any)
+	const hash = window.location.hash.substring(1);
+
+	if (hash) {
+		// Navigate to the screen if hash exists
+		navigateToScreen(hash + "-screen");
+	}
+}
 // Reset Button Function
 document
 	.querySelectorAll("button")
@@ -26,6 +78,7 @@ navs.forEach((li) => {
 		await delay(0);
 		tScreen.style.left = "0";
 		document.body.classList.add("disable-scrolling");
+		updateURL(li.className);
 	};
 });
 
@@ -34,6 +87,7 @@ let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
 	theScreen.children[0].children[0].onclick = async () => {
+		history.replaceState("", "", "/");
 		theScreen.style.left = "100dvw";
 		document.body.classList.remove("disable-scrolling");
 		await delay(500);
@@ -178,4 +232,9 @@ popupOpeners.forEach((popupOpener) => {
 			overley.style.display = "none";
 		};
 	};
+});
+
+// Initialize from URL on page load
+document.addEventListener("DOMContentLoaded", function () {
+	initializeFromURL();
 });

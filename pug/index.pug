@@ -19,10 +19,10 @@ html(lang="en")
 			href="https://fonts.gstatic.com",crossorigin )
 		link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap",
 			rel="stylesheet")
-			//- Page Logo 
+		//- Page Logo 
 		link(rel="shortcut icon", href="assets/imgs/favicon.ico", type="image/x-icon")
 	body 
-	div.container
+	div.container.home-screen#home
 		h1(class="text-center fs-5 pt-3 pb-3") Welcome To Server Settings Manger
 		ul 
 			each item in navsNames
@@ -34,7 +34,7 @@ html(lang="en")
 				class="d-flex justify-content-between align-items-center w-100") Discord
 				i(class="fa-solid fa-angle-right")
 		//- Overview Screen
-		div.overview-screen.screen 
+		div.overview-screen.screen#overview 
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
@@ -95,7 +95,7 @@ html(lang="en")
 						div.text-center
 							p.fs-3 Rocky : 
 							p.fs-3 0
-		div.chat-screen.screen
+		div.chat-screen.screen#chat
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
@@ -131,12 +131,12 @@ html(lang="en")
 								autofocus
 							)
 							button.submit.circle: i(class="fa-solid fa-paper-plane")
-		div.player-management-screen.screen
+		div.player-management-screen.screen#player-management
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
 				span Player Management
-		div.server-settings-screen.screen
+		div.server-settings-screen.screen#server-settings
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
@@ -413,7 +413,7 @@ html(lang="en")
 										textarea#messege-8(placeholder="Type Your Messege 8 Here", name="messege-8")
 					.overley
 		//- Rules Management Screen
-		div.rules-management-screen.screen
+		div.rules-management-screen.screen#rules-management
 			//- Header
 			div.header.p-realtive 
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
@@ -432,17 +432,17 @@ html(lang="en")
 					span Close Your Server
 					form
 						button.close-btn Close
-		div.server-logs-screen.screen
+		div.server-logs-screen.screen#server-logs
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
 				span Server Logs
-		div.effects-and-tag-management-screen.screen
+		div.effects-and-tag-management-screen.screen#effects-and-tag-management
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
 				span= "Player's Effects & Tags Mangement"
-		div.import-and-export-settings-screen.screen
+		div.import-and-export-settings-screen.screen#import-and-export-settings
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
@@ -463,12 +463,12 @@ html(lang="en")
 				li
 					span Export Your Settings 
 					button.export-btn Export
-		div.change-server-screen.screen
+		div.change-server-screen.screen#change-server
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
 				span Change Server
-		div.website-settings-screen.screen
+		div.website-settings-screen.screen#website-settings
 			//- Header
 			div.header.p-realtive
 				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")

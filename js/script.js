@@ -18,7 +18,7 @@ function updateURL(screenClass) {
 	const stateObj = { screen: screenName };
 
 	// Change the URL without reloading the page
-	history.pushState(stateObj, "", `#${screenName}`);
+	history.pushState(stateObj, "", `/#${screenName}`);
 }
 
 // Handle browser back/forward buttons

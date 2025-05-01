@@ -87,7 +87,7 @@ let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
 	theScreen.children[0].children[0].onclick = async () => {
-		history.replaceState("", "", "/");
+		history.replaceState("", "", `${window.location.pathname}`);
 		theScreen.style.left = "100dvw";
 		document.body.classList.remove("disable-scrolling");
 		await delay(500);

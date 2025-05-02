@@ -86,14 +86,15 @@ navs.forEach((li) => {
 let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
-	theScreen.children[0].children[0].onclick = async () => {
-		history.replaceState("", "", `${window.location.pathname}`);
-		theScreen.style.left = "100dvw";
-		document.body.classList.remove("disable-scrolling");
-		await delay(500);
-		// theScreen.style.opacity = "0";
-		theScreen.style.display = "none";
-	};
+	theScreen.querySelector(".header").querySelector(".back").onclick =
+		async () => {
+			history.replaceState("", "", `${window.location.pathname}`);
+			theScreen.style.left = "100dvw";
+			document.body.classList.remove("disable-scrolling");
+			await delay(500);
+			// theScreen.style.opacity = "0";
+			theScreen.style.display = "none";
+		};
 });
 
 // Send Msg
@@ -107,6 +108,7 @@ sendBtn.onclick = (e) => {
 	let input = document.querySelector(".chat-screen .write-messeges textarea");
 	sendMessege(input.value);
 	input.value = "";
+	input.focus();
 };
 document
 	.querySelector(".write-messeges textarea")
@@ -118,6 +120,7 @@ document
 			);
 			sendMessege(input.value);
 			input.value = "";
+			input.focus();
 		}
 	});
 

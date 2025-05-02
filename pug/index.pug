@@ -1,4 +1,18 @@
 include includes/variables.pug
+include includes/mixins.pug
+include includes/home-screen.pug
+include includes/overview-screen.pug
+include includes/chat-screen.pug
+include includes/server-settings-screen.pug
+include includes/quick-tools-screen.pug
+include includes/player-management-screen.pug
+include includes/import-and-export-server-settings-screen.pug
+include includes/effects-and-tag-management-screen.pug
+include includes/rules-management-screen.pug
+include includes/server-logs-screen.pug
+include includes/change-server-screen.pug
+include includes/website-settings-screen.pug
+
 doctype html
 html(lang="en")
 	head
@@ -22,463 +36,31 @@ html(lang="en")
 		//- Page Logo 
 		link(rel="shortcut icon", href="assets/imgs/favicon.ico", type="image/x-icon")
 	body 
-	div.container.home-screen#home
-		h1(class="text-center fs-5 pt-3 pb-3") Welcome To Server Settings Manger
-		ul 
-			each item in navsNames
-				li(class=item.class)
-					span= item.name
-					i(class="fa-solid fa-angle-right")
-			li.discord
-				a(href="https://discord.gg/QhDPnJsJ",
-				class="d-flex justify-content-between align-items-center w-100") Discord
-				i(class="fa-solid fa-angle-right")
+		+home
 		//- Overview Screen
 		div.overview-screen.screen#overview 
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Overview
-			//- Body Of Screen
-			div.container
-				//- Current And Next Map
-				div.current-and-next-game(class="d-flex flex-wrap service-container")
-					h4(class="mx-auto text-center w-100") Current And Next Map
-					div(class="d-flex justify-content-between flex-column w-100 flex-lg-row")
-						div.current-map(class="text-center") Current Map : 
-							span Game @ Map
-						div.next-map(class="text-center") Next Map : 
-							span Game @ Map
-				div(class="service-container mt-2 overflow-x-auto overflow-y-hidden p-relative")
-					h4(class="text-center mx-auto w-100") Top Players
-					table.mx-auto
-						thead
-							tr
-								th No.
-								th Name
-								th Score
-								th Kills
-						tbody
-							tr
-									td 1.
-									td Islam
-									td 200
-									td 200
-							tr
-									td 2.
-									td Text
-									td 200
-									td 200
-							tr
-									td 3.
-									td Anyone
-									td 20000
-									td 20000
-							tr
-									td 4.
-									td Testing
-									td 200000000
-									td 2004564231567876354
-							tr
-									td 5.
-									td Testing
-									td 200000000
-									td 200678987645
-				//- Server Teams Status
-				div(class="service-container mt-2 stats p-2")
-					h3.text-center Server Name : AnyThing
-					p.text-center Dual Team Session
-					div(class="d-flex align-center justify-content-between")
-						div.text-center
-							p.fs-3 Islam : 
-							p.fs-3 0
-						div.text-center
-							p.fs-3 Rocky : 
-							p.fs-3 0
+			+overview
 		div.chat-screen.screen#chat
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Chat
-			//- Body
-			div.container
-				//- Active Players
-				div.service-container
-					h4.text-center Live Players
-					div.active-players
-						span Vortex
-						span Zad
-						span Islam
-						span Anyone You Want
-						span Test
-				//- Messeges
-				div.service-container.mt-2
-					h4.text-center Messeges
-					div.messeges
-						p Islam: Hoho
-						p Islam: Hehe
-						p Islam: Haha
-						p Islam: Huhu
-						p Islam: Test
-					//- Messeges Sender
-					div.write-messeges
-						form.d-flex
-							textarea(
-								class="w-100",
-								name="messeges",
-								id="messeges",
-								placeholder="Type Your Messege Here",
-								autofocus
-							)
-							button.submit.circle: i(class="fa-solid fa-paper-plane")
+			+chat
 		div.player-management-screen.screen#player-management
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Player Management
+			+player-management
 		div.server-settings-screen.screen#server-settings
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Server Settings
-			//- body
-			ul.container
-				//- Sever Name
-				li
-					label.form
-						span Server Name:
-						textarea#server-name(placeholder="Type Your Server Name Here", name="server-name")
-				//- Host Device Name
-				li
-					label.form
-						span Host Device Name :
-						textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name")
-				//- Host Name
-				li
-					label.form
-						span Host Name :
-						textarea#host-name(placeholder="Type Your Host Name Here", name="host-name")
-				//- Frist Time Join Messege
-				li
-					label.form
-						span Frist Time Join Messege :
-						textarea#join-msg(placeholder="Type Your Join Messege Here", name="join-msg")
-				//- After Warn Kick Messege
-				li
-					label.form
-						span After Warn Kick Messege :
-						textarea#kick-msg.kick-msg(placeholder="Type Your Kick Messege Here")
-				//- Players Size
-				li.number-chooser
-					span Player Size :
-					span.d-flex.justify-content-between.align-items-center
-						button.circle
-							i.fa-solid.fa-plus
-						span.counter(data-min="2") 2
-						button.circle
-							i.fa-solid.fa-minus
-				//- Warn Cooldown
-				li.number-chooser
-					span Warn Cooldown Time :
-					span.d-flex.justify-content-between.align-items-center
-						button.circle
-							i.fa-solid.fa-plus
-						span.counter(data-min="1") 30
-						button.circle
-							i.fa-solid.fa-minus
-				//- Allow In Game Chat
-				li
-					label.switch
-						span Allow In Game Chat
-						span
-							input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat")
-							span.toggle-switch
-				//- Allow Team Chat
-				li
-					label.switch
-						span Allow Team Chat
-						span
-							input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat")
-							span.toggle-switch
-				//- Allow Votes
-				li
-					label.switch
-						span Allow Votes
-						span
-							input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes")
-							span.toggle-switch
-				//- Auto Team Balance
-				li
-					label.switch
-						span Auto Team Balance
-						span
-							input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance")
-							span.toggle-switch
-				//- Character Chooser
-				li
-					label.switch
-						span Character Chooser
-						span
-							input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser")
-							span.toggle-switch
-				//- Colorful Explosions
-				li
-					label.switch
-						span Colorful Explosion
-						span
-							input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion")
-							span.toggle-switch
-				//- Colorful Maps
-				li
-					label.switch
-						span Colorful Maps
-						span
-							input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps")
-							span.toggle-switch
-				//- Contribute Data
-				li
-					label.switch
-						span Contribute Data
-						span
-							input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data")
-							span.toggle-switch
-				//- Enable Hit Text
-				li
-					label.switch
-						span Enable Hit Text
-						span
-							input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text")
-							span.toggle-switch
-				//- Enable Tag Animation
-				li
-					label.switch
-						span Enable Tag Animation
-						span
-							input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation")
-							span.toggle-switch
-				//- Enable Top 5 Effects
-				li
-					label.switch
-						span Enable Top 5 Effects
-						span
-							input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects")
-							span.toggle-switch
-				//- Enable Effects
-				li
-					label.switch
-						span Enable Effects
-						span
-							input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects")
-							span.toggle-switch
-				//- Enable HP Tag
-				li
-					label.switch
-						span Enable HP Tag
-						span
-							input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag")
-							span.toggle-switch
-				//- Enable Rank
-				li
-					label.switch
-						span Enable Rank
-						span
-							input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank")
-							span.toggle-switch
-				//- Enable Stats
-				li
-					label.switch
-						span Enable Stats
-						span
-							input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats")
-							span.toggle-switch
-				//- Anti Id Revealer Switch Toggleer
-				li
-					label.switch
-						span Anti Id Revealer
-						span
-							input#anti-id-revealer.toggle-checkbox(type="checkbox", name="anti-id-revealer")
-							span.toggle-switch
-				//- Show Kick Vote Starter Name
-				li
-					label.switch
-						span Show Kick Vote Starter Name
-						span
-							input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name")
-							span.toggle-switch
-				//- Chat Commands Or Brodcast Commands
-				li
-					label.switch
-						span Chat Commands (Or Brodcast Commands)
-						span
-							input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands")
-							span.toggle-switch
-				//- Stumbled Score Screen
-				li
-					label.switch
-						span Stumbled Score Screen
-						span
-							input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen")
-							span.toggle-switch
-				//- Enable Tags
-				li
-					label.switch
-						span Enable Tags
-						span
-							input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags")
-							span.toggle-switch
-				//- Teams Settings
-				li.popup
-					.d-flex.justify-content-between.w-100
-						span Teams Settings
-						i.fa-solid.fa-angle-right
-					//- Popup
-					.popup-window
-						.popup-header
-							h5 Teams
-							button.close.circle
-								i.fa.fa-close
-						.body.mt-2
-							//- Frist Team
-							ul
-								li
-									label.form
-										span Frist Team Name :
-										textarea#frist-team-name(placeholder="Type Your Frist Team Name Here", name="frist-team-name")
-								li
-									label.form
-										span Frist Team Color :
-										input#frist-team-color(type="color", name="frist-team-color")
-							//- Secound Team
-							ul.mt-2
-								li
-									label.form
-										span Secound Team Name :
-										textarea#secound-team-name(placeholder="Type Your Secound Team Name Here", name="secound-team-name")
-								li
-									label.form
-										span Secound Team Color :
-										input#secound-team-color(type="color", name="secound-team-color")
-					.overley
-				//- Score Screen Announcement
-				li.popup
-					.d-flex.justify-content-between.w-100
-						span Score Screen Announcement
-						i.fa-solid.fa-angle-right
-					.popup-window
-						.popup-header
-							h5 Score Screen Announcement
-							button.close.circle
-								i.fa.fa-close
-						.body.mt-2
-							ul
-								//- Enable Score Screen Announcement
-								li
-									label.switch
-										span Enable 
-										span
-											input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement")
-											span.toggle-switch
-								li
-									label.form
-										span Messege 1 :
-										textarea#messege-1(placeholder="Type Your Messege 1 Here", name="messege-1")
-								li
-									label.form
-										span Messege 2 :
-										textarea#messege-2(placeholder="Type Your Messege 2 Here", name="messege-2")
-								li
-									label.form
-										span Messege 3 :
-										textarea#messege-3(placeholder="Type Your Messege 3 Here", name="messege-3")
-								li
-									label.form
-										span Messege 4 :
-										textarea#messege-4(placeholder="Type Your Messege 4 Here", name="messege-4")
-								li
-									label.form
-										span Messege 5 :
-										textarea#messege-5(placeholder="Type Your Messege 5 Here", name="messege-5")
-								li
-									label.form
-										span Messege 6 :
-										textarea#messege-6(placeholder="Type Your Messege 6 Here", name="messege-6")
-								li
-									label.form
-										span Messege 7 :
-										textarea#messege-7(placeholder="Type Your Messege 7 Here", name="messege-7")
-								li
-									label.form
-										span Messege 8 :
-										textarea#messege-8(placeholder="Type Your Messege 8 Here", name="messege-8")
-					.overley
+			+server-settings
 		//- Rules Management Screen
 		div.rules-management-screen.screen#rules-management
-			//- Header
-			div.header.p-realtive 
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Rules Management
+			+rules-management
 		div.quick-tools-screen.screen
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Quick Tools
-			ul.container
-				li
-					span Restart Your Server
-					form
-						button.restart-btn Restart
-				li
-					span Close Your Server
-					form
-						button.close-btn Close
+			+quick-tools
 		div.server-logs-screen.screen#server-logs
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Server Logs
+			+server-logs
 		div.effects-and-tag-management-screen.screen#effects-and-tag-management
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span= "Player's Effects & Tags Mangement"
+			+effects-and-tag-management
 		div.import-and-export-settings-screen.screen#import-and-export-settings
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Server Settings
-			//- Body
-			ul.container 
-				li 
-					span Upload Your Settings
-					form
-						button.upload-btn Upload
-						input(
-							type="file",
-							name="json-file",
-							id="json-file",
-							accept=".json",
-							hidden
-						)
-				li
-					span Export Your Settings 
-					button.export-btn Export
+			+import-and-export-server-settings
 		div.change-server-screen.screen#change-server
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Change Server
+			+change-server
 		div.website-settings-screen.screen#website-settings
-			//- Header
-			div.header.p-realtive
-				button.circle.back(aria-label="Black"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-				span Website Settings
-			//- Body
-			ul.container
-				li
-					label.switch 
-						span Dark Style
-						input.toggle-checkbox.dark-mode#dark-mode(type="checkbox", name="dark-mode")
-						span.toggle-switch
+			+website-settings
 		//- Java Script Bootstrap Libraray 
 		script(src="js/bootstrap.bundle.min.js")
 		//-  Font Awsome Icons 

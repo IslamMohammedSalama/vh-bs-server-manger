@@ -1,0 +1,34 @@
+mixin chat 
+  //- Header
+  +header-of-screen("Chat")
+  //- Body
+  div.container
+    //- Active Players
+    div.service-container
+      h4.text-center Live Players
+      div.active-players
+        span Vortex
+        span Zad
+        span Islam
+        span Anyone You Want
+        span Test
+    //- Messeges
+    div.service-container.mt-2
+      h4.text-center Messeges
+      div.messeges
+        p Islam: Hoho
+        p Islam: Hehe
+        p Islam: Haha
+        p Islam: Huhu
+        p Islam: Test
+      //- Messeges Sender
+      div.write-messeges
+        form.d-flex
+          textarea(
+            class="w-100",
+            name="messeges",
+            id="messeges",
+            placeholder="Type Your Messege Here",
+            autofocus
+          )
+          button.submit.circle: i(class="fa-solid fa-paper-plane")

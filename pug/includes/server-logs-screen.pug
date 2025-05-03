@@ -1,3 +1,18 @@
 mixin server-logs
   //- Header
   +header-of-screen("Server Logs")
+  //- body
+  .container 
+    ul
+      li
+        label.form
+          span String To Search On Logs File
+          textarea#string-search(name="" placeholder="Enter a String")
+      li
+        label.form
+          span File To Search On It 
+          //- I Will Change It Soon To Combobox
+          textarea#filename(name="" placeholder="Enter a Filename")
+    .service-container 
+      h4.text-center Result:
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

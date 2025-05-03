@@ -1,3 +1,38 @@
 mixin rules-management
   //- Header
   +header-of-screen("Rules Management")
+  //- body Start From Here
+  .container
+    ul
+      li 
+        span Player One:
+      li 
+        label.form 
+          span Player pb 
+          textarea.player-1-pb#player-1-pb(placeholder="Enter Player pb")
+        label.form
+          span Rule Name
+          textarea.player-1-rule-name#player-1-rule-name(placeholder="Enter Player Effect")
+    ul
+      li 
+        span Player Two:
+      li 
+        label.form 
+          span Player pb 
+          textarea.player-2-pb#player-2-pb(placeholder="Enter Player pb")
+      li 
+        label.form
+          span Rule Name
+          textarea.player-2-rulename#player-2-rulename(placeholder="Enter Player Tag")
+    //- Player Three 
+    ul
+      li 
+        span Player Three:
+      li 
+        label.form 
+          span Player pb 
+          textarea.player-3-pb#player-3-pb(placeholder="Enter Player pb")
+      li 
+        label.form
+          span Rule Name
+          textarea.player-3-rule-name#player-3-rule-name(placeholder="Enter Player Effect")

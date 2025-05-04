@@ -9,9 +9,9 @@ input:not(input[type="submit"]) {
 	padding: 7.5px 10px 7.5px 10px;
 	border-radius: 50px;
 	color: $main-text-color;
-	// white-space: pre; /* Prevent text wrapping */
-	// overflow-x: auto; /* Enable horizontal scrollbar */
-	// overflow-y: hidden;
+	white-space: pre; /* Prevent text wrapping */
+	overflow-x: auto; /* Enable horizontal scrollbar */
+	overflow-y: hidden;
 	transition: $animation-duration;
 	&:focus,
 	&:hover {

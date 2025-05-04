@@ -2,6 +2,7 @@
 @use "../helpers/mixins" as *;
 
 li.popup > .popup-window {
+	flex-direction: column;
 	opacity: 0;
 	display: none;
 	position: fixed;
@@ -11,8 +12,8 @@ li.popup > .popup-window {
 	transition: $animation-duration;
 	transform: translate(-50%, -50%) scale(0);
 	width: 700px;
-	// height: 500px;
-	// max-height: 90vh;
+	height: fit-content;
+	max-height: 95dvh;
 	background-color: $main-background-color;
 	border-radius: $main-border-radius;
 	padding: 15px;
@@ -22,25 +23,15 @@ li.popup > .popup-window {
 			text-align: center;
 			flex: 1;
 		}
-		// position: relative;
 		.close {
-			// position: absolute;
-			// right: 15px;
-			min-width: 30px;
-			min-height: 30px;
-			max-width: 30px;
-			max-height: 30px;
+			position: absolute;
+			right: 15px;
+			@include circle(30px,"true")
 		}
 	}
 	.body {
-		max-height: 75vh;
+		max-height: 75dvh;
 		overflow-y: scroll;
-		@include mobile-screens {
-			max-height: calc(100% - 65px);
-		}
-		@media (min-width:356px) and (max-width:767px) {
-			max-height: calc(100% - 40px);
-		}
 	}
 	// overley
 	& + .overley {
@@ -57,10 +48,6 @@ li.popup > .popup-window {
 		background-color: rgba($color: #000000, $alpha: 0.5);
 	}
 	@include mobile-screens {
-		width: 90vw;
-		height: 85vh;
-	}
-	@media (min-height:1080px) {
-		height: fit-content;
+		width: 90dvw;
 	}
 }

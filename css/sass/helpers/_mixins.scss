@@ -28,6 +28,8 @@
 	}@else if $force == "true"{
 		min-width: $diameter;
 		min-height: $diameter;
+		max-width: $diameter;
+		max-height: $diameter;
 	}
 	@else {
 		@error "Not Valid"

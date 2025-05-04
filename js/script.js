@@ -211,7 +211,7 @@ popupOpeners.forEach((popupOpener) => {
 	popupOpener.onclick = async () => {
 		let popupWin = popupOpener.nextElementSibling;
 		let overley = popupWin.nextElementSibling;
-		popupWin.style.display = "block";
+		popupWin.style.display = "flex";
 		overley.style.display = "block";
 		await delay(0);
 		popupWin.style.opacity = "1";

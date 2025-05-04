@@ -9,7 +9,6 @@ ul {
 		align-items: center;
 		background-color: #555555;
 		margin-bottom: 1px;
-
 		&:not(.popup) {
 			padding: 15px 20px;
 			&:hover {
@@ -29,15 +28,16 @@ ul {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			// align-items: center;
 			@include small-screens {
-				// align-items: center;
+				align-items: center;
 				> textarea {
 					width: 500px;
 					width: 60%;
 				}
 			}
 			@include mobile-screens {
+				flex-direction: column;
 				> {
 					textarea,
 					input {

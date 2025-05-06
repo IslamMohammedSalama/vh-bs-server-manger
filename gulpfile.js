@@ -5,7 +5,7 @@ import pug from "gulp-pug";
 import autoprefixer from "gulp-autoprefixer";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
-import srcmap from "gulp-sourcemaps";
+import srcmaps from "gulp-sourcemaps";
 import terser from "gulp-terser";
 import notify from "gulp-notify";
 // import zip from "gulp-zip";
@@ -20,28 +20,28 @@ gulp.task("html", () => {
 });
 gulp.task("js", () => {
 	return gulp
-		.src("js/script.js")
-		.pipe(srcmap.init())
+		.src(["js/**/*.js","!js/script.min.js"],{base:"js"})
+		.pipe(srcmaps.init({largeFile: true,loadMaps:"true"}))
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
-		.pipe(srcmap.write("./maps"))
+		.pipe(srcmaps.write("./maps"))
 		.pipe(gulp.dest("js"))
 		.pipe(notify());
 });
 
 gulp.task("css", () => {
 	return gulp
-		.src(["css/style.scss"])
-		.pipe(srcmap.init())
+		.src(["css/**/*.scss", "css/**/*.css","!css/style.min.css"] , { base: 'css' })
+		.pipe(srcmaps.init({largeFile: true,loadMaps:"true"}))
 		.pipe(
 			autoprefixer({
 				overrideBrowserslist: ["last 2 versions"], // optional
 				cascade: false,
 			})
 		)
-		.pipe(sass({ style: "compressed" }))
+		.pipe(sass({style:"compressed"}))
 		.pipe(gulpConcat("style.min.css"))
-		.pipe(srcmap.write("./maps"))
+		.pipe(srcmaps.write("./maps"))
 		.pipe(gulp.dest("css"))
 		.pipe(notify());
 });

@@ -1,0 +1,20 @@
+@use "../helpers/variables" as *;
+textarea,
+input:not(input[type="submit"]) {
+	height: 40px;
+	resize: none;
+	border: none;
+	outline: none;
+	background-color: #666;
+	padding: 7.5px 10px 7.5px 10px;
+	border-radius: 50px;
+	color: $main-text-color;
+	transition: $animation-duration;
+	&:focus,
+	&:hover {
+		background-color: #777;
+	}
+	&::placeholder {
+		color: #cccccc;
+	}
+}

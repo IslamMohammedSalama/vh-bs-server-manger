@@ -1,0 +1,91 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+ul {
+	> li {
+		transition: $animation-duration;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #555555;
+		margin-bottom: 1px;
+		&:not(.popup) {
+			padding: 15px 20px;
+			&:hover {
+				background-color: #666666;
+				cursor: pointer;
+			}
+		}
+		&:first-child {
+			border-top-right-radius: $main-border-radius;
+			border-top-left-radius: $main-border-radius;
+		}
+		&:last-child {
+			border-bottom-right-radius: $main-border-radius;
+			border-bottom-left-radius: $main-border-radius;
+		}
+		> label.form {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			@include small-screens {
+				align-items: center;
+				> textarea {
+					width: 500px;
+					width: 60%;
+				}
+			}
+			@include mobile-screens {
+				flex-direction: column;
+				> {
+					textarea,
+					input {
+						width: 100%;
+					}
+					span:first-of-type {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+		&:hover button:not(button:hover) {
+			background-color: #717171;
+		}
+		&.popup {
+			li {
+				cursor: pointer;
+				*:not(input, textarea) {
+					cursor: pointer;
+				}
+			}
+			> div:first-child {
+				display: flex;
+				align-items: center;
+				transition: $animation-duration;
+				height: 100%;
+				cursor: pointer;
+				padding: 15px 20px;
+				border-bottom-right-radius: $main-border-radius;
+				border-bottom-left-radius: $main-border-radius;
+				&:hover {
+					background-color: #666666;
+				}
+			}
+		}
+		@include mobile-screens {
+			&.number-chooser > span:first-of-type {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.screen > ul > li:not(li:is(:has(> button), :has(form > button))) {
+	@include mobile-screens {
+		align-items: flex-start;
+		flex-direction: column;
+		label:not(.switch) {
+			flex-direction: column;
+		}
+	}
+}

@@ -31,7 +31,7 @@ gulp.task("js", () => {
 
 gulp.task("css", () => {
 	return gulp
-		.src(["css/**/*.scss","css/**/*.css"])
+		.src(["css/style.scss"])
 		.pipe(srcmap.init())
 		.pipe(
 			autoprefixer({

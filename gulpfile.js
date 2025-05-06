@@ -47,7 +47,7 @@ gulp.task("css", () => {
 });
 
 gulp.task("watch", () => {
-	gulp.watch("*.pug", gulp.series("html"));
+	gulp.watch("pug/index.pug", gulp.series("html"));
 	gulp.watch("css/**/*.scss", gulp.series("css"));
 	gulp.watch("js/**/*.js", gulp.series("js"));
 });

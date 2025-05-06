@@ -20,7 +20,7 @@ gulp.task("html", () => {
 });
 gulp.task("js", () => {
 	return gulp
-		.src("js/**/*.js")
+		.src("js/script.js")
 		.pipe(srcmap.init())
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))

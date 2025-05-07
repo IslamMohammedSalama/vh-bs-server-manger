@@ -1,10 +1,11 @@
 @use "../helpers/variables" as *;
 textarea,
 input:not(input[type="submit"]) {
-	height: 40px;
+	height: 45px;
 	resize: none;
 	border: none;
 	outline: none;
+	white-space: pre;
 	background-color: #666;
 	padding: 7.5px 10px 7.5px 10px;
 	border-radius: 50px;

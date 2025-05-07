@@ -1,4 +1,3 @@
-// let gulp = require("gulp"),
 import gulp from "gulp";
 import gulpConcat from "gulp-concat";
 import pug from "gulp-pug";

@@ -1,5 +1,5 @@
-@use "../helpers/variables" as * ;
-@use "../components/custom-button" as * ;
+@use "../helpers/variables" as *;
+@use "../components/custom-button" as *;
 
 .chat-screen {
 	.active-players {
@@ -21,6 +21,8 @@
 	.write-messeges {
 		> form {
 			gap: 10px;
+			margin-top: 10px;
+			align-items: center;
 		}
 	}
 }

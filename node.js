@@ -1,5 +1,5 @@
 import { publish } from "gh-pages";
 
-publish("dist", function (err) {
+publish("dist",{dest:"."}, function (err) {
   console.log(err)
 });

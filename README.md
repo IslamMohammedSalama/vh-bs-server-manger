@@ -15,3 +15,4 @@ For Pug.js
 ```sh
 gulp watch
 ```
+**Note** : After Push On This Project (Or Make Anything) run `npm run deploy` to Refesh changes On gh-pages branch

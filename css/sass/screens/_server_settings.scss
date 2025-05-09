@@ -1,9 +1,0 @@
-@use "../helpers/variables" as *;
-@use "../helpers/mixins" as *;
-
-.number-chooser > span:last-of-type {
-	width: 200px;
-	@include mobile-screens {
-		width: 100%;
-	}
-}

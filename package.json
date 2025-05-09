@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/IslamMohammedSalama/vh-bs-server-manger#readme",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean": "^0.4.0",

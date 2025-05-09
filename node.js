@@ -7,10 +7,6 @@ ghpages.publish(
 		branch: "gh-pages",
 		repo: "https://github.com/IslamMohammedSalama/vh-bs-server-manger.git",
 		message: "Auto-generated commit from gh-pages",
-		user: {
-			name: "Your Name",
-			email: "your-email@example.com",
-		},
 	},
 	function (err) {
 		if (err) {

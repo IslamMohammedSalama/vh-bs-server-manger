@@ -32,7 +32,7 @@ gulp.task("html", () => {
 	return gulp
 		.src(paths.html.src)
 		.pipe(pug())
-		.pipe(gulp.dest(paths.html.dest))
+		// .pipe(gulp.dest(paths.html.dest))
 		.pipe(gulp.dest("dist/"))
 		// .pipe(notify());
 });
@@ -46,7 +46,7 @@ gulp.task("js", () => {
 		.pipe(gulpConcat("script.min.js"))
 		.pipe(srcmaps.write("./maps"))
 		.pipe(gulp.dest("dist/js"))
-		.pipe(gulp.dest(paths.scripts.dest))
+		// .pipe(gulp.dest(paths.scripts.dest))
 		// .pipe(notify());
 });
 
@@ -68,7 +68,7 @@ gulp.task("css", () => {
 		)
 		.pipe(gulpConcat("style.min.css"))
 		.pipe(srcmaps.write("./maps"))
-		.pipe(gulp.dest(paths.styles.dest))
+		// .pipe(gulp.dest(paths.styles.dest))
 		.pipe(gulp.dest("dist/css"))
 		// .pipe(notify());
 });

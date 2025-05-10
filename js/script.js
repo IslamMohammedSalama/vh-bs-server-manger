@@ -1,8 +1,8 @@
 // Wait function
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 // Send Msg Function
-function sendMessege(msg) {
-	let msgsBox = document.querySelector(".chat-screen .messeges");
+function sendMessage(msg) {
+	let msgsBox = document.querySelector(".chat-screen .messages");
 	let newMsg = document.createElement("p");
 	newMsg.textContent = `ServerName : ${msg}`;
 	msgsBox.appendChild(newMsg);
@@ -66,7 +66,7 @@ document
 	.querySelectorAll("button")
 	.forEach((btn) => (btn.onclick = (ev) => ev.preventDefault()));
 
-// Navgtaite To Screens
+// Navigate To Screens
 let navs = document.querySelectorAll(
 	"body > .container > ul > li:not(.discord)"
 );
@@ -100,25 +100,25 @@ screens.forEach((theScreen) => {
 // Send Msg
 
 let sendBtn = document.querySelector(
-	".chat-screen .write-messeges form button"
+	".chat-screen .write-messages form button"
 );
 
 sendBtn.onclick = (e) => {
 	e.preventDefault();
-	let input = document.querySelector(".chat-screen .write-messeges textarea");
-	sendMessege(input.value);
+	let input = document.querySelector(".chat-screen .write-messages textarea");
+	sendMessage(input.value);
 	input.value = "";
 	input.focus();
 };
 document
-	.querySelector(".write-messeges textarea")
+	.querySelector(".write-messages textarea")
 	.addEventListener("keypress", (event) => {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			let input = document.querySelector(
-				".chat-screen .write-messeges textarea"
+				".chat-screen .write-messages textarea"
 			);
-			sendMessege(input.value);
+			sendMessage(input.value);
 			input.value = "";
 			input.focus();
 		}

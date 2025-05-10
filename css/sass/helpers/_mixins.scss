@@ -9,7 +9,7 @@
 		@content;
 	}
 }
-@mixin middim-screens {
+@mixin middle-screens {
 	@media (min-width: 992px) {
 		@content;
 	}

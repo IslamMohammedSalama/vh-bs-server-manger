@@ -4,7 +4,7 @@ import pug from "gulp-pug";
 import autoprefixer from "gulp-autoprefixer";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
-import srcmaps from "gulp-sourcemaps";
+import sourcemaps from "gulp-sourcemaps";
 import terser from "gulp-terser";
 import clean from "gulp-clean";
 import zip from "gulp-zip";
@@ -41,10 +41,10 @@ gulp.task("html", () => {
 gulp.task("js", () => {
 	return gulp
 		.src(paths.scripts.src, { base: "js" })
-		.pipe(srcmaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
+		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
-		.pipe(srcmaps.write("./maps"))
+		.pipe(sourcemaps.write("./maps"))
 		.pipe(gulp.dest("dist/js"))
 		// .pipe(gulp.dest(paths.scripts.dest))
 		// .pipe(notify());
@@ -54,7 +54,7 @@ gulp.task("js", () => {
 gulp.task("css", () => {
 	return gulp
 		.src(paths.styles.src, { base: "css" })
-		.pipe(srcmaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
+		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
 		.pipe(
 			sass({
 				style: "compressed", // Updated property name
@@ -67,7 +67,7 @@ gulp.task("css", () => {
 			})
 		)
 		.pipe(gulpConcat("style.min.css"))
-		.pipe(srcmaps.write("./maps"))
+		.pipe(sourcemaps.write("./maps"))
 		// .pipe(gulp.dest(paths.styles.dest))
 		.pipe(gulp.dest("dist/css"))
 		// .pipe(notify());

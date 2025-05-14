@@ -333,7 +333,7 @@ mixin server-settings
                 label.switch
                   span Kick Idle From Lobby
                   span
-                    input#enable-afk-remove.toggle-checkbox(type="checkbox", name="enable-afk-remove")
+                    input#enable-kick-from-lobby.toggle-checkbox(type="checkbox", name="enable-kick-from-lobby")
                     span.toggle-switch
             li.number-chooser
               span In Game Idle Time In Sec :
@@ -374,4 +374,68 @@ mixin server-settings
                 label.form
                   span  End Time
                   input(type="time", name="")
+      .overley
+    li.popup
+      .d-flex.justify-content-between.w-100
+        span Auto Night Mode
+        i.fa-solid.fa-angle-right
+      //- Popup
+      .popup-window
+        .popup-header
+          h5 Auto Night Mode
+          button.close.circle
+            i.fa.fa-close
+        .body.mt-2
+          ul
+            li
+              form(action="")
+                label.form
+                  span  Start Time
+                  input(type="time", name="")
+            li
+              form(action="")
+                label.form
+                  span  End Time
+                  input(type="time", name="")
+            li
+              form(action="")
+                label.switch
+                  span Enable Fireflies
+                  span
+                    input#enable-fireflies.toggle-checkbox(type="checkbox", name="enable-fireflies")
+                    span.toggle-switch
+            li
+              form(action="")
+                label.switch
+                  span Enable Random Fireflies
+                  span
+                    input#enable-random-fireflies.toggle-checkbox(type="checkbox", name="enable-random-fireflies")
+                    span.toggle-switch
+      .overley
+    li.popup
+      .d-flex.justify-content-between.w-100
+        span Server Website
+        i.fa-solid.fa-angle-right
+      //- Popup
+      .popup-window
+        .popup-header
+          h5 Server Website
+          button.close.circle
+            i.fa.fa-close
+        .body.mt-2
+          ul
+            li
+              form(action="")
+                label.switch
+                  span Enable Website
+                  span
+                    input#enable-srv-website.toggle-checkbox(type="checkbox", name="enable-srv-website")
+                    span.toggle-switch
+            li 
+              form(action) 
+                label.password-form.d-flex.align-items-center
+                  span.me-auto Website Password
+                  .d-flex   
+                    input.me-1.d-block.w-100#website-password(type="password", name="website-password")
+                    button.show-or-hide.circle: i.fa-solid.fa-eye
       .overley

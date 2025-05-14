@@ -72,13 +72,13 @@ let navs = document.querySelectorAll(
 );
 navs.forEach((li) => {
 	li.onclick = async () => {
-		let tScreen = document.querySelector(`.${li.className}-screen`);
+		let tScreen = document.querySelector(`.${li.classList[0]}-screen`);
 		// tScreen.style.opacity = "1";
 		tScreen.style.display = "block";
 		await delay(0);
 		tScreen.style.left = "0";
 		document.body.classList.add("disable-scrolling");
-		updateURL(li.className);
+		updateURL(li.classList[0]);
 	};
 });
 
@@ -323,3 +323,17 @@ popupOpeners.forEach((popupOpener) => {
 document.addEventListener("DOMContentLoaded", function () {
 	initializeFromURL();
 });
+
+// Show/Hide Password Logic
+let showAndHidePassword = document.querySelector(".show-or-hide");
+showAndHidePassword.onclick = (ev) => {
+	ev.preventDefault();
+	if (showAndHidePassword.previousElementSibling.type === "password") {
+		showAndHidePassword.previousElementSibling.type = "text";
+		showAndHidePassword.innerHTML = `<i class="fa-solid fa-eye-slash"> </i>`;
+		// showAndHidePassword.children[0].classList.replace();
+	} else if (showAndHidePassword.previousElementSibling.type === "text") {
+		showAndHidePassword.previousElementSibling.type = "password";
+		showAndHidePassword.innerHTML = `<i class="fa-solid fa-eye"></i>`;
+	}
+};

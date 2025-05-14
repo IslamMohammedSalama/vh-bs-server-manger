@@ -87,21 +87,19 @@ gulp.task("watch", () => {
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {
-	return gulp.src(["dist/*"], { read: false ,allowEmpty:true}).pipe(clean());
+	return gulp.src(["dist/*"], { read: false, allowEmpty: true }).pipe(clean());
 });
 // Assets and webfonts task
-gulp.task(
-	"assets",
-	() =>
-		gulp
-			.src(["assets/**/*", "webfonts/**/*"], {
-				base: "./",
-				buffer: true,
-				dot: true, // Include dotfiles
-				nodir: false,
-				encoding: false,
-			})
-			.pipe(gulp.dest("dist"))
+gulp.task("assets", () =>
+	gulp
+		.src(["assets/**/*", "webfonts/**/*"], {
+			base: "./",
+			buffer: true,
+			dot: true, // Include dotfiles
+			nodir: false,
+			encoding: false,
+		})
+		.pipe(gulp.dest("dist"))
 );
 gulp.task(
 	"compress",
@@ -110,13 +108,13 @@ gulp.task(
 );
 
 function notifyBuildComplete(cb) {
-  gulpNotify({
-    title: 'Gulp Build',
-    message: 'Build completed successfully!',
-		onLast: true 
-    // icon: 'path/to/your/icon.png' // Optional: if you have a specific icon
-  }).write({}); // Trigger the notification
-  cb(); // Signal Gulp that this task is done
+	gulpNotify({
+		title: "Gulp Build",
+		message: "Build completed successfully!",
+		onLast: true,
+		// icon: 'path/to/your/icon.png' // Optional: if you have a specific icon
+	}).write({}); // Trigger the notification
+	cb(); // Signal Gulp that this task is done
 }
 
 // Build task (runs all tasks)

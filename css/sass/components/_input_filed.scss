@@ -1,7 +1,7 @@
 @use "../helpers/variables" as *;
 textarea,
 input:not(input[type="submit"]) {
-	height: 45px;
+	height: 40px;
 	resize: none;
 	border: none;
 	outline: none;

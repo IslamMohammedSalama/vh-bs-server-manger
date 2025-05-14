@@ -18,14 +18,17 @@
 		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
-		> .back + span {
+		> .back {
+			+ span {
+				margin-right: auto;
+				margin-left: auto;
 			text-align: center;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
+			// position: absolute;
+			// left: 50%;
+			// transform: translateX(-50%);
 			@include mobile-screens {
 				font-size: 15px;
 			}
-		}
+		}}
 	}
 }

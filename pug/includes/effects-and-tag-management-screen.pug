@@ -1,15 +1,15 @@
 mixin effects-and-tag-management
   //- Header
-  +header-of-screen("Player Effects & Tag Management")
+  +header-of-screen-and-add-btn("Player Effects & Tag Management")
   //- body Start From Here
   .container
     ul
       li 
-        span Player One:
+        span Player Number 1 :
       li 
         label.form 
           span Player pb 
-          textarea.player-1-pb#player-1-pb(placeholder="Enter Player pb")
+          textarea.player-1-pb#player-1-pb-effect(placeholder="Enter Player pb")
       li 
         label.form
           span Player Tag Name
@@ -20,11 +20,11 @@ mixin effects-and-tag-management
           textarea.player-1-effect#player-1-effect(placeholder="Enter Player Effect")
     ul
       li 
-        span Player Two:
+        span Player Number 2 :
       li 
         label.form 
           span Player pb 
-          textarea.player-2-pb#player-2-pb(placeholder="Enter Player pb")
+          textarea.player-2-pb#player-2-pb-effect(placeholder="Enter Player pb")
       li 
         label.form
           span Player Tag Name
@@ -36,11 +36,11 @@ mixin effects-and-tag-management
     //- Player Three 
     ul
       li 
-        span Player Three:
+        span Player Number 3 :
       li 
         label.form 
           span Player pb 
-          textarea.player-3-pb#player-3-pb(placeholder="Enter Player pb")
+          textarea.player-3-pb#player-3-pb-effect(placeholder="Enter Player pb")
       li 
         label.form
           span Player Tag Name

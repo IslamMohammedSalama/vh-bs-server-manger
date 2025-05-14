@@ -5,29 +5,34 @@ mixin server-settings
   ul.container
     //- Sever Name
     li
-      label.form
-        span Server Name:
-        textarea#server-name(placeholder="Type Your Server Name Here", name="server-name")
+      form(action="")
+        label.form
+          span Server Name:
+          textarea#server-name(placeholder="Type Your Server Name Here", name="server-name")
     //- Host Device Name
     li
-      label.form
-        span Host Device Name :
-        textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name")
+      form(action="")
+        label.form
+          span Host Device Name :
+          textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name")
     //- Host Name
     li
-      label.form
-        span Host Name :
-        textarea#host-name(placeholder="Type Your Host Name Here", name="host-name")
+      form(action="")
+        label.form
+          span Host Name :
+          textarea#host-name(placeholder="Type Your Host Name Here", name="host-name")
     //- First Time Join Message
     li
-      label.form
-        span First Time Join Message :
-        textarea#join-msg(placeholder="Type Your Join Message Here", name="join-msg")
+      form(action="")
+        label.form
+          span First Time Join Message :
+          textarea#join-msg(placeholder="Type Your Join Message Here", name="join-msg")
     //- After Warn Kick Message
     li
-      label.form
-        span After Warn Kick Message :
-        textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here")
+      form(action="")
+        label.form
+          span After Warn Kick Message :
+          textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here")
     //- Players Size
     li.number-chooser
       span Player Size :
@@ -48,144 +53,164 @@ mixin server-settings
           i.fa-solid.fa-minus
     //- Allow In Game Chat
     li
-      label.switch
-        span Allow In Game Chat
-        span
-          input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Allow In Game Chat
+          span
+            input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat")
+            span.toggle-switch
     //- Allow Team Chat
     li
-      label.switch
-        span Allow Team Chat
-        span
-          input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Allow Team Chat
+          span
+            input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat")
+            span.toggle-switch
     //- Allow Votes
     li
-      label.switch
-        span Allow Votes
-        span
-          input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Allow Votes
+          span
+            input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes")
+            span.toggle-switch
     //- Auto Team Balance
     li
-      label.switch
-        span Auto Team Balance
-        span
-          input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Auto Team Balance
+          span
+            input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance")
+            span.toggle-switch
     //- Character Chooser
     li
-      label.switch
-        span Character Chooser
-        span
-          input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Character Chooser
+          span
+            input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser")
+            span.toggle-switch
     //- Colorful Explosions
     li
-      label.switch
-        span Colorful Explosion
-        span
-          input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Colorful Explosion
+          span
+            input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion")
+            span.toggle-switch
     //- Colorful Maps
     li
-      label.switch
-        span Colorful Maps
-        span
-          input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Colorful Maps
+          span
+            input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps")
+            span.toggle-switch
     //- Contribute Data
     li
-      label.switch
-        span Contribute Data
-        span
-          input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Contribute Data
+          span
+            input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data")
+            span.toggle-switch
     //- Enable Hit Text
     li
-      label.switch
-        span Enable Hit Text
-        span
-          input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Hit Text
+          span
+            input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text")
+            span.toggle-switch
     //- Enable Tag Animation
     li
-      label.switch
-        span Enable Tag Animation
-        span
-          input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Tag Animation
+          span
+            input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation")
+            span.toggle-switch
     //- Enable Top 5 Effects
     li
-      label.switch
-        span Enable Top 5 Effects
-        span
-          input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Top 5 Effects
+          span
+            input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects")
+            span.toggle-switch
     //- Enable Effects
     li
-      label.switch
-        span Enable Effects
-        span
-          input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Effects
+          span
+            input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects")
+            span.toggle-switch
     //- Enable HP Tag
     li
-      label.switch
-        span Enable HP Tag
-        span
-          input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable HP Tag
+          span
+            input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag")
+            span.toggle-switch
     //- Enable Rank
     li
-      label.switch
-        span Enable Rank
-        span
-          input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Rank
+          span
+            input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank")
+            span.toggle-switch
     //- Enable Stats
     li
-      label.switch
-        span Enable Stats
-        span
-          input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Stats
+          span
+            input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats")
+            span.toggle-switch
     //- Anti Id Revealer Switch Toggler
     li
-      label.switch
-        span Anti Id Revealer
-        span
-          input#anti-id-revealer.toggle-checkbox(type="checkbox", name="anti-id-revealer")
-          span.toggle-switch
+      form(action="")
+        label.switch
+            span Anti Id Revealer
+            span
+              input#anti-id-revealer.toggle-checkbox(type="checkbox", name="anti-id-revealer")
+              span.toggle-switch
     //- Show Kick Vote Starter Name
     li
-      label.switch
-        span Show Kick Vote Starter Name
-        span
-          input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Show Kick Vote Starter Name
+          span
+            input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name")
+            span.toggle-switch
     //- Chat Commands Or Broadcast Commands
     li
-      label.switch
-        span Chat Commands (Or Broadcast Commands)
-        span
-          input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Chat Commands (Or Broadcast Commands)
+          span
+            input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands")
+            span.toggle-switch
     //- Stumbled Score Screen
     li
-      label.switch
-        span Stumbled Score Screen
-        span
-          input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Stumbled Score Screen
+          span
+            input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen")
+            span.toggle-switch
     //- Enable Tags
     li
-      label.switch
-        span Enable Tags
-        span
-          input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags")
-          span.toggle-switch
+      form(action="")
+        label.switch
+          span Enable Tags
+          span
+            input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags")
+            span.toggle-switch
     //- Teams Settings
     li.popup
       .d-flex.justify-content-between.w-100
@@ -201,23 +226,27 @@ mixin server-settings
           //- First Team
           ul
             li
-              label.form
-                span First Team Name :
-                textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name")
+              form(action="")
+                label.form
+                  span First Team Name :
+                  textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name")
             li
-              label.form
-                span First Team Color :
-                input#first-team-color(type="color", name="first-team-color")
+              form(action="")
+                label.form
+                  span First Team Color :
+                  input#first-team-color(type="color", name="first-team-color")
           //- Second Team
           ul.mt-2
             li
-              label.form
-                span Second Team Name :
-                textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name")
+              form(action="")
+                label.form
+                  span Second Team Name :
+                  textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name")
             li
-              label.form
-                span Second Team Color :
-                input#second-team-color(type="color", name="second-team-color")
+              form(action="")
+                label.form
+                  span Second Team Color :
+                  input#second-team-color(type="color", name="second-team-color")
       .overley
     //- Score Screen Announcement
     li.popup
@@ -233,41 +262,116 @@ mixin server-settings
           ul
             //- Enable Score Screen Announcement
             li
-              label.switch
-                span Enable 
-                span
-                  input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement")
-                  span.toggle-switch
+              form(action="")
+                label.switch
+                  span Enable 
+                  span
+                    input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement")
+                    span.toggle-switch
             li
-              label.form
-                span Message 1 :
-                textarea#message-1(placeholder="Type Your Message 1 Here", name="message-1")
+              form(action="")
+                label.form
+                  span Message 1 :
+                  textarea#message-1(placeholder="Type Your Message 1 Here", name="message-1")
             li
-              label.form
-                span Message 2 :
-                textarea#message-2(placeholder="Type Your Message 2 Here", name="message-2")
+              form(action="")
+                label.form
+                  span Message 2 :
+                  textarea#message-2(placeholder="Type Your Message 2 Here", name="message-2")
             li
-              label.form
-                span Message 3 :
-                textarea#message-3(placeholder="Type Your Message 3 Here", name="message-3")
+              form(action="")
+                label.form
+                  span Message 3 :
+                  textarea#message-3(placeholder="Type Your Message 3 Here", name="message-3")
             li
-              label.form
-                span Message 4 :
-                textarea#message-4(placeholder="Type Your Message 4 Here", name="message-4")
+              form(action="")
+                label.form
+                  span Message 4 :
+                  textarea#message-4(placeholder="Type Your Message 4 Here", name="message-4")
             li
-              label.form
-                span Message 5 :
-                textarea#message-5(placeholder="Type Your Message 5 Here", name="message-5")
+              form(action="")
+                label.form
+                  span Message 5 :
+                  textarea#message-5(placeholder="Type Your Message 5 Here", name="message-5")
             li
-              label.form
-                span Message 6 :
-                textarea#message-6(placeholder="Type Your Message 6 Here", name="message-6")
+              form(action="")
+                label.form
+                  span Message 6 :
+                  textarea#message-6(placeholder="Type Your Message 6 Here", name="message-6")
             li
-              label.form
-                span Message 7 :
-                textarea#message-7(placeholder="Type Your Message 7 Here", name="message-7")
+              form(action="")
+                label.form
+                  span Message 7 :
+                  textarea#message-7(placeholder="Type Your Message 7 Here", name="message-7")
             li
-              label.form
-                span Message 8 :
-                textarea#message-8(placeholder="Type Your Message 8 Here", name="message-8")
+              form(action="")
+                label.form
+                  span Message 8 :
+                  textarea#message-8(placeholder="Type Your Message 8 Here", name="message-8")
+      .overley
+    li.popup
+      .d-flex.justify-content-between.w-100
+        span Afk Remove
+        i.fa-solid.fa-angle-right
+      //- Popup
+      .popup-window
+        .popup-header
+          h5 Afk Remove
+          button.close.circle
+            i.fa.fa-close
+        .body.mt-2
+          ul
+            li
+              form(action="")
+                label.switch
+                  span Afk Remove
+                  span
+                    input#enable-afk-remove.toggle-checkbox(type="checkbox", name="enable-afk-remove")
+                    span.toggle-switch
+            li
+              form(action="")
+                label.switch
+                  span Kick Idle From Lobby
+                  span
+                    input#enable-afk-remove.toggle-checkbox(type="checkbox", name="enable-afk-remove")
+                    span.toggle-switch
+            li.number-chooser
+              span In Game Idle Time In Sec :
+              span.d-flex.justify-content-between.align-items-center
+                button.circle
+                  i.fa-solid.fa-plus
+                span.counter(data-min="1") 1
+                button.circle
+                  i.fa-solid.fa-minus
+            li.number-chooser
+              span Lobby Idle Time In Sec :
+              span.d-flex.justify-content-between.align-items-center
+                button.circle
+                  i.fa-solid.fa-plus
+                span.counter(data-min="1") 1
+                button.circle
+                  i.fa-solid.fa-minus
+      .overley
+    li.popup
+      .d-flex.justify-content-between.w-100
+        span Auto Night Mode
+        i.fa-solid.fa-angle-right
+      //- Popup
+      .popup-window
+        .popup-header
+          h5 Auto Night Mode
+          button.close.circle
+            i.fa.fa-close
+        .body.mt-2
+          ul
+            li
+              form(action="")
+                label.form
+                  span  Start Time
+                  input(type="time", name="")
+            li
+              form(action="")
+                label.form
+                  span  End Time
+                  input(type="time", name="")
       .overley

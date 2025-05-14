@@ -86,15 +86,97 @@ navs.forEach((li) => {
 let screens = document.querySelectorAll(".screen");
 
 screens.forEach((theScreen) => {
-	theScreen.querySelector(".header").querySelector(".back").onclick =
-		async () => {
-			history.replaceState("", "", `${window.location.pathname}`);
-			theScreen.style.left = "100dvw";
-			document.body.classList.remove("disable-scrolling");
-			await delay(500);
-			// theScreen.style.opacity = "0";
-			theScreen.style.display = "none";
-		};
+	let header = theScreen.querySelector(".header");
+	header.querySelector(".back").onclick = async () => {
+		history.replaceState("", "", `${window.location.pathname}`);
+		theScreen.style.left = "100dvw";
+		document.body.classList.remove("disable-scrolling");
+		await delay(500);
+		// theScreen.style.opacity = "0";
+		theScreen.style.display = "none";
+	};
+	if (header.children[2]) {
+		console.log("found");
+		try {
+			header.querySelector(".add").onclick = (ev) => {
+				// console.log(theScreen);
+				let newPlayerIndex =
+					theScreen.querySelector(".container").children.length + 1;
+				console.log(newPlayerIndex);
+				let newPlayer = theScreen
+					.querySelector(".container ul:last-child")
+					.cloneNode();
+				newPlayer.innerHTML = theScreen.classList.contains(
+					"effects-and-tag-management-screen"
+				)
+					? `
+								<ul>
+					<li><span>Player Number ${newPlayerIndex} :</span></li>
+					<li>
+						<label class="form">
+							<span>Player pb </span
+							><textarea
+								class="player-${newPlayerIndex}-pb"
+								id="player-${newPlayerIndex}-pb-effect"
+								placeholder="Enter Player pb"
+							></textarea>
+						</label>
+					</li>
+					<li>
+						<label class="form"
+							><span>Player Tag Name</span
+							><textarea
+								class="player-${newPlayerIndex}-tag"
+								id="player-${newPlayerIndex}-tag"
+								placeholder="Enter Player Tag"
+							></textarea>
+						</label>
+					</li>
+					<li>
+						<label class="form"
+							><span>Player Effect Name</span
+							><textarea
+								class="player-${newPlayerIndex}-effect"
+								id="player-${newPlayerIndex}-effect"
+								placeholder="Enter Player Effect"
+							></textarea>
+						</label>
+					</li>
+				</ul>
+				`
+					: theScreen.classList.contains("rules-management-screen")
+					? `
+						<ul>
+			<li><span>Player Number ${newPlayerIndex} :</span></li>
+			<li>
+				<label class="form">
+					<span>Player pb </span
+					><textarea
+						class="player-${newPlayerIndex}-pb"
+						id="player-${newPlayerIndex}-pb-rules"
+						placeholder="Enter Player pb"
+					></textarea>
+				</label>
+			</li>
+			<li>
+				<label class="form"
+					><span>Rule Name</span
+					><textarea
+						class="player-${newPlayerIndex}-rule-name"
+						id="player-${newPlayerIndex}-rule-name"
+						placeholder="Enter Player Effect"
+					></textarea>
+				</label>
+			</li>
+		</ul>
+
+				`
+					: null;
+				theScreen.querySelector(".container").appendChild(newPlayer);
+				console.log(newPlayer);
+			};
+		} catch (error) {}
+	}
 });
 
 // Send Msg

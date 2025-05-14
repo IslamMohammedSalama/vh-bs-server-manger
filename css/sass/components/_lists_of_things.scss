@@ -24,7 +24,10 @@ ul {
 			border-bottom-right-radius: $main-border-radius;
 			border-bottom-left-radius: $main-border-radius;
 		}
-		> label.form {
+		form {
+			width: 100%;
+		}
+		label.form {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;

@@ -96,7 +96,6 @@ screens.forEach((theScreen) => {
 		theScreen.style.display = "none";
 	};
 	if (header.children[2]) {
-		console.log("found");
 		try {
 			header.querySelector(".add").onclick = (ev) => {
 				// console.log(theScreen);

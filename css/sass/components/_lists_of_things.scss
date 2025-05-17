@@ -3,7 +3,8 @@
 
 ul {
 	> li {
-		&.number-chooser,&.nav,&.discord,&:has(> span){
+		&.number-chooser,
+		&:has(> span) {
 			padding: 15px 20px;
 		}
 		transition: $animation-duration;
@@ -29,7 +30,9 @@ ul {
 		form {
 			width: 100%;
 		}
-		label.form,label.password-form,label.switch {
+		label.form,
+		label.password-form,
+		label.switch {
 			padding: 15px 15px;
 			width: 100%;
 			display: flex;

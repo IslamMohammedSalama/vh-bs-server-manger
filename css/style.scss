@@ -13,6 +13,7 @@
 @use "./sass/layout/container" as *;
 @use "./sass/layout/screens" as *;
 
+@use "./sass/screens/home-screen" as *;
 @use "./sass/screens/overview" as *;
 @use "./sass/screens/chat" as *;
 @use "./sass/screens/player_management" as *;

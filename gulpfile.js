@@ -10,20 +10,23 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 const sass = gulpSass(dartSass);
-
+// import * as del from "del";
 // File paths
 const paths = {
 	html: {
 		src: "pug/index.pug",
-		dest: ".",
+		dest: "dist/",
+		destPath: "dist/index.html",
 	},
-	styles: {
+	css: {
 		src: ["css/**/*.scss", "css/**/*.css", "!css/style.min.css"],
-		dest: "css",
+		dest: "dist/css",
+		destPath: "dist/css/style.min.css",
 	},
-	scripts: {
+	js: {
 		src: ["js/**/*.js", "!js/script.min.js"],
-		dest: "js",
+		dest: "dist/js",
+		destPath: "dist/js/script.min.js",
 	},
 };
 
@@ -35,31 +38,23 @@ gulp.task(
 			.src(paths.html.src)
 			.pipe(pug())
 			// .pipe(gulp.dest(paths.html.dest))
-			.pipe(gulp.dest("dist/"))
+			.pipe(gulp.dest(paths.html.dest))
 	// .pipe(notify());
 );
 
-// JavaScript task
-gulp.task(
-	"js",
-	() =>
-		gulp
-			.src(paths.scripts.src, { base: "js" })
-			.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
-			.pipe(terser())
-			.pipe(gulpConcat("script.min.js"))
-			.pipe(sourcemaps.write("./maps"))
-			.pipe(gulp.dest("dist/js"))
-	// .pipe(gulp.dest(paths.scripts.dest))
-	// .pipe(notify());
-);
+// New: Specific clean task for HTML output
+gulp.task("clean:html", function () {
+	return gulp
+		.src(paths.html.destPath, { read: false, allowEmpty: true })
+		.pipe(clean());
+});
 
 // CSS task
 gulp.task(
 	"css",
 	() =>
 		gulp
-			.src(paths.styles.src, { base: "css" })
+			.src(paths.css.src, { base: "css" })
 			.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
 			.pipe(
 				sass({
@@ -75,20 +70,48 @@ gulp.task(
 			.pipe(gulpConcat("style.min.css"))
 			.pipe(sourcemaps.write("./maps"))
 			// .pipe(gulp.dest(paths.styles.dest))
-			.pipe(gulp.dest("dist/css"))
+			.pipe(gulp.dest(paths.css.dest))
 	// .pipe(notify());
 );
 
+// New: Specific clean task for HTML output
+gulp.task("clean:css", function () {
+	return gulp
+		.src(paths.css.destPath, { read: false, allowEmpty: true })
+		.pipe(clean());
+});
+
+// JavaScript task
+gulp.task(
+	"js",
+	() =>
+		gulp
+			.src(paths.js.src, { base: "js" })
+			.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
+			.pipe(terser())
+			.pipe(gulpConcat("script.min.js"))
+			.pipe(sourcemaps.write("./maps"))
+			.pipe(gulp.dest(paths.js.dest))
+	// .pipe(gulp.dest(paths.scripts.dest))
+	// .pipe(notify());
+);
+// New: Specific clean task for HTML output
+gulp.task("clean:js", function () {
+	return gulp
+		.src(paths.js.destPath, { read: false, allowEmpty: true })
+		.pipe(clean());
+});
 // Watch task
 gulp.task("watch", () => {
-	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
-	gulp.watch("css/**/*.scss", gulp.series("css"));
-	gulp.watch(paths.scripts.src, gulp.series("js"));
+	gulp.watch("pug/**/*.pug", gulp.series("clean:html", "html")); // Watch all pug files
+	gulp.watch("css/**/*.scss", gulp.series("clean:css","css"));
+	gulp.watch(paths.js.src, gulp.series("clean:js","js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {
 	return gulp.src(["dist/*"], { read: false, allowEmpty: true }).pipe(clean());
 });
+
 // Assets and webfonts task
 gulp.task("assets", () =>
 	gulp

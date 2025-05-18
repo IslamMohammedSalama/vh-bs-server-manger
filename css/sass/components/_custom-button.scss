@@ -1,5 +1,6 @@
 @use "../helpers/variables" as *;
 @use "../helpers/mixins" as *;
+@use "../helpers/functions" as *;
 button,
 input[type="submit"] {
 	padding: 10px;
@@ -8,17 +9,18 @@ input[type="submit"] {
 	align-items: center;
 	border: none;
 	color: $main-text-color;
-	background-color: #666;
+	background-color: get-item-by-index($main-colors,6);
 	transition: $animation-duration;
 	&:not(.circle) {
 		border-radius: 50px;
 	}
 	&.circle {
 		@include circle(40px,"true");
+		justify-content: center !important;
+		align-items: center !important;
 	}
-
 	&:hover {
-		background-color: #777;
+		background-color: get-item-by-index($main-colors,7);
 	}
 	> {
 		i,

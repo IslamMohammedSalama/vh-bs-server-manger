@@ -287,7 +287,7 @@ document
 	});
 
 // Setup Popups
-let popupOpeners = document.querySelectorAll("li.popup > div:first-child");
+let popupOpeners = document.querySelectorAll("li.popup > button");
 popupOpeners.forEach((popupOpener) => {
 	popupOpener.onclick = async () => {
 		let popupWin = popupOpener.nextElementSibling;
@@ -336,3 +336,13 @@ showAndHidePassword.onclick = (ev) => {
 		showAndHidePassword.innerHTML = `<i class="fa-solid fa-eye"></i>`;
 	}
 };
+
+document.querySelectorAll(".toggle-switch").forEach(
+	(element) =>
+		(element.onclick = function (ev) {
+			ev.preventDefault();
+			element.previousElementSibling.checked =
+				!element.previousElementSibling.checked;
+			console.log(element.previousElementSibling.checked);
+		})
+);

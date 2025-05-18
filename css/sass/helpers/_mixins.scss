@@ -21,7 +21,7 @@
 }
 
 @mixin circle($diameter, $force: "false") {
-	border-radius: 50%;
+	border-radius: 50% !important;
 	@if $force == "false" {
 		width: $diameter;
 		height: $diameter;

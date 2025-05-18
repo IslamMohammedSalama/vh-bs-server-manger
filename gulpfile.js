@@ -103,9 +103,9 @@ gulp.task("clean:js", function () {
 });
 // Watch task
 gulp.task("watch", () => {
-	gulp.watch("pug/**/*.pug", gulp.series("clean:html", "html")); // Watch all pug files
-	gulp.watch("css/**/*.scss", gulp.series("clean:css","css"));
-	gulp.watch(paths.js.src, gulp.series("clean:js","js"));
+	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
+	gulp.watch("css/**/*.scss", gulp.series("css"));
+	gulp.watch(paths.js.src, gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {

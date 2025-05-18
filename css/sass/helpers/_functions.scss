@@ -1,0 +1,12 @@
+@function get-item-by-index($list,$index) {
+  $counter: 0 ;
+  @each $item in $list {
+    @if $counter == $index {
+      @return $item
+    } @else {
+
+      $counter : $counter + 1 ;
+    }
+    // @debug $counter
+  }
+}

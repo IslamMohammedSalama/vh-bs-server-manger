@@ -1,4 +1,5 @@
 @use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
 @use "../helpers/mixins" as *;
 
 ul {
@@ -7,28 +8,40 @@ ul {
 		&:has(> span) {
 			padding: 15px 20px;
 		}
+		span {
+			text-align: left;
+		}
 		transition: $animation-duration;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #555555;
+		background-color: get-item-by-index($main-colors, 5);
+		border-radius: 15px;
+
 		margin-bottom: 1px;
+		margin-bottom: 5px;
 		&:not(.popup) {
 			&:hover {
-				background-color: #666666;
+				background-color: get-item-by-index($main-colors, 6);
 				cursor: pointer;
 			}
 		}
-		&:first-child {
-			border-top-right-radius: $main-border-radius;
-			border-top-left-radius: $main-border-radius;
-		}
-		&:last-child {
-			border-bottom-right-radius: $main-border-radius;
-			border-bottom-left-radius: $main-border-radius;
-		}
-		form {
+		// &:first-child {
+		// 	border-top-right-radius: $main-border-radius;
+		// 	border-top-left-radius: $main-border-radius;
+		// }
+		// &:last-child {
+		// 	border-bottom-right-radius: $main-border-radius;
+		// 	border-bottom-left-radius: $main-border-radius;
+		// }
+		> form {
 			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&:not(form:has(label)) {
+				padding: 15px;
+			}
 		}
 		label.form,
 		label.password-form,
@@ -45,20 +58,28 @@ ul {
 				}
 			}
 			@include mobile-screens {
-				flex-direction: column;
+				&.form span:first-child {
+					margin-bottom: 2.5px;
+				}
+				&:not(.switch) {
+					flex-direction: column;
+				}
+				&.password-form div {
+					width: 100%;
+					input {
+						width: 100%;
+					}
+				}
 				> {
 					textarea,
 					input {
 						width: 100%;
 					}
-					span:first-of-type {
-						margin-bottom: 10px;
-					}
 				}
 			}
 		}
 		&:hover button:not(button:hover) {
-			background-color: #717171;
+			background-color: get-item-by-index($main-colors, 8);
 		}
 		&.popup {
 			li {
@@ -77,7 +98,7 @@ ul {
 				border-bottom-right-radius: $main-border-radius;
 				border-bottom-left-radius: $main-border-radius;
 				&:hover {
-					background-color: #666666;
+					background-color: get-item-by-index($main-colors, 6);
 				}
 			}
 		}
@@ -86,6 +107,25 @@ ul {
 				margin-bottom: 10px;
 			}
 		}
+		> button:not(.circle) {
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			display: flex;
+			justify-content: space-between;
+			padding: 15px;
+			border-radius: 0 0 0 0 !important;
+			border-radius: 15px !important;
+			&:hover {
+				background-color: get-item-by-index($main-colors, 6);
+			}
+		}
+		// &:first-child > button:not(.circle) {
+		// 	border-radius: 15px 15px 0 0 !important;
+		// }
+		// &:last-child > button:not(.circle) {
+		// 	border-radius: 0 0 15px 15px !important;
+		// }
 	}
 }
 

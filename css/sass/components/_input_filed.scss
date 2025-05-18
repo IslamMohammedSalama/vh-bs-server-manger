@@ -1,4 +1,5 @@
 @use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
 textarea,
 input:not(input[type="submit"]) {
 	height: 40px;
@@ -6,16 +7,16 @@ input:not(input[type="submit"]) {
 	border: none;
 	outline: none;
 	white-space: pre;
-	background-color: #666;
+	background-color: get-item-by-index($main-colors,6);
 	padding: 7.5px 10px 7.5px 10px;
 	border-radius: 50px;
 	color: $main-text-color;
 	transition: $animation-duration;
 	&:focus,
 	&:hover {
-		background-color: #777;
+		background-color: get-item-by-index($main-colors,7);
 	}
 	&::placeholder {
-		color: #cccccc;
+		color: $main-placeholder-color;
 	}
 }

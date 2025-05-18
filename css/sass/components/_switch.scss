@@ -1,4 +1,5 @@
 @use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
 @use "../helpers/mixins" as *;
 
 label.switch {
@@ -23,7 +24,7 @@ label.switch {
 		display: block;
 		transition: $animation-duration;
 		position: relative;
-		background-color: #777;
+		background-color: get-item-by-index($main-colors,7);
 		width: 60px;
 		height: 30px;
 		border-radius: 50px;

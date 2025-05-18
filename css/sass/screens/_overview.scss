@@ -1,4 +1,5 @@
 @use "../helpers/variables" as * ;
+@use "../helpers/functions" as * ;
 
 .overview-screen {
 	.current-and-next-game {
@@ -21,17 +22,17 @@
 		td,
 		th {
 			transition: $animation-duration;
-			background-color: #454545;
+			background-color: get-item-by-index($main-colors,3);
 			padding: 20px;
 			border-radius: $main-border-radius;
 			text-align: center;
 			border: 1px solid transparent;
 		}
 		th {
-			background-color: #333;
+			background-color: get-item-by-index($main-colors,1);
 		}
 		tr:hover td {
-			background-color: #4e4e4e;
+			background-color: get-item-by-index($main-colors,4);
 		}
 		td:hover {
 			border: 1px solid $main-color;
@@ -42,7 +43,7 @@
 				tbody
 				> tr
 				> *:nth-child(#{$i}) {
-				background-color: #4e4e4e;
+				background-color: get-item-by-index($main-colors,4);
 			}
 		}
 	}

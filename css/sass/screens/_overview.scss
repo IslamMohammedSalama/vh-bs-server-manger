@@ -1,5 +1,5 @@
-@use "../helpers/variables" as * ;
-@use "../helpers/functions" as * ;
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
 
 .overview-screen {
 	.current-and-next-game {
@@ -7,8 +7,8 @@
 		> div {
 			gap: 10px;
 			> div {
-				border-radius: $main-border-radius;
-				padding: 10px;
+				border-radius: $main-border-radius-size;
+				padding: $main-padding-size;
 				background-color: $main-color;
 				width: 100%;
 			}
@@ -22,17 +22,17 @@
 		td,
 		th {
 			transition: $animation-duration;
-			background-color: get-item-by-index($main-colors,3);
-			padding: 20px;
-			border-radius: $main-border-radius;
+			background-color: get-item-by-index($main-colors, 3);
+			padding: $main-padding-size;
+			border-radius: $main-border-radius-size;
 			text-align: center;
 			border: 1px solid transparent;
 		}
 		th {
-			background-color: get-item-by-index($main-colors,1);
+			background-color: get-item-by-index($main-colors, 1);
 		}
 		tr:hover td {
-			background-color: get-item-by-index($main-colors,4);
+			background-color: get-item-by-index($main-colors, 4);
 		}
 		td:hover {
 			border: 1px solid $main-color;
@@ -43,7 +43,7 @@
 				tbody
 				> tr
 				> *:nth-child(#{$i}) {
-				background-color: get-item-by-index($main-colors,4);
+				background-color: get-item-by-index($main-colors, 4);
 			}
 		}
 	}
@@ -51,9 +51,9 @@
 		gap: 10px;
 		> div {
 			background-color: $main-color;
-			border-radius: $main-border-radius;
+			border-radius: $main-border-radius-size;
 			width: 100%;
-			padding: 20px 0;
+			padding: $main-padding-size 0;
 			> p:last-child {
 				line-height: 1;
 			}

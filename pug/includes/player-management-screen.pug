@@ -2,44 +2,46 @@ mixin player-management
   //- Header
   +header-of-screen("Player Management")
   .body.container
-    ul.container
-      li.d-flex.justify-content-between
-        span Rank
-        span Name
-        span Score
-        span Kills
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
-      li.d-flex.justify-content-between
-        span 1.
-        span Zad
-        span 2000
-        span 2000
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
+    table.container
+      thead
+        tr
+          th Rank
+          th Name
+          th Score
+          th Kills
+          th: button.circle: i(class="fa-solid fa-ellipsis-vertical")
+      tbody
+        tr
+          td 1.
+          td Zad
+          td 2000
+          td 2000
+          td: button.circle: i(class="fa-solid fa-ellipsis-vertical")
 
-      li.d-flex.justify-content-between
-        span 2.
-        span Vortex
-        span 2000
-        span 2000
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
+        tr
+          td 2.
+          td Vortex
+          td 2000
+          td 2000
+          td: button.circle: i(class="fa-solid fa-ellipsis-vertical")
 
-      li.d-flex.justify-content-between
-        span 3.
-        span Sara
-        span 2000
-        span 2000
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
+        tr
+          td 3.
+          td Sara
+          td 2000
+          td 2000
+          td: button.circle: i(class="fa-solid fa-ellipsis-vertical")
 
-      li.d-flex.justify-content-between
-        span 4.
-        span Dest
-        span 1000
-        span 1000
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
+        tr
+          td 4.
+          td Dest
+          td 1000
+          td 1000
+          td: button.circle: i(class="fa-solid fa-ellipsis-vertical")
 
-      li.d-flex.justify-content-between
-        span 5.
-        span Islam
-        span 50
-        span 50
-        button.circle: i(class="fa-solid fa-ellipsis-vertical")
+        tr
+          td 5.
+          td Islam
+          td 50
+          td 50
+          td: button.circle: i(class="fa-solid fa-ellipsis-vertical")

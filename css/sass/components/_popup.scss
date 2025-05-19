@@ -15,8 +15,8 @@ li.popup > .popup-window {
 	height: fit-content;
 	max-height: 95dvh;
 	background-color: $main-background-color;
-	border-radius: $main-border-radius;
-	padding: 15px;
+	border-radius: $main-border-radius-size;
+	padding: $main-padding-size;
 	> .popup-header {
 		display: flex;
 		h5 {
@@ -26,7 +26,7 @@ li.popup > .popup-window {
 		.close {
 			position: absolute;
 			right: 15px;
-			@include circle(30px,"true")
+			@include circle(30px, "true");
 		}
 	}
 	.body {

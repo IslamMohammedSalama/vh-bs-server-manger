@@ -6,7 +6,7 @@ ul {
 	> li {
 		&.number-chooser,
 		&:has(> span) {
-			padding: 15px 20px;
+			padding: $main-padding-size;
 		}
 		span {
 			text-align: left;
@@ -16,8 +16,8 @@ ul {
 		justify-content: space-between;
 		align-items: center;
 		background-color: get-item-by-index($main-colors, 5);
-		border-radius: 15px;
-		margin-bottom: 4px;
+		border-radius: $main-border-radius-size;
+		margin-bottom: 5px;
 		&:not(.popup) {
 			&:hover {
 				background-color: get-item-by-index($main-colors, 6);
@@ -38,13 +38,13 @@ ul {
 			justify-content: space-between;
 			align-items: center;
 			&:not(form:has(label)) {
-				padding: 15px;
+				padding: $main-padding-size;
 			}
 		}
 		label.form,
 		label.password-form,
 		label.switch {
-			padding: 15px 15px;
+			padding: $main-padding-size;
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
@@ -92,9 +92,8 @@ ul {
 				transition: $animation-duration;
 				height: 100%;
 				cursor: pointer;
-				padding: 15px 20px;
-				border-bottom-right-radius: $main-border-radius;
-				border-bottom-left-radius: $main-border-radius;
+				padding: $main-padding-size;
+				border-radius: $main-border-radius-size;
 				&:hover {
 					background-color: get-item-by-index($main-colors, 6);
 				}
@@ -111,9 +110,9 @@ ul {
 			background-color: transparent;
 			display: flex;
 			justify-content: space-between;
-			padding: 15px;
+			padding: $main-padding-size;
 			// border-radius: 0 0 0 0 !important;
-			border-radius: 15px !important;
+			border-radius: $main-border-radius-size !important;
 			&:hover {
 				background-color: get-item-by-index($main-colors, 6);
 			}

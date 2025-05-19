@@ -3,7 +3,7 @@
 @use "../helpers/functions" as *;
 button,
 input[type="submit"] {
-	padding: 10px;
+	padding: calc($main-padding-size / 2) $main-padding-size;
 	display: flex;
 	justify-content: center;
 	align-items: center;

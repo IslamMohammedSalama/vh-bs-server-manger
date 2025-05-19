@@ -21,12 +21,12 @@ const paths = {
 		destPath: "dist/index.html",
 	},
 	css: {
-		src: ["css/**/*.scss", "css/**/*.css", "!css/**/*.min.css"],
+		src: ["css/**/*.scss", "css/**/*.css"],
 		dest: "dist/css",
 		destPath: "dist/css/style.min.css",
 	},
 	js: {
-		src: ["js/**/*.js", "!js/**/*.min.js"],
+		src: ["js/**/*.js"],
 		dest: "dist/js",
 		destPath: "dist/js/script.min.js",
 	},
@@ -100,11 +100,12 @@ gulp.task("js", () =>
 	gulp
 		.src(paths.js.src, { base: "js" })
 		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
-		.pipe(
-			babel({
-				presets: ["@babel/env"],
-			})
-		)
+		// .pipe(
+		// 	babel({
+		// 		presets: ["@babel/env"],
+		// 		// compact:false
+		// 	})
+		// )
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
 		.pipe(sourcemaps.write("./maps"))
@@ -154,19 +155,8 @@ gulp.task(
 	// .pipe(notify());
 );
 
-function notifyBuildComplete(cb) {
-	gulpNotify({
-		title: "Gulp Build",
-		message: "Build completed successfully!",
-		onLast: true,
-		icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-	}).write({}); // Trigger the notification
-	cb(); // Signal Gulp that this task is done
-}
-
 gulp.task("build-msg", function () {
-	return gulp.src("dist/", { allowEmpty: true })
-	.pipe(
+	return gulp.src("dist/", { allowEmpty: true }).pipe(
 		gulpNotify({
 			title: "Gulp Build",
 			message: "Build completed successfully!",

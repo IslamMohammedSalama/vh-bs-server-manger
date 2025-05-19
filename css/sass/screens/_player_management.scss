@@ -1,1 +1,44 @@
- 
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+
+.player-management-screen {
+	table {
+		tr {
+			display: flex;
+			background-color: get-item-by-index($main-colors, 5);
+			border-radius: $main-border-radius-size;
+			margin-bottom: 2.5px;
+			transition: $animation-duration;
+			&:not(:first-child):hover {
+				background-color: get-item-by-index($main-colors, 6);
+			}
+			td,
+			th {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: $animation-duration;
+        padding: $main-padding-size 0;
+        // @include mobile-screens {
+        // padding: $main-padding-size / 2;
+        // }
+			}
+			& td:first-child {
+				border-radius: $main-border-radius-size 0 0 $main-border-radius-size;
+			}
+			& td:last-child {
+				border-radius: 0  $main-border-radius-size $main-border-radius-size 0;
+			}
+		}
+	}
+	@for $i from 1 through 5 {
+		&:has(tbody > tr > *:nth-child(#{$i}):hover)
+			tbody
+			> tr
+			> *:nth-child(#{$i}) {
+			background-color: get-item-by-index($main-colors, 6);
+		}
+	}
+}

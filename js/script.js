@@ -98,10 +98,8 @@ screens.forEach((theScreen) => {
 	if (header.children[2]) {
 		try {
 			header.querySelector(".add").onclick = (ev) => {
-				// console.log(theScreen);
 				let newPlayerIndex =
 					theScreen.querySelector(".container").children.length + 1;
-				console.log(newPlayerIndex);
 				let newPlayer = theScreen
 					.querySelector(".container ul:last-child")
 					.cloneNode();
@@ -172,7 +170,6 @@ screens.forEach((theScreen) => {
 				`
 					: null;
 				theScreen.querySelector(".container").appendChild(newPlayer);
-				console.log(newPlayer);
 			};
 		} catch (error) {}
 	}
@@ -231,7 +228,6 @@ fileChooser.addEventListener("change", (event) => {
 	reader.onload = (e) => {
 		const content = e.target.result;
 		jsonContent = content;
-		console.log(jsonContent);
 	};
 
 	// Handle errors
@@ -303,7 +299,6 @@ popupOpeners.forEach((popupOpener) => {
 			overley.style.opacity = "0";
 			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
 			await delay(300);
-			// console.log("waited");
 			popupWin.style.display = "none";
 			overley.style.display = "none";
 		};
@@ -343,6 +338,5 @@ document.querySelectorAll(".toggle-switch").forEach(
 			ev.preventDefault();
 			element.previousElementSibling.checked =
 				!element.previousElementSibling.checked;
-			console.log(element.previousElementSibling.checked);
 		})
 );

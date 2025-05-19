@@ -23,17 +23,17 @@ html(lang="en")
 		//- Page Logo 
 		link(rel="shortcut icon", href="assets/imgs/favicon.ico", type="image/x-icon")
 		//- Main Css File
-		link(rel="stylesheet", href="css/style.min.css")
+		link(rel="stylesheet", href="css/style.min.css") 
 		//- Google Fonts
 		link(rel="preconnect",
 			href="https://fonts.googleapis.com")
 		link(rel="preconnect",
 			href="https://fonts.gstatic.com",crossorigin )
 		link(
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
+		rel="preload"
+		href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+		as="style"
+		onload="this.onload=null;this.rel='stylesheet'"
 		)
 		noscript: link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap",
 			rel="text/css")
@@ -64,9 +64,4 @@ html(lang="en")
 			+change-server
 		div.website-settings-screen.screen#website-settings
 			+website-settings
-		//- Java Script Bootstrap Library 
-		//- script(src="js/bootstrap.bundle.min.js")
-		//-  Font Awesome Icons 
-		//- script(src="js/all.min.js")
-		//- Main Java Script File 
-		script(src="js/script.min.js" async)
+		script(src="js/script.min.js" async defer)

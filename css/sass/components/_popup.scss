@@ -35,6 +35,7 @@ li.popup > .popup-window {
 	}
 	// overley
 	& + .overley {
+		z-index: 11;
 		display: none;
 		transition: opacity $animation-duration;
 		content: "";

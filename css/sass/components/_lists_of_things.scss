@@ -43,7 +43,8 @@ ul {
 		}
 		label.form,
 		label.password-form,
-		label.switch {
+		label.switch ,
+		label.radio-box{
 			padding: $main-padding-size;
 			width: 100%;
 			display: flex;
@@ -59,7 +60,7 @@ ul {
 				&.form span:first-child {
 					margin-bottom: 2.5px;
 				}
-				&:not(.switch) {
+				&:not(.radio-box,.switch) {
 					flex-direction: column;
 				}
 				&.password-form div {

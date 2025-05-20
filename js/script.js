@@ -91,7 +91,7 @@ screens.forEach((theScreen) => {
 		history.replaceState("", "", `${window.location.pathname}`);
 		theScreen.style.left = "100dvw";
 		document.body.classList.remove("disable-scrolling");
-		await delay(500);
+		await delay(350);
 		// theScreen.style.opacity = "0";
 		theScreen.style.display = "none";
 	};
@@ -298,7 +298,7 @@ popupOpeners.forEach((popupOpener) => {
 			popupWin.style.opacity = "0";
 			overley.style.opacity = "0";
 			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
-			await delay(300);
+			await delay(350);
 			popupWin.style.display = "none";
 			overley.style.display = "none";
 		};
@@ -306,7 +306,7 @@ popupOpeners.forEach((popupOpener) => {
 			popupWin.style.opacity = "0";
 			overley.style.opacity = "0";
 			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
-			await delay(300);
+			await delay(350);
 			popupWin.style.display = "none";
 			overley.style.display = "none";
 		};
@@ -331,7 +331,7 @@ showAndHidePassword.onclick = (ev) => {
 		showAndHidePassword.innerHTML = `<i class="fa-solid fa-eye"></i>`;
 	}
 };
-
+// Toggle Switch Logic
 document.querySelectorAll(".toggle-switch").forEach(
 	(element) =>
 		(element.onclick = function (ev) {
@@ -340,3 +340,53 @@ document.querySelectorAll(".toggle-switch").forEach(
 				!element.previousElementSibling.checked;
 		})
 );
+
+// Toggle Radio Box Logic
+
+document.querySelectorAll(".toggle-radio-box").forEach((element) => {
+	element.previousElementSibling.onchange = () => {
+		document.querySelectorAll(".toggle-radio-box").forEach((ele) => {
+			ele.previousElementSibling.checked = false;
+		});
+		element.previousElementSibling.checked = true;
+	};
+	element.onclick = function (ev) {
+		ev.preventDefault();
+		document.querySelectorAll(".toggle-radio-box").forEach((ele) => {
+			ele.previousElementSibling.checked = false;
+		});
+		element.previousElementSibling.checked = true;
+	};
+});
+
+// Open Menu On Players Management
+// Will Fix Soon
+// document
+// 	.querySelectorAll(".player-management-screen .open-menu")
+// 	.forEach((element) => {
+// 		element.onclick = (ev) => {
+// 			ev.preventDefault();
+// 			if (element.nextElementSibling.classList.contains("opened") === false) {
+// 				document
+// 				.querySelectorAll(".player-management-screen .open-menu")
+// 				.forEach((ele) => {
+// 					if (ele.nextElementSibling.classList.contains("opened")) {
+// 						ele.nextElementSibling.classList.remove("opened")
+// 					}
+// 				});
+// 				element.nextElementSibling.classList.add("opened");
+
+// 				console.log(element.nextElementSibling.classList[1].split("-")[1])
+// 				console.log(element.nextElementSibling.previousElementSibling.classList[2].split("-")[2])
+
+// 				addEventListener("click",()=> {
+// 						element.nextElementSibling.classList.remove("opened");
+					
+// 				})
+// 			} 
+// 			else {
+// 				element.nextElementSibling.classList.remove("opened");
+// 			}
+		
+// 		};
+// 	});

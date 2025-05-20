@@ -1,5 +1,6 @@
 @use "../helpers/variables" as *;
 @use "../helpers/mixins" as *;
+@use "../helpers/functions" as *;
 
 .screen {
 	overflow-y: auto;
@@ -13,12 +14,12 @@
 	> .header {
 		position: sticky;
 		top: 0;
-		z-index: 10000;
+		z-index: 10;
 		padding: $main-padding-size;
 		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
-		box-shadow: 0 5px 20px get-item-by-index($main-colors,0);
+		box-shadow: 0 5px 40px get-item-by-index($main-colors, 0);
 		> .back {
 			+ span {
 				margin-right: auto;

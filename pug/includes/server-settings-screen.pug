@@ -391,6 +391,7 @@ mixin server-settings
                     input#enable-random-fireflies.toggle-checkbox(type="checkbox", name="enable-random-fireflies")
                     button.toggle-switch
       .overley
+    //- Server Website Settings
     li.popup
       button.d-flex.justify-content-between.w-100
         span Server Website
@@ -418,6 +419,7 @@ mixin server-settings
                     input.me-1.d-block#website-password(type="password", name="website-password" placeholder="Type Your Server Password")
                     button.show-or-hide.circle: i.fa-solid.fa-eye
       .overley
+    //- Coop Settings
     li.popup
       button.d-flex.justify-content-between.w-100
         span Coop With Less Players
@@ -443,6 +445,7 @@ mixin server-settings
                   span.me-auto Minimum Player To Exit Coop:
                   input.me-1.d-block#min-players-to-coop(type="number", name="min-players-to-coop" placeholder="Type Your Number" value="0")
       .overley
+    //- Discord Web Hooks
     li.popup
       button.d-flex.justify-content-between.w-100
         span Discord Web Hook
@@ -468,6 +471,7 @@ mixin server-settings
                   span.me-auto Web Hook Url:
                   input.me-1.d-block#web-hook-url(type="text", name="web-hook-url" placeholder="Type Your Url" value="0")
       .overley
+    //- Discord Bot
     li.popup
       button.d-flex.justify-content-between.w-100
         span Discord Bot
@@ -508,7 +512,7 @@ mixin server-settings
                   span.me-auto Token:
                   input.me-1.d-block#discord-bot-token(type="text", name="discord-bot-token" placeholder="Type Your Url" value="0")
       .overley
-
+    //- Powerups Settings
     li.popup 
       button.d-flex.justify-content-between.w-100
         span Powerups 
@@ -648,6 +652,7 @@ mixin server-settings
                   span.me-auto Triple Bomb:
                   input.me-1.d-block#quantity-triple-bomb(type="number", name="quantity-triple-bomb" placeholder="Type Your Number" value="1")
       .overley
+    //- Leader Board Settings
     li.popup
       button.d-flex.justify-content-between.w-100
         span Leader Board
@@ -675,21 +680,25 @@ mixin server-settings
                     input#enable-leader-board-bars.toggle-checkbox(type="checkbox", name="enable-leader-board-bars")
                     button.toggle-switch
       .overley
+    //- Max Account Per Id
     li
       form(action="")
         label.form
           span Max Account Per Id:
           input#max-account-per-id(placeholder="Type Your Number", name="max-account-per-id" type="number" value="1")
+    //- Max Players Per Device
     li
       form(action="")
         label.form
           span Max Players Per Device:
           input#max-players-per-device(placeholder="Type Your Number", name="max-players-per-device" type="number" value="1")
+    //- Max Warn Count
     li
       form(action="")
         label.form
           span Max Warn Count:
           input#max-warn-count(placeholder="Type Your Number", name="max-players-per-device" type="number" value="3")
+    //- Enable Mikirog Quick Turn 
     li
       form(action="")
         label.switch
@@ -697,11 +706,13 @@ mixin server-settings
           span
             input#enable-mikirog.toggle-checkbox(type="checkbox", name="enable-mikirog")
             button.toggle-switch
+    //- Min Age to Chat 
     li
       form(action="")
         label.form
           span Min Age To Chat In Hours:
           input#min-age-to-chat(placeholder="Type Your Number" name="min-age-to-chat" type="number" value="78")
+    //- New Result Board
     li
       form(action="")
         label.switch
@@ -709,7 +720,7 @@ mixin server-settings
           span
             input#new-result-board.toggle-checkbox(type="checkbox", name="new-result-board")
             button.toggle-switch
-
+    //- Player Mods
     li.popup
       button.d-flex.justify-content-between.w-100
         span Player Mod
@@ -721,7 +732,7 @@ mixin server-settings
           button.close.circle
             i.fa.fa-close
         .body.mt-2
-          ul
+          ul.mb-4
             li
               form(action="")
                 label.switch
@@ -741,7 +752,52 @@ mixin server-settings
                 label.form.d-flex.align-items-center
                   span.me-auto Default Bomb Count:
                   input.me-1.d-block#default-bomb-count(type="number", name="default-bomb-count" placeholder="Type Your Count" value="2")
-          //- Will Complete This Soon
+          form
+            ul 
+              li
+                span Default Bomb 
+              li
+                label.radio-box
+                  span Normal Bomb
+                  span
+                    input#normal-bomb.toggle-radio(type="radio", name="enable-bomb" checked)
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Ice Bomb
+                  span
+                    input#ice-bomb.toggle-radio(type="radio", name="ice-bomb")
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Fire Bomb
+                  span
+                    input#fire-bomb.toggle-radio(type="radio", name="fire-bomb")
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Impact Bomb
+                  span
+                    input#impact-bomb.toggle-radio(type="radio", name="impact-bomb")
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Sticky Bomb
+                  span
+                    input#sticky-bomb.toggle-radio(type="radio", name="sticky-bomb")
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Expansive Bomb
+                  span
+                    input#expansive-bomb.toggle-radio(type="radio", name="expansive-bomb")
+                    button.toggle-radio-box
+              li
+                label.radio-box
+                  span Mine Bomb
+                  span
+                    input#mine-bomb.toggle-radio(type="radio", name="mine-bomb")
+                    button.toggle-radio-box
       .overley
     //- After Warn Kick Message
     li
@@ -749,6 +805,7 @@ mixin server-settings
         label.form
           span Warn Msg:
           textarea#warn-msg.kick-msg(placeholder="Type Your Warn Msg Here")
+    //- Same Character For Team
     li
       form(action="")
         label.switch
@@ -756,6 +813,7 @@ mixin server-settings
           span
             input#same-chat-for-team.toggle-checkbox(type="checkbox", name="same-chat-for-team")
             button.toggle-switch
+    //- Enable White List
     li
       form(action="")
         label.switch
@@ -763,11 +821,13 @@ mixin server-settings
           span
             input#enable-white-list.toggle-checkbox(type="checkbox", name="enable-white-list")
             button.toggle-switch
+    //- Stats Reset After Days
     li 
       form(action) 
         label.form.d-flex.align-items-center
           span.me-auto Stats Reset After Days:
           input.me-1.d-block#stats-reset-days(type="number", name="stats-reset-days" placeholder="Type Your Count" value="31")
+    //- Use V2 Account
     li
       form(action="")
         label.switch
@@ -775,6 +835,7 @@ mixin server-settings
           span
             input#use-v2-account.toggle-checkbox(type="checkbox", name="use-v2-account")
             button.toggle-switch
+    //- Regular Welcome Message
     li 
       form(action) 
         label.form.d-flex.align-items-center

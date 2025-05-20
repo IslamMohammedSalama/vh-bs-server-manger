@@ -1,0 +1,45 @@
+@use "../helpers/variables" as *;
+@use "../helpers/functions" as *;
+@use "../helpers/mixins" as *;
+
+label.radio-box {
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.toggle-radio {
+		appearance: none;
+		display: none;
+	}
+	.toggle-radio-box {
+		padding: 0;
+		display: block;
+		transition: $animation-duration;
+		position: relative;
+		background-color: #bbb !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include circle(25px);
+		border: 2px solid #bbb;
+		// border-radius: 50px;
+		cursor: pointer;
+		&::after {
+			content: "";
+			transition: $animation-duration;
+			@include circle(12.5px);
+			background-color: $main-color;
+			transform: scale(0);
+		}
+	}
+	.toggle-radio:checked + .toggle-radio-box {
+		// background-color: $main-color;
+		border: 2px solid $main-color;
+		&::after {
+			// content: "\f00c";
+			color: $main-color;
+			transform: scale(1);
+		}
+	}
+}

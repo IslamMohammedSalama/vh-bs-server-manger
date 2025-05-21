@@ -360,33 +360,37 @@ document.querySelectorAll(".toggle-radio-box").forEach((element) => {
 });
 
 // Open Menu On Players Management
-// Will Fix Soon
-// document
-// 	.querySelectorAll(".player-management-screen .open-menu")
-// 	.forEach((element) => {
-// 		element.onclick = (ev) => {
-// 			ev.preventDefault();
-// 			if (element.nextElementSibling.classList.contains("opened") === false) {
-// 				document
-// 				.querySelectorAll(".player-management-screen .open-menu")
-// 				.forEach((ele) => {
-// 					if (ele.nextElementSibling.classList.contains("opened")) {
-// 						ele.nextElementSibling.classList.remove("opened")
-// 					}
-// 				});
-// 				element.nextElementSibling.classList.add("opened");
+document.querySelectorAll(".player-management-screen .open-menu").forEach((element) => {
+	element.onclick = (ev) => {
+			ev.preventDefault();
+			ev.stopPropagation();
+			const menu = element.nextElementSibling;
+			
+			// Close other menus
+			document.querySelectorAll(".player-management-screen .menu").forEach((otherMenu) => {
+					if (otherMenu !== menu) otherMenu.classList.remove("opened");
+			});
+			
+			// Toggle current menu
+			menu.classList.toggle("opened");
+	};
+});
 
-// 				console.log(element.nextElementSibling.classList[1].split("-")[1])
-// 				console.log(element.nextElementSibling.previousElementSibling.classList[2].split("-")[2])
+// Close menus when clicking outside or on menu items
+document.addEventListener('click', (ev) => {
+	const isMenuButton = ev.target.closest('.open-menu');
+	const isMenuOption = ev.target.closest('.menu button');
+	const isInsideMenu = ev.target.closest('.menu');
 
-// 				addEventListener("click",()=> {
-// 						element.nextElementSibling.classList.remove("opened");
-					
-// 				})
-// 			} 
-// 			else {
-// 				element.nextElementSibling.classList.remove("opened");
-// 			}
-		
-// 		};
-// 	});
+	if (isMenuOption) {
+			// Close the parent menu when clicking any menu button
+			const menu = ev.target.closest('.menu');
+			menu.classList.remove("opened");
+	}
+	else if (!isMenuButton && !isInsideMenu) {
+			// Close all menus when clicking outside
+			document.querySelectorAll(".player-management-screen .menu").forEach((menu) => {
+					menu.classList.remove("opened");
+			});
+	}
+});

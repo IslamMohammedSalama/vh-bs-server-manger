@@ -61,6 +61,11 @@ function initializeFromURL() {
 		navigateToScreen(hash + "-screen");
 	}
 }
+// Initialize from URL on page load
+document.addEventListener("DOMContentLoaded", function () {
+	initializeFromURL();
+});
+
 // Reset Button Function
 document
 	.querySelectorAll("button")
@@ -258,6 +263,7 @@ exportSettingsButton.onclick = (ev) => {
 			let newFile = new Blob([JSON.stringify(jsonFileToExport, null, 2)], {
 				type: "application/json",
 			});
+
 			link.href = URL.createObjectURL(newFile);
 			link.download = "config.json";
 			link.click();
@@ -294,7 +300,7 @@ popupOpeners.forEach((popupOpener) => {
 		popupWin.style.opacity = "1";
 		overley.style.opacity = "1";
 		popupWin.style.transform = "translate(-50%, -50%) scale(1)";
-		popupWin.querySelector(" .popup-header .close ").onclick = async () => {
+		popupWin.querySelector(" .close ").onclick = async () => {
 			popupWin.style.opacity = "0";
 			overley.style.opacity = "0";
 			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
@@ -311,11 +317,6 @@ popupOpeners.forEach((popupOpener) => {
 			overley.style.display = "none";
 		};
 	};
-});
-
-// Initialize from URL on page load
-document.addEventListener("DOMContentLoaded", function () {
-	initializeFromURL();
 });
 
 // Show/Hide Password Logic
@@ -360,37 +361,92 @@ document.querySelectorAll(".toggle-radio-box").forEach((element) => {
 });
 
 // Open Menu On Players Management
-document.querySelectorAll(".player-management-screen .open-menu").forEach((element) => {
-	element.onclick = (ev) => {
+document
+	.querySelectorAll(".player-management-screen .open-menu")
+	.forEach((element) => {
+		element.onclick = (ev) => {
 			ev.preventDefault();
 			ev.stopPropagation();
 			const menu = element.nextElementSibling;
-			
+
 			// Close other menus
-			document.querySelectorAll(".player-management-screen .menu").forEach((otherMenu) => {
+			document
+				.querySelectorAll(".player-management-screen .menu")
+				.forEach((otherMenu) => {
 					if (otherMenu !== menu) otherMenu.classList.remove("opened");
-			});
-			
+				});
+
 			// Toggle current menu
 			menu.classList.toggle("opened");
-	};
-});
+		};
+	});
 
 // Close menus when clicking outside or on menu items
-document.addEventListener('click', (ev) => {
-	const isMenuButton = ev.target.closest('.open-menu');
-	const isMenuOption = ev.target.closest('.menu button');
-	const isInsideMenu = ev.target.closest('.menu');
+document.addEventListener("click", (ev) => {
+	const isMenuButton = ev.target.closest(".open-menu");
+	const isMenuOption = ev.target.closest(".menu button");
+	const isInsideMenu = ev.target.closest(".menu");
 
 	if (isMenuOption) {
-			// Close the parent menu when clicking any menu button
-			const menu = ev.target.closest('.menu');
-			menu.classList.remove("opened");
-	}
-	else if (!isMenuButton && !isInsideMenu) {
-			// Close all menus when clicking outside
-			document.querySelectorAll(".player-management-screen .menu").forEach((menu) => {
-					menu.classList.remove("opened");
+		// Close the parent menu when clicking any menu button
+		const menu = ev.target.closest(".menu");
+		menu.classList.remove("opened");
+	} else if (!isMenuButton && !isInsideMenu) {
+		// Close all menus when clicking outside
+		document
+			.querySelectorAll(".player-management-screen .menu")
+			.forEach((menu) => {
+				menu.classList.remove("opened");
 			});
 	}
+});
+
+let menuBtns = document.querySelectorAll("tbody .menu button");
+menuBtns.forEach((element) => {
+	element.onclick = async (ev) => {
+		ev.preventDefault();
+		let btnContent = element.textContent;
+		let popup = document.createElement("div");
+		popup.className = "popup-window";
+		popup.innerHTML = `
+    <div class="popup-header">
+        <h5>Alert</h5>
+    </div>
+    <div class="body">
+		  <span class="text-center w-100 d-block">The ${btnContent} Operation Was Successful</span>
+		  <button class="mt-2 close text-center w-100 d-block">Close</button>
+		  </div>
+		</div>
+		`;
+		let overley = document.createElement("div");
+		overley.className = "overley";
+		document.body.append(popup, overley);
+
+		popup.style.display = "flex";
+		overley.style.display = "block";
+		await delay(0);
+		popup.style.opacity = "1";
+		overley.style.opacity = "1";
+		popup.style.transform = "translate(-50%, -50%) scale(1)";
+		popup.querySelector(" .close ").onclick = async () => {
+			popup.style.opacity = "0";
+			overley.style.opacity = "0";
+			popup.style.transform = "translate(-50%, -50%) scale(0)";
+			await delay(350);
+			popup.style.display = "none";
+			overley.style.display = "none";
+			overley.remove();
+			popup.remove();
+		};
+		overley.onclick = async () => {
+			popup.style.opacity = "0";
+			overley.style.opacity = "0";
+			popup.style.transform = "translate(-50%, -50%) scale(0)";
+			await delay(350);
+			popup.style.display = "none";
+			overley.style.display = "none";
+			overley.remove();
+			popup.remove();
+		};
+	};
 });

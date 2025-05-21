@@ -1,10 +1,6 @@
 @use "../helpers/variables" as *;
 @use "../helpers/mixins" as *;
 
-li.popup > .popup-window {
-	width: 700px;
-
-}
 
  .popup-window {
 	flex-direction: column;
@@ -18,7 +14,7 @@ li.popup > .popup-window {
 	transform: translate(-50%, -50%) scale(0);
 	// transform: translate(-50%, -50%) ;
 	height: fit-content;
-	width: 200px;
+	width: 400px;
 	max-height: 95dvh;
 	background-color: $main-background-color;
 	border-radius: $main-border-radius-size;

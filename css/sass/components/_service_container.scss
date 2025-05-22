@@ -1,7 +1,7 @@
 @use "../helpers/variables" as *;
 @use "../helpers/functions" as *;
 .service-container {
-	border-radius: $main-border-radius-size;
-	background-color: get-item-by-index($main-colors, 5);
-	padding: $main-padding-size;
+	border-radius: var(--main-border-radius-size,$main-border-radius-size);
+	background-color: var(--color-5,get-item-by-index($main-colors, 5));
+	padding: var(--main-padding-size,$main-padding-size);
 }

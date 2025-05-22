@@ -2,7 +2,7 @@
 
 .login-screen {
 	opacity: 1;
-	transition: $animation-duration;
+	transition: var(--animation-duration,$animation-duration);
 	width: 100%;
 	height: 100dvh;
 	position: absolute;
@@ -14,7 +14,13 @@
 		transform: translate(-50%, -50%) scale(1);
 		opacity: 1;
 		button.login {
-			background-color: $main-color;
+			background-color: var(--main-color,$main-color);
+		}
+	}
+	button.login {
+		&:hover {
+			background-color: var(--main-alt-color,$main-alt-color);
+			// background-color: var(--color-7,get-item-by-index($main-colors,7));
 		}
 	}
 	.overley {

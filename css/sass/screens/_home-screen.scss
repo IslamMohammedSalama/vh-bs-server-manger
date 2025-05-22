@@ -1,7 +1,7 @@
 @use "../helpers/variables" as *;
 .home-screen {
 	ul li a {
-		padding: $main-padding-size;
-		border-radius: $main-border-radius-size;
+		padding: var(--main-padding-size,$main-padding-size);
+		border-radius: var(--main-border-radius-size,$main-border-radius-size);
 	}
 }

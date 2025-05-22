@@ -1,5 +1,5 @@
 @use "../helpers/variables" as *;
 .container {
-	transition: $animation-duration;
-	padding-bottom: $main-padding-size;
+	transition: var(--animation-duration,$animation-duration);
+	padding-bottom: var(--main-padding-size,$main-padding-size);
 }

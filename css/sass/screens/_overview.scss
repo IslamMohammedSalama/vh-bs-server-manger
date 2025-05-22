@@ -7,9 +7,9 @@
 		> div {
 			gap: 10px;
 			> div {
-				border-radius: $main-border-radius-size;
-				padding: $main-padding-size;
-				background-color: $main-color;
+				border-radius: var(--main-border-radius-size,$main-border-radius-size);
+				padding: var(--main-padding-size,$main-padding-size);
+				background-color: var(--main-color,$main-color);
 				width: 100%;
 			}
 		}
@@ -21,39 +21,39 @@
 		min-width: 500px;
 		td,
 		th {
-			transition: $animation-duration;
+			transition: var(--animation-duration,$animation-duration);
 			background-color: get-item-by-index($main-colors, 3);
-			padding: $main-padding-size;
-			border-radius: $main-border-radius-size;
+			padding: var(--main-padding-size,$main-padding-size);
+			border-radius: var(--main-border-radius-size,$main-border-radius-size);
 			text-align: center;
 			border: 1px solid transparent;
 		}
 		th {
-			background-color: get-item-by-index($main-colors, 1);
+			background-color: var(--color-1,get-item-by-index($main-colors, 1));
 		}
 		tr:hover td {
-			background-color: get-item-by-index($main-colors, 4);
+			background-color: var(--color-4,get-item-by-index($main-colors, 4));
 		}
 		td:hover {
-			border: 1px solid $main-color;
-			color: $main-color;
+			border: 1px solid var(--main-color,$main-color);
+			color: var(--main-color,$main-color);
 		}
 		@for $i from 1 through 4 {
 			&:has(tbody > tr > *:nth-child(#{$i}):hover)
 				tbody
 				> tr
 				> *:nth-child(#{$i}) {
-				background-color: get-item-by-index($main-colors, 4);
+				background-color: var(--color-4,get-item-by-index($main-colors, 4));
 			}
 		}
 	}
 	.stats > div {
 		gap: 10px;
 		> div {
-			background-color: $main-color;
-			border-radius: $main-border-radius-size;
+			background-color: var(--main-color,$main-color);
+			border-radius: var(--main-border-radius-size,$main-border-radius-size);
 			width: 100%;
-			padding: $main-padding-size 0;
+			padding: var(--main-padding-size,$main-padding-size) 0;
 			> p:last-child {
 				line-height: 1;
 			}

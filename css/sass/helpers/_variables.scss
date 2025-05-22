@@ -1,8 +1,28 @@
 $animation-duration: 0.35s;
 $main-color: #1f88ff;
+$main-alt-color: rgb(75, 145, 224);
 $main-text-color: white;
 $main-background-color: #222;
-$main-colors:#222,#333,#444,#454545,#4e4e4e,#555,#666,#777,#717171;
-$main-placeholder-color:#ccc;
-$main-padding-size:13px;
-$main-border-radius-size:20px;
+$main-colors: #222, #333, #444, #454545, #4e4e4e, #555, #666, #777, #717171;
+$main-placeholder-color: #ccc;
+$main-padding-size: 13px;
+$main-border-radius-size: 20px;
+:root {
+	--color-0: #222;
+	--color-1: #333;
+	--color-2: #444;
+	--color-3: #454545;
+	--color-4: #4e4e4e;
+	--color-5: #555;
+	--color-6: #666;
+	--color-7: #777;
+	--color-8: #717171;
+	--main-placeholder-color: #ccc;
+	--main-padding-size: 13px;
+	--main-border-radius-size: 20px;
+	--animation-duration: 0.35s;
+	--main-color: #1f88ff;
+	--main-alt-color: rgb(75, 145, 224);
+	--main-text-color: white;
+	--main-background-color: #222;
+}

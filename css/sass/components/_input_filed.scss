@@ -7,16 +7,16 @@ input:not(input[type="submit"]) {
 	border: none;
 	outline: none;
 	white-space: pre;
-	background-color: get-item-by-index($main-colors,6);
+	background-color: var(--color-6,get-item-by-index($main-colors,6));
 	padding: 7.5px 10px 7.5px 10px;
 	border-radius: 50px;
-	color: $main-text-color;
-	transition: $animation-duration;
+	color: var(--main-text-color,$main-text-color);
+	transition: var(--animation-duration,$animation-duration);
 	&:focus,
 	&:hover {
-		background-color: get-item-by-index($main-colors,7);
+		background-color: var(--color-7,get-item-by-index($main-colors,7));
 	}
 	&::placeholder {
-		color: $main-placeholder-color;
+		color: var(--main-placeholder-color,$main-placeholder-color);
 	}
 }

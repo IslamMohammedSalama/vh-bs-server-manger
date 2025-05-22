@@ -8,13 +8,13 @@
 body,
 .screen,
 .screen > .header {
-	color: $main-text-color;
-	background-color: $main-background-color;
+	color: var(--main-text-color,$main-text-color);
+	background-color: var(--main-background-color,$main-background-color);
 	font-family: "Cairo", sans-serif;
 }
 
 a {
-	color: $main-text-color;
+	color: var(--main-text-color,$main-text-color);
 	text-decoration-line: none;
 }
 

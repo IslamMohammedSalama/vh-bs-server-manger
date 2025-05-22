@@ -191,7 +191,7 @@ gulp.task("clean", function () {
 gulp.task(
 	"build",
 	gulp.series(
-		// "clean",
+		"clean",
 		gulp.parallel("html", "css", "js", "assets"),
 		"compress",
 		"build-msg"

@@ -6,46 +6,38 @@ ul {
 	> li {
 		&.number-chooser,
 		&:has(> span) {
-			padding: $main-padding-size;
+			padding: var(--main-padding-size,$main-padding-size);
 		}
 		span {
 			text-align: left;
 		}
-		transition: $animation-duration;
+		transition: var(--animation-duration,$animation-duration);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: get-item-by-index($main-colors, 5);
-		border-radius: $main-border-radius-size;
+		background-color: var(--color-5,get-item-by-index($main-colors, 5));
+		border-radius: var(--main-border-radius-size,$main-border-radius-size);
 		margin-bottom: 5px;
 		&:not(.popup) {
 			&:hover {
-				background-color: get-item-by-index($main-colors, 6);
+				background-color: var(--color-6,get-item-by-index($main-colors, 6));
 				cursor: pointer;
 			}
 		}
-		// &:first-child {
-		// 	border-top-right-radius: $main-border-radius;
-		// 	border-top-left-radius: $main-border-radius;
-		// }
-		// &:last-child {
-		// 	border-bottom-right-radius: $main-border-radius;
-		// 	border-bottom-left-radius: $main-border-radius;
-		// }
 		> form {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			&:not(form:has(label)) {
-				padding: $main-padding-size;
+				padding: var(--main-padding-size,$main-padding-size);
 			}
 		}
 		label.form,
 		label.password-form,
 		label.switch ,
 		label.radio-box{
-			padding: $main-padding-size;
+			padding: var(--main-padding-size,$main-padding-size);
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
@@ -77,9 +69,9 @@ ul {
 				}
 			}
 		}
-		&:hover button:not(button:hover) {
-			background-color: get-item-by-index($main-colors, 8);
-		}
+		// &:hover button:not(button:hover) {
+		// 	background-color: var(--color-8,get-item-by-index($main-colors, 8));
+		// }
 		&.popup {
 			li {
 				cursor: pointer;
@@ -90,13 +82,13 @@ ul {
 			> div:first-child {
 				display: flex;
 				align-items: center;
-				transition: $animation-duration;
+				transition: var(--animation-duration,$animation-duration);
 				height: 100%;
 				cursor: pointer;
-				padding: $main-padding-size;
-				border-radius: $main-border-radius-size;
+				padding: var(--main-padding-size,$main-padding-size);
+				border-radius: var(--main-border-radius-size,$main-border-radius-size);
 				&:hover {
-					background-color: get-item-by-index($main-colors, 6);
+					background-color: var(--color-6,get-item-by-index($main-colors, 6));
 				}
 			}
 		}
@@ -111,19 +103,13 @@ ul {
 			background-color: transparent;
 			display: flex;
 			justify-content: space-between;
-			padding: $main-padding-size;
+			padding: var(--main-padding-size,$main-padding-size);
 			// border-radius: 0 0 0 0 !important;
-			border-radius: $main-border-radius-size !important;
+			border-radius: var(--main-border-radius-size,$main-border-radius-size) !important;
 			&:hover {
-				background-color: get-item-by-index($main-colors, 6);
+				background-color: var(--color-6,get-item-by-index($main-colors, 6));
 			}
 		}
-		// &:first-child > button:not(.circle) {
-		// 	border-radius: 15px 15px 0 0 !important;
-		// }
-		// &:last-child > button:not(.circle) {
-		// 	border-radius: 0 0 15px 15px !important;
-		// }
 	}
 }
 

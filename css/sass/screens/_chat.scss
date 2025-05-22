@@ -9,7 +9,7 @@
 		flex-wrap: wrap;
 		> span {
 			display: block;
-			background-color: $main-color;
+			background-color: var(--main-color,$main-color);
 			padding: 7.5px;
 			border-radius: 50px;
 		}

@@ -6,12 +6,12 @@
 	table {
 		tr {
 			display: flex;
-			background-color: get-item-by-index($main-colors, 5);
-			border-radius: $main-border-radius-size;
+			background-color: var(--color-5,get-item-by-index($main-colors, 5));
+			border-radius: var(--main-padding-size,$main-border-radius-size);
 			margin-bottom: 2.5px;
-			transition: $animation-duration;
+			transition: var(--animation-duration,$animation-duration);
 			&:not(:first-child):hover {
-				background-color: get-item-by-index($main-colors, 6);
+				background-color: var(--color-6,get-item-by-index($main-colors, 6));
 			}
 			td,
 			th {
@@ -19,8 +19,8 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				transition: $animation-duration;
-				padding: $main-padding-size 0;
+				transition: var(--animation-duration,$animation-duration);
+				padding: var(--main-padding-size,$main-padding-size) 0;
 				// @include mobile-screens {
 				// padding: $main-padding-size / 2;
 				// }
@@ -33,35 +33,35 @@
 					position: absolute;
 					min-width: 100px;
 					top: 100%;
-					background: get-item-by-index($main-colors, 3);
+					background: var(--color-3,get-item-by-index($main-colors, 3));
 					border-radius: 15px;
 					z-index: 100;
 					// opacity: 0;
-					transition: $animation-duration;
+					transition: var(--animation-duration,$animation-duration);
 					button {
 						width: 100%;
 						justify-content: left;
-						background-color: get-item-by-index($main-colors, 3);
+						background-color: var(--color-3,get-item-by-index($main-colors, 3));
 						&:hover {
-							background-color: get-item-by-index($main-colors, 4);
+							background-color: var(--color-4,get-item-by-index($main-colors, 4));
 						}
 					}
 					&::before {
 						content: "";
-						border: 13px solid #444;
+						border: 13px solid var(--color-2,get-item-by-index($main-colors, 2));
 						position: absolute;
 						top: 0;
 						left: 50%;
 						transform: translate(-50%, -100%);
-						border-color: transparent transparent #444;
+						border-color: transparent transparent var(--color-2,get-item-by-index($main-colors, 2));
 					}
 				}
 			}
 			& td:first-child {
-				border-radius: $main-border-radius-size 0 0 $main-border-radius-size;
+				border-radius: var(--main-padding-size,$main-border-radius-size) 0 0 var(--main-padding-size,$main-border-radius-size);
 			}
 			& td:last-child {
-				border-radius: 0 $main-border-radius-size $main-border-radius-size 0;
+				border-radius: 0 var(--main-padding-size,$main-border-radius-size) var(--main-padding-size,$main-border-radius-size) 0;
 			}
 		}
 	}

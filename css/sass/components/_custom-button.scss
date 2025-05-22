@@ -3,14 +3,15 @@
 @use "../helpers/functions" as *;
 button,
 input[type="submit"] {
-	padding: calc($main-padding-size / 2) $main-padding-size;
+	padding: calc(var(--main-padding-size,$main-padding-size) / 2) var(--main-padding-size,$main-padding-size);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: none;
-	color: $main-text-color;
-	background-color: get-item-by-index($main-colors,6);
-	transition: $animation-duration;
+	color: var(--main-text-color,$main-text-color);
+	// background-color: var(--color-6,get-item-by-index($main-colors,6));
+	background-color: var(--main-color,$main-color);
+	transition: var(--animation-duration,$animation-duration);
 	&:not(.circle) {
 		border-radius: 50px;
 	}
@@ -20,7 +21,8 @@ input[type="submit"] {
 		align-items: center !important;
 	}
 	&:hover {
-		background-color: get-item-by-index($main-colors,7);
+		background-color: var(--main-alt-color,$main-alt-color);
+		// background-color: var(--color-7,get-item-by-index($main-colors,7));
 	}
 	> {
 		i,

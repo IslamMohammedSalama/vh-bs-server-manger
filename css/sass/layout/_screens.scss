@@ -10,16 +10,16 @@
 	left: 100dvw;
 	top: 0;
 	display: none;
-	transition: left $animation-duration;
+	transition: left var(--animation-duration,$animation-duration);
 	> .header {
 		position: sticky;
 		top: 0;
 		z-index: 10;
-		padding: $main-padding-size;
+		padding: var(--main-padding-size,$main-padding-size);
 		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
-		box-shadow: 0 5px 40px get-item-by-index($main-colors, 0);
+		box-shadow: 0 5px 40px var(--color-0,get-item-by-index($main-colors, 0));
 		> .back {
 			+ span {
 				margin-right: auto;

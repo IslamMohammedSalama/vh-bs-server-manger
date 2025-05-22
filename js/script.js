@@ -71,6 +71,62 @@ document
 	.querySelectorAll("button")
 	.forEach((btn) => (btn.onclick = (ev) => ev.preventDefault()));
 
+// Auto Login
+if (localStorage.getItem("password") === "VortexAndHonor") {
+	document.body.classList.remove("disable-scrolling");
+} else {
+	document.body.className = "disable-scrolling";
+	let loginScreen = document.createElement("div");
+	loginScreen.className = "login-screen";
+	loginScreen.id = "login-screen";
+	loginScreen.style.opacity = "1";
+	loginScreen.innerHTML = `
+	<div class="popup-window">
+		<div class="popup-header"><h5>Login</h5></div>
+		<div class="body">
+			<form action">
+				<label class="password-form d-flex align-items-center flex-column"
+					><span class="me-auto">Enter Your Password:</span>
+					<div class="d-flex w-100 mt-1">
+						<input
+							class="me-1 d-block w-100"
+							id="login-password"
+							type="password"
+							name="login-password"
+							placeholder="Password"
+						/>
+						<button class="show-or-hide circle">
+						<i class="fa-solid fa-eye"></i>
+						</button>
+						</div>
+						<div class="wrong-password-text"> Wrong Password</div>
+						<button class="login w-100">Login</button></label
+						>
+						</form>
+		</div>
+	</div>
+	<div class="overley"></div>
+	`;
+	document.body.children[0].before(loginScreen);
+	loginScreen.querySelector(
+		"#login-screen > div.popup-window > div.body > form > label > button.login"
+	).onclick = async (ev) => {
+		ev.preventDefault();
+		// console.log("hi");
+		let password = loginScreen.querySelector("#login-password");
+		console.log(password.value);
+		if (password.value === "VortexAndHonor") {
+			document.body.classList.remove("disable-scrolling");
+			loginScreen.style.opacity = "0";
+			await delay(350);
+			loginScreen.remove();
+			localStorage.setItem("password", "VortexAndHonor");
+		} else {
+			loginScreen.querySelector(".wrong-password-text").style.opacity = "1";
+		}
+	};
+}
+
 // Navigate To Screens
 let navs = document.querySelectorAll(
 	"body > .container > ul > li:not(.discord)"
@@ -413,9 +469,9 @@ menuBtns.forEach((element) => {
         <h5>Alert</h5>
     </div>
     <div class="body">
-		  <span class="text-center w-100 d-block">The ${btnContent} Operation Was Successful</span>
-		  <button class="mt-2 close text-center w-100 d-block">Close</button>
-		  </div>
+			<span class="text-center w-100 d-block">The ${btnContent} Operation Was Successful</span>
+			<button class="mt-2 close text-center w-100 d-block">Close</button>
+			</div>
 		</div>
 		`;
 		let overley = document.createElement("div");

@@ -1,36 +1,37 @@
 mixin chat 
-  //- Header
-  +header-of-screen("Chat")
-  //- Body
-  div.container
-    //- Active Players
-    div.service-container
-      h4.text-center Live Players
-      div.active-players
-        span Vortex
-        span Zad
-        span Islam
-        span sara
-        span Test
-        span Dest
-        
-    //- Messages
-    div.service-container.mt-2
-      h4.text-center Messages
-      div.messages
-        p Islam: Hoho
-        p Islam: Hehe
-        p Islam: Haha
-        p Islam: Huhu
-        p Islam: Test
-      //- Messages Sender
-      div.write-messages
-        form.d-flex
-          textarea(
-            class="w-100",
-            name="messages",
-            id="messages",
-            placeholder="Type Your Message Here",
-            autofocus
-          )
-          button.submit.circle: i(class="fa-solid fa-paper-plane")
+  .chat-screen.screen#chat
+    //- Header
+    +header-of-screen("Chat")
+    //- Body
+    .container
+      //- Active Players
+      .service-container
+        h4.text-center Live Players
+        .active-players
+          span Vortex
+          span Zad
+          span Islam
+          span sara
+          span Test
+          span Dest
+          
+      //- Messages
+      .service-container.mt-2
+        h4.text-center Messages
+        .messages
+          p Islam: Hoho
+          p Islam: Hehe
+          p Islam: Haha
+          p Islam: Huhu
+          p Islam: Test
+        //- Messages Sender
+        .write-messages
+          form.d-flex
+            textarea(
+              class="w-100",
+              name="messages",
+              id="messages",
+              placeholder="Type Your Message Here",
+              autofocus
+            )
+            button.submit.circle: i(class="fa-solid fa-paper-plane")  

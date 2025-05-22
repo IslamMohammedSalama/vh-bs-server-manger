@@ -1,13 +1,14 @@
 mixin quick-tools
-  //- Header
-  +header-of-screen("Quick Tools")
-  //- Body
-  ul.container
-    li
-      form
-        span Restart Your Server
-        button.restart-btn Restart
-    li
-      form
-        span Close Your Server
-        button.close-btn Close
+  .quick-tools-screen.screen
+    //- Header
+    +header-of-screen("Quick Tools")
+    //- Body
+    ul.container
+      li
+        form
+          span Restart Your Server
+          button.restart-btn Restart
+      li
+        form
+          span Close Your Server
+          button.close-btn Close

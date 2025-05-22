@@ -1,10 +1,12 @@
 mixin website-settings 
-  //- Header
-  +header-of-screen("Website Settings")
-  //- Body
-  ul.container
-    li
-      label.switch 
-        span Dark Style
-        input.toggle-checkbox.dark-mode#dark-mode(type="checkbox", name="dark-mode")
-        button.toggle-switch
+  .website-settings-screen.screen#website-settings
+
+    //- Header
+    +header-of-screen("Website Settings")
+    //- Body
+    ul.container
+      li
+        label.switch 
+          span Dark Style
+          input.toggle-checkbox.dark-mode#dark-mode(type="checkbox", name="dark-mode")
+          button.toggle-switch

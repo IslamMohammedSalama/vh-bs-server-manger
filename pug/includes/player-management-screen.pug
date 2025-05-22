@@ -1,70 +1,72 @@
 mixin player-management 
-  //- Header
-  +header-of-screen("Player Management")
-  .body.container
-    table.container
-      thead
-        tr
-          th Rank
-          th Name
-          th Score
-          th Kills
-          th 
-            button.circle.open-menu.open-menu-head: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-head
-              button Sort By Kills
-              button Sort By Score
-      tbody
-        tr
-          td 1.
-          td Zad
-          td 2000
-          td 2000
-          td
-            button.circle.open-menu.open-menu-1: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-1
-              button Mute
-              button Ban
-        tr
-          td 2.
-          td Vortex
-          td 2000
-          td 2000
-          td
-            button.circle.open-menu.open-menu-2: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-2
-              button Mute
-              button Ban
+  .player-management-screen.screen#player-management
 
-        tr
-          td 3.
-          td Sara
-          td 2000
-          td 2000
-          td
-            button.circle.open-menu.open-menu-3: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-3
-              button Mute
-              button Ban
+    //- Header
+    +header-of-screen("Player Management")
+    .body.container
+      table.container
+        thead
+          tr
+            th Rank
+            th Name
+            th Score
+            th Kills
+            th 
+              button.circle.open-menu.open-menu-head: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-head
+                button Sort By Kills
+                button Sort By Score
+        tbody
+          tr
+            td 1.
+            td Zad
+            td 2000
+            td 2000
+            td
+              button.circle.open-menu.open-menu-1: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-1
+                button Mute
+                button Ban
+          tr
+            td 2.
+            td Vortex
+            td 2000
+            td 2000
+            td
+              button.circle.open-menu.open-menu-2: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-2
+                button Mute
+                button Ban
 
-        tr
-          td 4.
-          td Dest
-          td 1000
-          td 1000
-          td
-            button.circle.open-menu.open-menu-4: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-4
-              button Mute
-              button Ban
+          tr
+            td 3.
+            td Sara
+            td 2000
+            td 2000
+            td
+              button.circle.open-menu.open-menu-3: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-3
+                button Mute
+                button Ban
 
-        tr
-          td 5.
-          td Islam
-          td 50
-          td 50
-          td
-            button.circle.open-menu.open-menu-5: i(class="fa-solid fa-ellipsis-vertical")
-            .menu.menu-5
-              button Mute
-              button Ban
+          tr
+            td 4.
+            td Dest
+            td 1000
+            td 1000
+            td
+              button.circle.open-menu.open-menu-4: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-4
+                button Mute
+                button Ban
+
+          tr
+            td 5.
+            td Islam
+            td 50
+            td 50
+            td
+              button.circle.open-menu.open-menu-5: i(class="fa-solid fa-ellipsis-vertical")
+              .menu.menu-5
+                button Mute
+                button Ban

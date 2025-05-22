@@ -1,3 +1,4 @@
+include includes/login-screen.pug
 include includes/variables.pug
 include includes/mixins.pug
 include includes/home-screen.pug
@@ -38,31 +39,32 @@ html(lang="en")
 		noscript: link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap",
 			rel="text/css")
 
-	body 
+	body
+		//- Login Screen
+		//- +login-screen
+		//- Home Screen
 		+home
 		//- Overview Screen
-		div.overview-screen.screen#overview 
-			+overview
-		div.chat-screen.screen#chat
-			+chat
-		div.player-management-screen.screen#player-management
-			+player-management
-		div.server-settings-screen.screen#server-settings
-			+server-settings
+		+overview
+		//- Chat Screen
+		+chat
+		//- Player Management
+		+player-management
+		//- Server Settings
+		+server-settings
 		//- Rules Management Screen
-		div.rules-management-screen.screen#rules-management
-			+rules-management
-		div.quick-tools-screen.screen
-			+quick-tools
-		div.server-logs-screen.screen#server-logs
-			+server-logs
-		div.effects-and-tag-management-screen.screen#effects-and-tag-management
-			+effects-and-tag-management
-		div.import-and-export-settings-screen.screen#import-and-export-settings
-			+import-and-export-server-settings
-		div.change-server-screen.screen#change-server
-			+change-server
-		div.website-settings-screen.screen#website-settings
-			+website-settings
+		+rules-management
+		//- Quick Tools
+		+quick-tools
+		//- Server Logs
+		+server-logs
+		//- Effects And Tags Management
+		+effects-and-tag-management
+		//- Import/Export Server Settings
+		+import-and-export-server-settings
+		//- Change Server 
+		+change-server
+		//- Website Settings
+		+website-settings
 
 		script(src="js/script.min.js" async defer)

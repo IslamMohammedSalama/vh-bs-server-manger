@@ -28,7 +28,7 @@ label.radio-box {
 		&::after {
 			content: "";
 			transition: var(--animation-duration,$animation-duration);
-			@include circle(12.5px);
+			@include circle(13px);
 			background-color: var(--main-color,$main-color);
 			transform: scale(0);
 		}

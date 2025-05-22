@@ -4,23 +4,36 @@
 
 ul {
 	> li {
-		&.number-chooser,
-		&:has(> span) {
-			padding: var(--main-padding-size,$main-padding-size);
-		}
-		span {
-			text-align: left;
-		}
-		transition: var(--animation-duration,$animation-duration);
+		transition: var(--animation-duration, $animation-duration);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: var(--color-5,get-item-by-index($main-colors, 5));
-		border-radius: var(--main-border-radius-size,$main-border-radius-size);
+		background-color: var(--color-5, get-item-by-index($main-colors, 5));
+		border-radius: var(--main-border-radius-size, $main-border-radius-size);
 		margin-bottom: 5px;
+		&.number-chooser,
+		&:has(> span) {
+			padding: var(--main-padding-size, $main-padding-size);
+		}
+		// span {
+		// 	text-align: left;
+		// }
+		&.number-chooser {
+			flex-direction: row;
+			@include mobile-screens {
+				flex-direction: column;
+			}
+			> span:last-of-type {
+				width: 200px !important;
+				@include mobile-screens {
+					width: 100%;
+				}
+			}
+		}
+
 		&:not(.popup) {
 			&:hover {
-				background-color: var(--color-6,get-item-by-index($main-colors, 6));
+				background-color: var(--color-6, get-item-by-index($main-colors, 6));
 				cursor: pointer;
 			}
 		}
@@ -30,14 +43,14 @@ ul {
 			justify-content: space-between;
 			align-items: center;
 			&:not(form:has(label)) {
-				padding: var(--main-padding-size,$main-padding-size);
+				padding: var(--main-padding-size, $main-padding-size);
 			}
 		}
 		label.form,
 		label.password-form,
-		label.switch ,
-		label.radio-box{
-			padding: var(--main-padding-size,$main-padding-size);
+		label.switch,
+		label.radio-box {
+			padding: var(--main-padding-size, $main-padding-size);
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
@@ -52,7 +65,7 @@ ul {
 				&.form span:first-child {
 					margin-bottom: 2.5px;
 				}
-				&:not(.radio-box,.switch) {
+				&:not(.radio-box, .switch) {
 					flex-direction: column;
 				}
 				&.password-form div {
@@ -82,13 +95,13 @@ ul {
 			> div:first-child {
 				display: flex;
 				align-items: center;
-				transition: var(--animation-duration,$animation-duration);
+				transition: var(--animation-duration, $animation-duration);
 				height: 100%;
 				cursor: pointer;
-				padding: var(--main-padding-size,$main-padding-size);
-				border-radius: var(--main-border-radius-size,$main-border-radius-size);
+				padding: var(--main-padding-size, $main-padding-size);
+				border-radius: var(--main-border-radius-size, $main-border-radius-size);
 				&:hover {
-					background-color: var(--color-6,get-item-by-index($main-colors, 6));
+					background-color: var(--color-6, get-item-by-index($main-colors, 6));
 				}
 			}
 		}
@@ -103,11 +116,14 @@ ul {
 			background-color: transparent;
 			display: flex;
 			justify-content: space-between;
-			padding: var(--main-padding-size,$main-padding-size);
+			padding: var(--main-padding-size, $main-padding-size);
 			// border-radius: 0 0 0 0 !important;
-			border-radius: var(--main-border-radius-size,$main-border-radius-size) !important;
+			border-radius: var(
+				--main-border-radius-size,
+				$main-border-radius-size
+			) !important;
 			&:hover {
-				background-color: var(--color-6,get-item-by-index($main-colors, 6));
+				background-color: var(--color-6, get-item-by-index($main-colors, 6));
 			}
 		}
 	}
@@ -120,5 +136,12 @@ ul {
 		label:not(.switch) {
 			flex-direction: column;
 		}
+	}
+}
+
+.popup-window .number-chooser {
+	flex-direction: column;
+	@include small-screens {
+		flex-direction: row;
 	}
 }

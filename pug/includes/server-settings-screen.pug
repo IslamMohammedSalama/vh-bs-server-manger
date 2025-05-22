@@ -440,11 +440,14 @@ mixin server-settings
                     span
                       input#enable-coop.toggle-checkbox(type="checkbox", name="enable-coop")
                       button.toggle-switch
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Minimum Player To Exit Coop:
-                    input.me-1.d-block#min-players-to-coop(type="number", name="min-players-to-coop" placeholder="Type Your Number" value="0")
+              li.number-chooser
+                span Minimum Players To Exit:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
         .overley
       //- Discord Web Hooks
       li.popup
@@ -555,104 +558,161 @@ mixin server-settings
                     span Powerup Gravity:
                     input#powerups-gravity.toggle-checkbox(type="checkbox", name="powerup-gravity")
                     button.toggle-switch
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Heath Damage PTG: 
-                    input.me-1.d-block#heath-damage-ptg(type="number", name="heath-damage-ptg" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Powerup Scale:
-                    input.me-1.d-block#powerup-scale(type="number", name="powerup-scale" placeholder="Type Your Number" value="1")
+              li.number-chooser
+                span.me-auto Heath Damage PTG: 
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Powerup Scale:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
             ul.mb-2
               li 
                 span Quantity:
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Curse:
-                    input.me-1.d-block#quantity-curse(type="number", name="quantity-curse" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Fire Bomb:
-                    input.me-1.d-block#quantity-fire-bomb(type="number", name="quantity-fire-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Fly Bomb:
-                    input.me-1.d-block#quantity-fly-bomb(type="number", name="quantity-fly-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Goodbye:
-                    input.me-1.d-block#quantity-goodbye(type="number", name="quantity-goodbye" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Healing Bomb:
-                    input.me-1.d-block#quantity-healing-bomb(type="number", name="quantity-healing-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Health:
-                    input.me-1.d-block#quantity-health(type="number", name="quantity-health" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Ice Bomb:
-                    input.me-1.d-block#quantity-ice-bomb(type="number", name="quantity-ice-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Ice man:
-                    input.me-1.d-block#quantity-ice-man(type="number", name="quantity-ice-man" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Impact Bomb:
-                    input.me-1.d-block#quantity-impact-bomb(type="number", name="quantity-impact-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Impairment Bomb:
-                    input.me-1.d-block#quantity-impairment-bomb(type="number", name="quantity-impairment-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Mine Bomb:
-                    input.me-1.d-block#quantity-mine-bomb(type="number", name="quantity-mine-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Punch:
-                    input.me-1.d-block#quantity-punch(type="number", name="quantity-punch" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Shield:
-                    input.me-1.d-block#quantity-shield(type="number", name="quantity-shield" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Speed:
-                    input.me-1.d-block#quantity-speed(type="number", name="quantity-speed" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Sticky Bomb:
-                    input.me-1.d-block#quantity-sticky-bomb(type="number", name="quantity-sticky-bomb" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Tank Shield:
-                    input.me-1.d-block#quantity-tank-shield(type="number", name="quantity-tank-shield" placeholder="Type Your Number" value="1")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Triple Bomb:
-                    input.me-1.d-block#quantity-triple-bomb(type="number", name="quantity-triple-bomb" placeholder="Type Your Number" value="1")
+              li.number-chooser
+                span.me-auto Curse:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Fire Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Fly Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Goodbye:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Healing Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Health:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Ice Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Ice man:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Impact Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Impairment Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Mine Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Punch:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Shield:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Speed:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Sticky Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Tank Shield:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
+              li.number-chooser
+                span.me-auto Triple Bomb:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
         .overley
       //- Leader Board Settings
       li.popup
@@ -683,23 +743,32 @@ mixin server-settings
                       button.toggle-switch
         .overley
       //- Max Account Per Id
-      li
-        form(action="")
-          label.form
-            span Max Account Per Id:
-            input#max-account-per-id(placeholder="Type Your Number", name="max-account-per-id" type="number" value="1")
+      li.number-chooser
+        span Max Account Per Id:  
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter(data-min="2") 2
+          button.circle
+            i.fa-solid.fa-minus
       //- Max Players Per Device
-      li
-        form(action="")
-          label.form
-            span Max Players Per Device:
-            input#max-players-per-device(placeholder="Type Your Number", name="max-players-per-device" type="number" value="1")
+      li.number-chooser
+        span Max Players Per Device:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle 
+            i.fa-solid.fa-plus
+          span.counter(data-min="2") 5
+          button.circle
+            i.fa-solid.fa-minus
       //- Max Warn Count
-      li
-        form(action="")
-          label.form
-            span Max Warn Count:
-            input#max-warn-count(placeholder="Type Your Number", name="max-players-per-device" type="number" value="3")
+      li.number-chooser
+        span Max Warn Count:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter(data-min="2") 2
+          button.circle
+            i.fa-solid.fa-minus
       //- Enable Mikirog Quick Turn 
       li
         form(action="")
@@ -709,11 +778,14 @@ mixin server-settings
               input#enable-mikirog.toggle-checkbox(type="checkbox", name="enable-mikirog")
               button.toggle-switch
       //- Min Age to Chat 
-      li
-        form(action="")
-          label.form
-            span Min Age To Chat In Hours:
-            input#min-age-to-chat(placeholder="Type Your Number" name="min-age-to-chat" type="number" value="78")
+      li.number-chooser
+        span Min Age To Chat In Hours:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter(data-min="2") 2
+          button.circle
+            i.fa-solid.fa-minus
       //- New Result Board
       li
         form(action="")
@@ -749,11 +821,14 @@ mixin server-settings
                     span
                       input#enable-shield.toggle-checkbox(type="checkbox", name="enable-shield")
                       button.toggle-switch
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Default Bomb Count:
-                    input.me-1.d-block#default-bomb-count(type="number", name="default-bomb-count" placeholder="Type Your Count" value="2")
+              li.number-chooser
+                span.me-auto Default Bomb Count:
+                span.d-flex.justify-content-between.align-items-center
+                  button.circle
+                    i.fa-solid.fa-plus
+                  span.counter(data-min="2") 2
+                  button.circle
+                    i.fa-solid.fa-minus
             form
               ul 
                 li
@@ -824,11 +899,14 @@ mixin server-settings
               input#enable-white-list.toggle-checkbox(type="checkbox", name="enable-white-list")
               button.toggle-switch
       //- Stats Reset After Days
-      li 
-        form(action) 
-          label.form.d-flex.align-items-center
-            span.me-auto Stats Reset After Days:
-            input.me-1.d-block#stats-reset-days(type="number", name="stats-reset-days" placeholder="Type Your Count" value="31")
+      li.number-chooser
+        span.me-auto Stats Reset After Days:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter(data-min="2") 2
+          button.circle
+            i.fa-solid.fa-minus
       //- Use V2 Account
       li
         form(action="")
@@ -842,4 +920,4 @@ mixin server-settings
         form(action) 
           label.form.d-flex.align-items-center
             span.me-auto Regular Welcome Message:
-            input.me-1.d-block#regular-welcome-msg(type="text", name="regular-welcome-msg" placeholder="Type Your msg" value="0")
+            input.me-1.d-block#regular-welcome-msg(type="text", name="regular-welcome-msg" placeholder="Type Your msg" value="Hello My Friend")

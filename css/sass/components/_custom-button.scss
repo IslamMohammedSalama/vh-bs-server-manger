@@ -3,26 +3,33 @@
 @use "../helpers/functions" as *;
 button,
 input[type="submit"] {
-	padding: calc(var(--main-padding-size,$main-padding-size) / 2) var(--main-padding-size,$main-padding-size);
+	padding: calc(var(--main-padding-size, $main-padding-size) / 2)
+		var(--main-padding-size, $main-padding-size);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: none;
-	color: var(--main-text-color,$main-text-color);
-	// background-color: var(--color-6,get-item-by-index($main-colors,6));
+	color: var(--main-text-color, $main-text-color);
 	background-color: var(--main-color,$main-color);
-	transition: var(--animation-duration,$animation-duration);
+	&:has(svg),
+	&:has(i) {
+		background-color: var(--color-6, get-item-by-index($main-colors, 6));
+	}
+	transition: var(--animation-duration, $animation-duration);
 	&:not(.circle) {
 		border-radius: 50px;
 	}
 	&.circle {
-		@include circle(40px,"true");
+		@include circle(40px, "true");
 		justify-content: center !important;
 		align-items: center !important;
 	}
 	&:hover {
 		background-color: var(--main-alt-color,$main-alt-color);
-		// background-color: var(--color-7,get-item-by-index($main-colors,7));
+		&:has(svg),
+		&:has(i) {
+			background-color: var(--color-8, get-item-by-index($main-colors, 8));
+		}
 	}
 	> {
 		i,

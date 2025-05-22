@@ -10,7 +10,7 @@
 		> span {
 			display: block;
 			background-color: var(--main-color,$main-color);
-			padding: 7.5px;
+			padding: var(--main-padding-size,$main-padding-size)	;
 			border-radius: 50px;
 		}
 	}

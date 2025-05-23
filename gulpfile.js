@@ -175,7 +175,6 @@ gulp.task("connect", function (done) {
 	});
 	done();
 });
-
 // Watch task
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files

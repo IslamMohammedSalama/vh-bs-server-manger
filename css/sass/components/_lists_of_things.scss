@@ -4,6 +4,9 @@
 
 ul {
 	> li {
+		span {
+			text-align: left;
+		}
 		transition: var(--animation-duration, $animation-duration);
 		display: flex;
 		justify-content: space-between;
@@ -24,7 +27,7 @@ ul {
 				flex-direction: column;
 			}
 			> span:last-of-type {
-				width: 200px !important;
+				width: 200px;
 				@include mobile-screens {
 					width: 100%;
 				}

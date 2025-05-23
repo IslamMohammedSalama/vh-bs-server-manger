@@ -9,38 +9,38 @@ mixin server-settings
         form(action="")
           label.form
             span Server Name:
-            textarea#server-name(placeholder="Type Your Server Name Here", name="server-name")
+            textarea#server-name(placeholder="Type Your Server Name Here", name="server-name") Vortex Vs Honor 
       //- Host Device Name
       li
         form(action="")
           label.form
             span Host Device Name:
-            textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name")
+            textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name") 1.7.20
       //- Host Name
       li
         form(action="")
           label.form
             span Host Name:
-            textarea#host-name(placeholder="Type Your Host Name Here", name="host-name")
+            textarea#host-name(placeholder="Type Your Host Name Here", name="host-name") Vortex And Honor
       //- First Time Join Message
       li
         form(action="")
           label.form
             span First Time Join Message:
-            textarea#join-msg(placeholder="Type Your Join Message Here", name="join-msg")
+            textarea#join-msg(placeholder="Type Your Join Message Here", name="join-msg") Welcome To Our Server 
       //- After Warn Kick Message
       li
         form(action="")
           label.form
             span After Warn Kick Message:
-            textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here")
-      //- Players Size
+            textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here") You Will Eat A Ban If You Made This Again 
+      //- party Size
       li.number-chooser
-        span Player Size:
+        span Party Size:
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 2
+          span.counter.max-party-size(data-min="12") 12
           button.circle
             i.fa-solid.fa-minus
       //- Warn Cooldown
@@ -49,7 +49,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="1") 30
+          span.counter.warn-cooldown-time(data-min="1") 30
           button.circle
             i.fa-solid.fa-minus
       //- Allow In Game Chat
@@ -58,7 +58,7 @@ mixin server-settings
           label.switch
             span Allow In Game Chat
             span
-              input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat")
+              input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat" checked)
               button.toggle-switch
       //- Allow Team Chat
       li
@@ -66,7 +66,7 @@ mixin server-settings
           label.switch
             span Allow Team Chat:
             span
-              input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat")
+              input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat" checked)
               button.toggle-switch
       //- Allow Votes
       li
@@ -74,7 +74,7 @@ mixin server-settings
           label.switch
             span Allow Votes:
             span
-              input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes")
+              input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes" checked)
               button.toggle-switch
       //- Auto Team Balance
       li
@@ -82,7 +82,7 @@ mixin server-settings
           label.switch
             span Auto Team Balance:
             span
-              input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance")
+              input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance" checked)
               button.toggle-switch
       //- Character Chooser
       li
@@ -90,7 +90,7 @@ mixin server-settings
           label.switch
             span Character Chooser:
             span
-              input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser")
+              input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser" checked)
               button.toggle-switch
       //- Colorful Explosions
       li
@@ -98,7 +98,7 @@ mixin server-settings
           label.switch
             span Colorful Explosion:
             span
-              input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion")
+              input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion" checked)
               button.toggle-switch
       //- Colorful Maps
       li
@@ -106,7 +106,7 @@ mixin server-settings
           label.switch
             span Colorful Maps
             span
-              input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps")
+              input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps" checked)
               button.toggle-switch
       //- Contribute Data
       li
@@ -114,7 +114,7 @@ mixin server-settings
           label.switch
             span Contribute Data:
             span
-              input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data")
+              input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data" checked)
               button.toggle-switch
       //- Enable Hit Text
       li
@@ -122,7 +122,7 @@ mixin server-settings
           label.switch
             span Enable Hit Text:
             span
-              input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text")
+              input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text" checked)
               button.toggle-switch
       //- Enable Tag Animation
       li
@@ -130,7 +130,7 @@ mixin server-settings
           label.switch
             span Enable Tag Animation:
             span
-              input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation")
+              input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation" checked)
               button.toggle-switch
       //- Enable Top 5 Effects
       li
@@ -138,7 +138,7 @@ mixin server-settings
           label.switch
             span Enable Top 5 Effects:
             span
-              input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects")
+              input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects" checked)
               button.toggle-switch
       //- Enable Effects
       li
@@ -146,7 +146,7 @@ mixin server-settings
           label.switch
             span Enable Effects:
             span
-              input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects")
+              input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects" checked)
               button.toggle-switch
       //- Enable HP Tag
       li
@@ -154,7 +154,7 @@ mixin server-settings
           label.switch
             span Enable HP Tag:
             span
-              input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag")
+              input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag" checked)
               button.toggle-switch
       //- Enable Rank
       li
@@ -162,7 +162,7 @@ mixin server-settings
           label.switch
             span Enable Rank:
             span
-              input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank")
+              input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank" checked)
               button.toggle-switch
       //- Enable Stats
       li
@@ -170,7 +170,15 @@ mixin server-settings
           label.switch
             span Enable Stats:
             span
-              input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats")
+              input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats" checked)
+              button.toggle-switch
+      //- Authenticate Clients
+      li
+        form(action="")
+          label.switch
+            span Authenticate Clients:
+            span
+              input#auth-clients.toggle-checkbox(type="checkbox", name="auth-clients" checked)
               button.toggle-switch
       //- Anti Id Revealer Switch Toggler
       li
@@ -186,7 +194,7 @@ mixin server-settings
           label.switch
             span Show Kick Vote Starter Name:
             span
-              input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name")
+              input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name" checked)
               button.toggle-switch
       //- Chat Commands Or Broadcast Commands
       li
@@ -194,7 +202,7 @@ mixin server-settings
           label.switch
             span Chat Commands (Or Broadcast Commands):
             span
-              input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands")
+              input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands" checked)
               button.toggle-switch
       //- Stumbled Score Screen
       li
@@ -202,7 +210,7 @@ mixin server-settings
           label.switch
             span Stumbled Score Screen:
             span
-              input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen")
+              input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen" checked)
               button.toggle-switch
       //- Enable Tags
       li
@@ -210,7 +218,7 @@ mixin server-settings
           label.switch
             span Enable Tags:
             span
-              input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags")
+              input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags" checked)
               button.toggle-switch
       //- Teams Settings
       li.popup
@@ -230,24 +238,24 @@ mixin server-settings
                 form(action="")
                   label.form
                     span First Team Name:
-                    textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name")
+                    textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name") Vortex
               li
                 form(action="")
                   label.form
                     span First Team Color:
-                    input#first-team-color(type="color", name="first-team-color")
+                    input#first-team-color(type="color", name="first-team-color" value="#00ffff")
             //- Second Team
             ul.mt-2
               li
                 form(action="")
                   label.form
                     span Second Team Name:
-                    textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name")
+                    textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name") Honor
               li
                 form(action="")
                   label.form
                     span Second Team Color:
-                    input#second-team-color(type="color", name="second-team-color")
+                    input#second-team-color(type="color", name="second-team-color" value="#eeff00")
         .overley
       //- Score Screen Announcement
       li.popup
@@ -267,7 +275,7 @@ mixin server-settings
                   label.switch
                     span Enable 
                     span
-                      input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement")
+                      input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement" checked)
                       button.toggle-switch
               li
                 form(action="")
@@ -342,7 +350,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="1") 1
+                  span.counter.in-game-idle(data-min="1") 1
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -350,7 +358,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="1") 1
+                  span.counter.lobby-idle(data-min="1") 1
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -445,7 +453,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.minimum-players-to-exit(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -563,7 +571,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.health-damage(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -571,7 +579,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.powerups-scale(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
             ul.mb-2
@@ -582,7 +590,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.curse-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -590,7 +598,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.fire-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -598,7 +606,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.fly-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -606,7 +614,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.goodbye-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -614,7 +622,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.healing-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -622,7 +630,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.health-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -630,7 +638,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.ice-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -638,7 +646,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.ice-man-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -646,7 +654,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.impact-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -654,7 +662,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.impairment-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -662,7 +670,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.mine-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -670,7 +678,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.punch-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -678,7 +686,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.shield-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -686,7 +694,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.speed-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -694,7 +702,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.sticky-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -702,7 +710,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.tank-shield-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -710,7 +718,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.triple-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -748,7 +756,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 2
+          span.counter.max-account-per-id(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Max Players Per Device
@@ -757,7 +765,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle 
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 5
+          span.counter.max-players-ber-devices(data-min="2") 5
           button.circle
             i.fa-solid.fa-minus
       //- Max Warn Count
@@ -766,7 +774,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 2
+          span.counter.max-warn-count(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Enable Mikirog Quick Turn 
@@ -783,7 +791,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 2
+          span.counter.min-age-to-chat(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- New Result Board
@@ -826,7 +834,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter(data-min="2") 2
+                  span.counter.default-bomb-count(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
             form
@@ -881,7 +889,7 @@ mixin server-settings
         form(action="")
           label.form
             span Warn Msg:
-            textarea#warn-msg.kick-msg(placeholder="Type Your Warn Msg Here")
+            textarea#warn-msg.warn-msg(placeholder="Type Your Warn Msg Here") Don't Make This Again
       //- Same Character For Team
       li
         form(action="")
@@ -904,7 +912,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter(data-min="2") 2
+          span.counter.stats-reset(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Use V2 Account
@@ -920,4 +928,4 @@ mixin server-settings
         form(action) 
           label.form.d-flex.align-items-center
             span.me-auto Regular Welcome Message:
-            input.me-1.d-block#regular-welcome-msg(type="text", name="regular-welcome-msg" placeholder="Type Your msg" value="Hello My Friend")
+            textarea.me-1.d-block#regular-welcome-msg( name="regular-welcome-msg" placeholder="Type Your msg" ) Hello My Friend

@@ -1,3 +1,15 @@
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }) // Scope typically defaults to '/' if not specified
+      .then((registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch((err) => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  });
+}
 // Wait function
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 // Send Msg Function

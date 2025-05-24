@@ -10,7 +10,7 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 import connect from "gulp-connect";
-import babel from "gulp-babel";
+// import babel from "gulp-babel";
 const sass = gulpSass(dartSass);
 
 // File paths
@@ -26,7 +26,7 @@ const paths = {
 		destPath: "dist/css/style.min.css",
 	},
 	js: {
-		src: ["js/**/*.js"],
+		src: ["js/**/*.js","!js/sw.js"],
 		dest: "dist/js",
 		destPath: "dist/js/script.min.js",
 	},
@@ -99,13 +99,7 @@ gulp.task("clean:css", function () {
 gulp.task("js", () =>
 	gulp
 		.src(paths.js.src, { base: "js" })
-		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
-		// .pipe(
-		// 	babel({
-		// 		presets: ["@babel/env"],
-		// 		// compact:false
-		// 	})
-		// )
+		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true }))
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
 		.pipe(sourcemaps.write("./maps"))
@@ -120,6 +114,13 @@ gulp.task("js", () =>
 				icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 			})
 		)
+);
+// JavaScript task
+gulp.task("sw-js", () =>
+	gulp
+		.src("js/sw.js", { base: "js" })
+		.pipe(gulp.dest(paths.html.dest))
+		.pipe(connect.reload())
 );
 
 // New: Specific clean task for HTML output
@@ -179,6 +180,7 @@ gulp.task("connect", function (done) {
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
 	gulp.watch("css/**/*.scss", gulp.series("css"));
+	gulp.watch("js/sw.js", gulp.series("sw-js"));
 	gulp.watch(paths.js.src, gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
@@ -191,7 +193,7 @@ gulp.task(
 	"build",
 	gulp.series(
 		"clean",
-		gulp.parallel("html", "css", "js", "assets"),
+		gulp.parallel("html", "css", "js","sw-js", "assets"),
 		"compress",
 		"build-msg"
 	)

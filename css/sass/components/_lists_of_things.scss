@@ -120,11 +120,10 @@ ul {
 			display: flex;
 			justify-content: space-between;
 			padding: var(--main-padding-size, $main-padding-size);
-			// border-radius: 0 0 0 0 !important;
 			border-radius: var(
 				--main-border-radius-size,
 				$main-border-radius-size
-			) !important;
+			) ;
 			&:hover {
 				background-color: var(--color-6, get-item-by-index($main-colors, 6));
 			}

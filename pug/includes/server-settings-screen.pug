@@ -22,6 +22,12 @@ mixin server-settings
           label.form
             span Host Name:
             textarea#host-name(placeholder="Type Your Host Name Here", name="host-name") Vortex And Honor
+      //- Playlist Code
+      li
+        form(action="")
+          label.form
+            span Playlist Code:
+            input#playlist-code(placeholder="Type Server Playlist Code", name="playlist-code" value="412158") 
       //- First Time Join Message
       li
         form(action="")
@@ -40,7 +46,25 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.max-party-size(data-min="12") 12
+          span.counter.max-party-size#max-party-size(data-min="2") 12
+          button.circle
+            i.fa-solid.fa-minus
+      //- party Size
+      li.number-chooser
+        span FFA Series Length:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter.ffa-series-length#ffa-series-length(data-min="1") 24
+          button.circle
+            i.fa-solid.fa-minus
+      //- Clean Exit Time
+      li.number-chooser
+        span Clean Exit Time:
+        span.d-flex.justify-content-between.align-items-center
+          button.circle
+            i.fa-solid.fa-plus
+          span.counter.clean-exit-time#clean-exit-time(data-min="12") 0 
           button.circle
             i.fa-solid.fa-minus
       //- Warn Cooldown
@@ -49,7 +73,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.warn-cooldown-time(data-min="1") 30
+          span.counter.warn-cooldown-time#warn-cooldown-time(data-min="1") 30
           button.circle
             i.fa-solid.fa-minus
       //- Allow In Game Chat
@@ -58,7 +82,23 @@ mixin server-settings
           label.switch
             span Allow In Game Chat
             span
-              input#allow-in-game-chat.toggle-checkbox(type="checkbox", name="allow-in-game-chat" checked)
+              input#in-game-chat.toggle-checkbox(type="checkbox", name="in-game-chat" checked)
+              button.toggle-switch
+      //- Public Party
+      li
+        form(action="")
+          label.switch
+            span Public Party
+            span
+              input#public-party.toggle-checkbox(type="checkbox", name="public-party" checked)
+              button.toggle-switch
+      //- Playlist Shuffle
+      li
+        form(action="")
+          label.switch
+            span Playlist Shuffle
+            span
+              input#playlist-shuffle.toggle-checkbox(type="checkbox", name="playlist-shuffle" checked)
               button.toggle-switch
       //- Allow Team Chat
       li
@@ -66,7 +106,7 @@ mixin server-settings
           label.switch
             span Allow Team Chat:
             span
-              input#allow-team-chat.toggle-checkbox(type="checkbox", name="allow-team-chat" checked)
+              input#team-chat.toggle-checkbox(type="checkbox", name="team-chat" checked)
               button.toggle-switch
       //- Allow Votes
       li
@@ -74,7 +114,15 @@ mixin server-settings
           label.switch
             span Allow Votes:
             span
-              input#allow-votes.toggle-checkbox(type="checkbox", name="allow-votes" checked)
+              input#votes.toggle-checkbox(type="checkbox", name="votes" checked)
+              button.toggle-switch
+      //- Enable Default Kick Voting
+      li
+        form(action="")
+          label.switch
+            span Enable Default Kick Voting:
+            span
+              input#default-kick-voting.toggle-checkbox(type="checkbox", name="default-kick-voting" checked)
               button.toggle-switch
       //- Auto Team Balance
       li
@@ -84,6 +132,34 @@ mixin server-settings
             span
               input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance" checked)
               button.toggle-switch
+      //- Auto Team Balance
+      li
+        form(action="")
+          label.switch
+            span Enable Queue :
+            span
+              input#queue.toggle-checkbox(type="checkbox", name="queue")
+              button.toggle-switch
+      //- Enable Telnet
+      li
+        form(action="")
+          label.switch
+            span Enable Telnet :
+            span
+              input#telnet.toggle-checkbox(type="checkbox", name="telnet")
+              button.toggle-switch
+      //- Coop Level
+      li
+        form(action="")
+          label.form
+            span Coop Level:
+            textarea#coop-level(placeholder="Type Your Coop Level Name Here", name="coop-level") OnSlaught Training
+      //- Coop Campaign
+      li
+        form(action="")
+          label.form
+            span Coop Campaign:
+            textarea#coop-campaign(placeholder="Type Your Coop Level Name Here", name="coop-campaign") Easy
       //- Character Chooser
       li
         form(action="")
@@ -122,7 +198,7 @@ mixin server-settings
           label.switch
             span Enable Hit Text:
             span
-              input#enable-hit-text.toggle-checkbox(type="checkbox", name="enable-hit-text" checked)
+              input#hit-text.toggle-checkbox(type="checkbox", name="hit-text" checked)
               button.toggle-switch
       //- Enable Tag Animation
       li
@@ -130,7 +206,7 @@ mixin server-settings
           label.switch
             span Enable Tag Animation:
             span
-              input#enable-tag-animation.toggle-checkbox(type="checkbox", name="enable-tag-animation" checked)
+              input#tag-animation.toggle-checkbox(type="checkbox", name="tag-animation" checked)
               button.toggle-switch
       //- Enable Top 5 Effects
       li
@@ -138,7 +214,7 @@ mixin server-settings
           label.switch
             span Enable Top 5 Effects:
             span
-              input#enable-top-5-effects.toggle-checkbox(type="checkbox", name="enable-top-5-effects" checked)
+              input#top-5-effects.toggle-checkbox(type="checkbox", name="top-5-effects" checked)
               button.toggle-switch
       //- Enable Effects
       li
@@ -146,7 +222,7 @@ mixin server-settings
           label.switch
             span Enable Effects:
             span
-              input#enable-effects.toggle-checkbox(type="checkbox", name="enable-effects" checked)
+              input#effects.toggle-checkbox(type="checkbox", name="effects" checked)
               button.toggle-switch
       //- Enable HP Tag
       li
@@ -154,7 +230,7 @@ mixin server-settings
           label.switch
             span Enable HP Tag:
             span
-              input#enable-hp-tag.toggle-checkbox(type="checkbox", name="enable-hp-tag" checked)
+              input#hp-tag.toggle-checkbox(type="checkbox", name="hp-tag" checked)
               button.toggle-switch
       //- Enable Rank
       li
@@ -162,7 +238,7 @@ mixin server-settings
           label.switch
             span Enable Rank:
             span
-              input#enable-rank.toggle-checkbox(type="checkbox", name="enable-rank" checked)
+              input#rank.toggle-checkbox(type="checkbox", name="rank" checked)
               button.toggle-switch
       //- Enable Stats
       li
@@ -170,7 +246,7 @@ mixin server-settings
           label.switch
             span Enable Stats:
             span
-              input#enable-stats.toggle-checkbox(type="checkbox", name="enable-stats" checked)
+              input#stats.toggle-checkbox(type="checkbox", name="stats" checked)
               button.toggle-switch
       //- Authenticate Clients
       li
@@ -218,7 +294,7 @@ mixin server-settings
           label.switch
             span Enable Tags:
             span
-              input#enable-tags.toggle-checkbox(type="checkbox", name="enable-tags" checked)
+              input#tags.toggle-checkbox(type="checkbox", name="tags" checked)
               button.toggle-switch
       //- Teams Settings
       li.popup
@@ -275,7 +351,7 @@ mixin server-settings
                   label.switch
                     span Enable 
                     span
-                      input#enable-score-screen-announcement.toggle-checkbox(type="checkbox", name="enable-score-screen-announcement" checked)
+                      input#score-screen-announcement.toggle-checkbox(type="checkbox", name="score-screen-announcement" checked)
                       button.toggle-switch
               li
                 form(action="")
@@ -336,21 +412,21 @@ mixin server-settings
                   label.switch
                     span Afk Remove:
                     span
-                      input#enable-afk-remove.toggle-checkbox(type="checkbox", name="enable-afk-remove")
+                      input#afk-remove.toggle-checkbox(type="checkbox", name="afk-remove")
                       button.toggle-switch
               li
                 form(action="")
                   label.switch
                     span Kick Idle From Lobby:
                     span
-                      input#enable-kick-from-lobby.toggle-checkbox(type="checkbox", name="enable-kick-from-lobby")
+                      input#kick-from-lobby.toggle-checkbox(type="checkbox", name="kick-from-lobby")
                       button.toggle-switch
               li.number-chooser
                 span In Game Idle Time In Sec:
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.in-game-idle(data-min="1") 1
+                  span.counter.in-game-idle#in-game-idle(data-min="1") 1
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -358,7 +434,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.lobby-idle(data-min="1") 1
+                  span.counter.lobby-idle#lobby-idle(data-min="1") 1
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -379,25 +455,25 @@ mixin server-settings
                 form(action="")
                   label.form
                     span  Start Time:
-                    input(type="time", name="")
+                    input.start-time-auto-night#start-time-auto-night(type="time", name="start-time-auto-night")
               li
                 form(action="")
                   label.form
                     span  End Time:
-                    input(type="time", name="")
+                    input.end-time-auto-night#end-time-auto-night(type="time", name="end-time-auto-night")
               li
                 form(action="")
                   label.switch
                     span Enable Fireflies:
                     span
-                      input#enable-fireflies.toggle-checkbox(type="checkbox", name="enable-fireflies")
+                      input#fireflies.toggle-checkbox(type="checkbox", name="fireflies")
                       button.toggle-switch
               li
                 form(action="")
                   label.switch
                     span Enable Random Fireflies:
                     span
-                      input#enable-random-fireflies.toggle-checkbox(type="checkbox", name="enable-random-fireflies")
+                      input#random-fireflies.toggle-checkbox(type="checkbox", name="random-fireflies")
                       button.toggle-switch
         .overley
       //- Server Website Settings
@@ -418,14 +494,14 @@ mixin server-settings
                   label.switch
                     span Enable Website:
                     span
-                      input#enable-srv-website.toggle-checkbox(type="checkbox", name="enable-srv-website")
+                      input#srv-website.toggle-checkbox(type="checkbox", name="srv-website")
                       button.toggle-switch
               li 
                 form(action) 
                   label.password-form.d-flex.align-items-center
                     span.me-auto Website Password:
                     .d-flex   
-                      input.me-1.d-block#website-password(type="password", name="website-password" placeholder="Type Your Server Password")
+                      input.me-1.d-block#website-password(type="password", name="website-password" placeholder="Type Your Server Password" value="VortexAndHonor")
                       button.show-or-hide.circle: i.fa-solid.fa-eye
         .overley
       //- Coop Settings
@@ -446,14 +522,14 @@ mixin server-settings
                   label.switch
                     span Enable Coop:
                     span
-                      input#enable-coop.toggle-checkbox(type="checkbox", name="enable-coop")
+                      input#coop.toggle-checkbox(type="checkbox", name="coop")
                       button.toggle-switch
               li.number-chooser
                 span Minimum Players To Exit:
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.minimum-players-to-exit(data-min="2") 2
+                  span.counter.min-players-to-exit-coop#min-player-to-exit-coop(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -475,7 +551,7 @@ mixin server-settings
                   label.switch
                     span Enable Hook:
                     span
-                      input#enable-web-hook.toggle-checkbox(type="checkbox", name="enable-web-hook")
+                      input#web-hook.toggle-checkbox(type="checkbox", name="web-hook")
                       button.toggle-switch
               li 
                 form(action) 
@@ -500,13 +576,13 @@ mixin server-settings
                 form(action="")
                   label.switch
                     span Enable Bot:
-                    input#enable-discord-bot.toggle-checkbox(type="checkbox", name="enable-discord-bot")
+                    input#discord-bot.toggle-checkbox(type="checkbox", name="discord-bot")
                     button.toggle-switch
               li
                 form(action="")
                   label.switch
                     span Live Chat:
-                    input#enable-discord-bot-live-chat.toggle-checkbox(type="checkbox", name="enable-discord-bot-live-chat")
+                    input#discord-bot-live-chat.toggle-checkbox(type="checkbox", name="discord-bot-live-chat")
                     button.toggle-switch
               li 
                 form(action) 
@@ -540,7 +616,7 @@ mixin server-settings
                 form(action="")
                   label.switch
                     span Enable Powerups:
-                    input#enable-powerups.toggle-checkbox(type="checkbox", name="enable-powerups")
+                    input#powerups.toggle-checkbox(type="checkbox", name="powerups")
                     button.toggle-switch
               li
                 form(action="")
@@ -571,7 +647,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.health-damage(data-min="2") 2
+                  span.counter.health-damage#health-damage(data-min="2") 72
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -579,7 +655,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.powerups-scale(data-min="2") 2
+                  span.counter.powerups-scale#powerups-scale(data-min="1") 1
                   button.circle
                     i.fa-solid.fa-minus
             ul.mb-2
@@ -590,7 +666,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.curse-quantity(data-min="2") 2
+                  span.counter.curse-quantity#curse-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -598,7 +674,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.fire-bomb-quantity(data-min="2") 2
+                  span.counter.fire-bomb-quantity#fire-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -606,7 +682,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.fly-bomb-quantity(data-min="2") 2
+                  span.counter.fly-bomb-quantity#fly-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -614,7 +690,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.goodbye-quantity(data-min="2") 2
+                  span.counter.goodbye-quantity#goodbye-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -622,7 +698,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.healing-bomb-quantity(data-min="2") 2
+                  span.counter.healing-bomb-quantity#healing-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -630,7 +706,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.health-quantity(data-min="2") 2
+                  span.counter.health-quantity#health-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -638,7 +714,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.ice-bomb-quantity(data-min="2") 2
+                  span.counter.ice-bomb-quantity#ice-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -646,7 +722,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.ice-man-quantity(data-min="2") 2
+                  span.counter.ice-man-quantity#ice-man-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -654,7 +730,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.impact-bomb-quantity(data-min="2") 2
+                  span.counter.impact-bomb-quantity#impact-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -662,7 +738,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.impairment-bomb-quantity(data-min="2") 2
+                  span.counter.impairment-bomb-quantity#impairment-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -670,7 +746,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.mine-bomb-quantity(data-min="2") 2
+                  span.counter.mine-bomb-quantity#mine-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -678,7 +754,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.punch-quantity(data-min="2") 2
+                  span.counter.punch-quantity#punch-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -686,7 +762,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.shield-quantity(data-min="2") 2
+                  span.counter.shield-quantity#shield-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -694,7 +770,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.speed-quantity(data-min="2") 2
+                  span.counter.speed-quantity#speed-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -702,7 +778,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.sticky-bomb-quantity(data-min="2") 2
+                  span.counter.sticky-bomb-quantity#sticky-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -710,7 +786,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.tank-shield-quantity(data-min="2") 2
+                  span.counter.tank-shield-quantity#tank-shield-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -718,7 +794,7 @@ mixin server-settings
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.triple-bomb-quantity(data-min="2") 2
+                  span.counter.triple-bomb-quantity#triple-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
         .overley
@@ -740,14 +816,14 @@ mixin server-settings
                   label.switch
                     span Enable Leader Board:
                     span
-                      input#enable-leader-board.toggle-checkbox(type="checkbox", name="enable-leader-board")
+                      input#leader-board.toggle-checkbox(type="checkbox", name="leader-board")
                       button.toggle-switch
               li
                 form(action="")
                   label.switch
                     span Bars Behind Names:
                     span
-                      input#enable-leader-board-bars.toggle-checkbox(type="checkbox", name="enable-leader-board-bars")
+                      input#leader-board-bars.toggle-checkbox(type="checkbox", name="leader-board-bars")
                       button.toggle-switch
         .overley
       //- Max Account Per Id
@@ -756,7 +832,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.max-account-per-id(data-min="2") 2
+          span.counter.max-account-per-id#max-account-per-id(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Max Players Per Device
@@ -765,7 +841,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle 
             i.fa-solid.fa-plus
-          span.counter.max-players-ber-devices(data-min="2") 5
+          span.counter.max-players-ber-devices#max-players-ber-device(data-min="2") 5
           button.circle
             i.fa-solid.fa-minus
       //- Max Warn Count
@@ -774,7 +850,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.max-warn-count(data-min="2") 2
+          span.counter.max-warn-count#max-warn-count(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Enable Mikirog Quick Turn 
@@ -783,7 +859,7 @@ mixin server-settings
           label.switch
             span Enable MikiRog Quick Turn:
             span
-              input#enable-mikirog.toggle-checkbox(type="checkbox", name="enable-mikirog")
+              input#mikirog.toggle-checkbox(type="checkbox", name="mikirog" checked)
               button.toggle-switch
       //- Min Age to Chat 
       li.number-chooser
@@ -791,7 +867,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.min-age-to-chat(data-min="2") 2
+          span.counter.min-age-to-chat(data-min="2") 72
           button.circle
             i.fa-solid.fa-minus
       //- New Result Board
@@ -800,7 +876,7 @@ mixin server-settings
           label.switch
             span New Result Board:
             span
-              input#new-result-board.toggle-checkbox(type="checkbox", name="new-result-board")
+              input#new-result-board.toggle-checkbox(type="checkbox", name="new-result-board" checked)
               button.toggle-switch
       //- Player Mods
       li.popup
@@ -820,21 +896,21 @@ mixin server-settings
                   label.switch
                     span Default Gloves:
                     span
-                      input#enable-gloves.toggle-checkbox(type="checkbox", name="enable-gloves")
+                      input#gloves.toggle-checkbox(type="checkbox", name="gloves" checked)
                       button.toggle-switch
               li
                 form(action="")
                   label.switch
                     span Default Shield:
                     span
-                      input#enable-shield.toggle-checkbox(type="checkbox", name="enable-shield")
+                      input#shield.toggle-checkbox(type="checkbox", name="shield")
                       button.toggle-switch
               li.number-chooser
                 span.me-auto Default Bomb Count:
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.default-bomb-count(data-min="2") 2
+                  span.counter.default-bomb-count#default-bomb-count(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
             form
@@ -845,7 +921,7 @@ mixin server-settings
                   label.radio-box
                     span Normal Bomb
                     span
-                      input#normal-bomb.toggle-radio(type="radio", name="enable-bomb" checked)
+                      input#normal-bomb.toggle-radio(type="radio", name="bomb" checked)
                       button.toggle-radio-box
                 li
                   label.radio-box
@@ -904,7 +980,7 @@ mixin server-settings
           label.switch
             span Enable White List:
             span
-              input#enable-white-list.toggle-checkbox(type="checkbox", name="enable-white-list")
+              input#white-list.toggle-checkbox(type="checkbox", name="white-list")
               button.toggle-switch
       //- Stats Reset After Days
       li.number-chooser
@@ -912,7 +988,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.stats-reset(data-min="2") 2
+          span.counter.stats-reset#stats-reset(data-min="1") 31
           button.circle
             i.fa-solid.fa-minus
       //- Use V2 Account

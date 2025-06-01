@@ -10,22 +10,22 @@ input[type="submit"] {
 	align-items: center;
 	border: none;
 	color: var(--main-text-color, $main-text-color);
-	background-color: var(--main-color,$main-color);
+	background-color: var(--main-color, $main-color);
+	transition: var(--main-animation-duration, $main-animation-duration);
 	&:has(svg),
 	&:has(i) {
 		background-color: var(--color-6, get-item-by-index($main-colors, 6));
 	}
-	transition: var(--animation-duration, $animation-duration);
 	&:not(.circle) {
 		border-radius: 50px;
 	}
 	&.circle {
 		@include circle(40px, "true");
-		justify-content: center ;
-		align-items: center ;
+		justify-content: center;
+		align-items: center;
 	}
 	&:hover {
-		background-color: var(--main-alt-color,$main-alt-color);
+		background-color: var(--main-alt-color, $main-alt-color);
 		&:has(svg),
 		&:has(i) {
 			background-color: var(--color-8, get-item-by-index($main-colors, 8));
@@ -37,4 +37,10 @@ input[type="submit"] {
 			font-size: 14px;
 		}
 	}
+}
+
+.quick-tools-screen ul button,
+.import-and-export-settings-screen ul button,
+.popup-window .body button {
+	color: white;
 }

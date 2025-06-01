@@ -9,7 +9,7 @@
 	z-index: 10000;
 	left: 50%;
 	top: 50%;
-	transition: var(--animation-duration, $animation-duration);
+	transition: var(--main-animation-duration, $main-animation-duration);
 	transform: translate(-50%, -50%) scale(0);
 	// transform: translate(-50%, -50%) ;
 	height: fit-content;
@@ -20,9 +20,12 @@
 	padding: var(--main-padding-size, $main-padding-size);
 	> .popup-header {
 		display: flex;
-		h5 {
-			text-align: center;
-			flex: 1;
+
+		@for $i from 1 through 6 {
+			h#{$i} {
+				text-align: center;
+				flex: 1;
+			}
 		}
 		.close {
 			position: absolute;
@@ -34,11 +37,17 @@
 		max-height: 75dvh;
 		overflow-y: scroll;
 	}
+	.reset {
+		background-color: red;
+		&:hover {
+			background-color: rgb(200, 0, 0);
+		}
+	}
 	// overley
 	& + .overley {
 		z-index: 11;
 		display: none;
-		transition: opacity var(--animation-duration, $animation-duration);
+		transition: opacity var(--main-animation-duration, $main-animation-duration);
 		content: "";
 		opacity: 0;
 		position: fixed;

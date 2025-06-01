@@ -8,9 +8,9 @@ const urlsToCache = [
 	"/css/maps/style.min.css.map",
 	"/js/script.min.js",
 	"/js/maps/script.min.js.map",
-	// Add other static assets you want to cache
 	"/assets/imgs/favicon.ico",
-	"/assets/json/config.json",
+	"/assets/json/config.jsonc",
+	"/assets/json/players.jsonc",
 	"/webfonts/fa-brands-400.ttf",
 	"/webfonts/fa-brands-400.woff2",
 	"/webfonts/fa-regular-400.ttf",

@@ -1,5 +1,6 @@
 @use "../helpers/variables" as *;
 @use "../helpers/functions" as *;
+
 .service-container {
 	border-radius: var(--main-border-radius-size,$main-border-radius-size);
 	background-color: var(--color-5,get-item-by-index($main-colors, 5));

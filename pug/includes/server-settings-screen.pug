@@ -33,7 +33,7 @@ mixin server-settings
         form(action="")
           label.form
             span First Time Join Message:
-            textarea#join-msg(placeholder="Type Your Join Message Here", name="join-msg") Welcome To Our Server 
+            textarea#first-join-msg(placeholder="Type Your Join Message Here", name="first-join-msg") Welcome To Our Server 
       //- After Warn Kick Message
       li
         form(action="")
@@ -64,7 +64,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.clean-exit-time#clean-exit-time(data-min="12") 0 
+          span.counter.clean-exit-time#clean-exit-time(data-min="0") 0 
           button.circle
             i.fa-solid.fa-minus
       //- Warn Cooldown
@@ -357,42 +357,42 @@ mixin server-settings
                 form(action="")
                   label.form
                     span Message 1:
-                    textarea#message-1(placeholder="Type Your Message 1 Here", name="message-1")
+                    textarea#message-1.screen-msg(placeholder="Type Your Message 1 Here", name="message-1")
               li
                 form(action="")
                   label.form
                     span Message 2:
-                    textarea#message-2(placeholder="Type Your Message 2 Here", name="message-2")
+                    textarea#message-2.screen-msg(placeholder="Type Your Message 2 Here", name="message-2")
               li
                 form(action="")
                   label.form
                     span Message 3:
-                    textarea#message-3(placeholder="Type Your Message 3 Here", name="message-3")
+                    textarea#message-3.screen-msg(placeholder="Type Your Message 3 Here", name="message-3")
               li
                 form(action="")
                   label.form
                     span Message 4:
-                    textarea#message-4(placeholder="Type Your Message 4 Here", name="message-4")
+                    textarea#message-4.screen-msg(placeholder="Type Your Message 4 Here", name="message-4")
               li
                 form(action="")
                   label.form
                     span Message 5:
-                    textarea#message-5(placeholder="Type Your Message 5 Here", name="message-5")
+                    textarea#message-5.screen-msg(placeholder="Type Your Message 5 Here", name="message-5")
               li
                 form(action="")
                   label.form
                     span Message 6:
-                    textarea#message-6(placeholder="Type Your Message 6 Here", name="message-6")
+                    textarea#message-6.screen-msg(placeholder="Type Your Message 6 Here", name="message-6")
               li
                 form(action="")
                   label.form
                     span Message 7:
-                    textarea#message-7(placeholder="Type Your Message 7 Here", name="message-7")
+                    textarea#message-7.screen-msg(placeholder="Type Your Message 7 Here", name="message-7")
               li
                 form(action="")
                   label.form
                     span Message 8:
-                    textarea#message-8(placeholder="Type Your Message 8 Here", name="message-8")
+                    textarea#message-8.screen-msg(placeholder="Type Your Message 8 Here", name="message-8")
         .overley
       //- Afk Remove
       li.popup
@@ -734,11 +734,11 @@ mixin server-settings
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
-                span.me-auto Impairment Bomb:
+                span.me-auto Expansive Bomb:
                 span.d-flex.justify-content-between.align-items-center
                   button.circle
                     i.fa-solid.fa-plus
-                  span.counter.impairment-bomb-quantity#impairment-bomb-quantity(data-min="2") 2
+                  span.counter.expansive-bomb-quantity#expansive-bomb-quantity(data-min="2") 2
                   button.circle
                     i.fa-solid.fa-minus
               li.number-chooser
@@ -832,7 +832,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.max-account-per-id#max-account-per-id(data-min="2") 2
+          span.counter.max-accounts-per-id#max-accounts-per-id(data-min="2") 2
           button.circle
             i.fa-solid.fa-minus
       //- Max Players Per Device
@@ -841,7 +841,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle 
             i.fa-solid.fa-plus
-          span.counter.max-players-ber-devices#max-players-ber-device(data-min="2") 5
+          span.counter.max-players-per-devices#max-players-per-device(data-min="2") 5
           button.circle
             i.fa-solid.fa-minus
       //- Max Warn Count
@@ -867,7 +867,7 @@ mixin server-settings
         span.d-flex.justify-content-between.align-items-center
           button.circle
             i.fa-solid.fa-plus
-          span.counter.min-age-to-chat(data-min="2") 72
+          span.counter.min-age-to-chat#min-age-to-chat(data-min="2") 72
           button.circle
             i.fa-solid.fa-minus
       //- New Result Board
@@ -964,15 +964,15 @@ mixin server-settings
       li
         form(action="")
           label.form
-            span Warn Msg:
-            textarea#warn-msg.warn-msg(placeholder="Type Your Warn Msg Here") Don't Make This Again
+            span Warn Message:
+            textarea#warn-msg.warn-msg(placeholder="Type Your Warn Message Here") Don't Make This Again
       //- Same Character For Team
       li
         form(action="")
           label.switch
             span Same Character For Team:
             span
-              input#same-chat-for-team.toggle-checkbox(type="checkbox", name="same-chat-for-team")
+              input#same-char-for-team.toggle-checkbox(type="checkbox", name="same-chat-for-team")
               button.toggle-switch
       //- Enable White List
       li

@@ -1,8 +1,8 @@
 {
 	"name": "vh-bs-settings-manger",
-	"version": "1.0.0",
+	"version": "1.0.0-beta",
 	"description": "A Vortex And Honor Server Manger",
-	"main": "gulpfile.js",
+	"main": "./pug/index.pug",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"deploy": "git subtree split --prefix dist -b gh-pages && git push origin gh-pages --force"
@@ -11,7 +11,7 @@
 		"type": "git",
 		"url": "git+https://github.com/IslamMohammedSalama/vh-bs-server-manger.git"
 	},
-	"author": "",
+	"author": "Vortex & Honor Team",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/IslamMohammedSalama/vh-bs-server-manger/issues"
@@ -22,7 +22,6 @@
 		"@babel/preset-env": "^7.27.2",
 		"babel-core": "^4.7.16",
 		"babel-preset-env": "^0.0.0",
-		"gh-pages": "^6.3.0",
 		"gulp": "^5.0.0",
 		"gulp-autoprefixer": "^9.0.0",
 		"gulp-babel": "^8.0.0",

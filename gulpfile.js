@@ -26,7 +26,7 @@ const paths = {
 		destPath: "dist/css/style.min.css",
 	},
 	js: {
-		src: ["js/**/*.js","!js/sw.js"],
+		src: ["js/**/*.js", "!js/sw.js"],
 		dest: "dist/js",
 		destPath: "dist/js/script.min.js",
 	},
@@ -44,7 +44,7 @@ gulp.task("html", () =>
 				title: "Html Compile",
 				message: "Html Compile completed successfully!",
 				onLast: true,
-				icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 			})
 		)
 		.pipe(connect.reload())
@@ -67,14 +67,9 @@ gulp.task("css", () =>
 				style: "compressed", // Updated property name
 			}).on("error", sass.logError) // Error handling
 		)
-		.pipe(
-			autoprefixer({
-				overrideBrowserslist: ["last 2 versions"],
-				cascade: false,
-			})
-		)
+		.pipe(autoprefixer())
 		.pipe(gulpConcat("style.min.css"))
-		.pipe(sourcemaps.write("./maps"))
+		.pipe(sourcemaps.write("maps"))
 		// .pipe(gulp.dest(paths.styles.dest))
 		.pipe(gulp.dest(paths.css.dest))
 		.pipe(connect.reload())
@@ -83,7 +78,7 @@ gulp.task("css", () =>
 				title: "Css Compile",
 				message: "Css Compile completed successfully!",
 				onLast: true,
-				icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 			})
 		)
 );
@@ -98,11 +93,11 @@ gulp.task("clean:css", function () {
 // JavaScript task
 gulp.task("js", () =>
 	gulp
-		.src(paths.js.src, { base: "js" })
+		.src("js/*.js", { base: "js" })
 		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true }))
 		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
-		.pipe(sourcemaps.write("./maps"))
+		.pipe(sourcemaps.write("maps"))
 		.pipe(gulp.dest(paths.js.dest))
 		.pipe(connect.reload())
 		// .pipe(gulp.dest(paths.scripts.dest))
@@ -111,9 +106,19 @@ gulp.task("js", () =>
 				title: "Js Compile",
 				message: "JavaScript Compile completed successfully!",
 				onLast: true,
-				icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 			})
 		)
+);
+
+gulp.task("js-libs", () =>
+	gulp
+		.src("js/lib/**/*.js")
+		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true }))
+		.pipe(terser())
+		.pipe(sourcemaps.write("maps"))
+		.pipe(gulp.dest("dist/js/lib"))
+		.pipe(connect.reload())
 );
 // JavaScript task
 gulp.task("sw-js", () =>
@@ -127,6 +132,13 @@ gulp.task("sw-js", () =>
 gulp.task("clean:js", function () {
 	return gulp
 		.src(paths.js.destPath, { read: false, allowEmpty: true })
+		.pipe(clean());
+});
+
+// New: Specific clean task for HTML output
+gulp.task("clean:assets", function () {
+	return gulp
+		.src("dist/assets/", { read: false, allowEmpty: true })
 		.pipe(clean());
 });
 
@@ -146,7 +158,7 @@ gulp.task("assets", () =>
 				title: "Assets Move",
 				message: "Build completed successfully!",
 				onLast: true,
-				icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 			})
 		)
 );
@@ -162,7 +174,7 @@ gulp.task("build-msg", function () {
 			title: "Gulp Build",
 			message: "Build completed successfully!",
 			onLast: true,
-			icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+			// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 		})
 	); // Trigger the notification
 });
@@ -172,7 +184,7 @@ gulp.task("connect", function (done) {
 		root: "./dist/",
 		livereload: true,
 		port: 8080,
-		name: "Dist App",
+		name: "VH Website",
 	});
 	done();
 });
@@ -180,7 +192,8 @@ gulp.task("connect", function (done) {
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
 	gulp.watch("css/**/*.scss", gulp.series("css"));
-	gulp.watch("js/sw.js", gulp.series("sw-js"));
+	// gulp.watch("js/sw.js", gulp.series("sw-js"));
+	gulp.watch(paths.js.src, gulp.series("js-libs"));
 	gulp.watch(paths.js.src, gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
@@ -193,7 +206,14 @@ gulp.task(
 	"build",
 	gulp.series(
 		"clean",
-		gulp.parallel("html", "css", "js","sw-js", "assets"),
+		gulp.parallel(
+			"html",
+			"css",
+			"js",
+			"js-libs",
+			// "sw-js",
+			"assets"
+		),
 		"compress",
 		"build-msg"
 	)

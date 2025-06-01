@@ -1,0 +1,176 @@
+{
+	"server-name": "Vortex And Honor",
+	"host-device-name": "1.7.20",
+	"host-name": "VortexAndHonor",
+	"playlist-code": 412158,
+	"first-time-join-msg": "Welcome To Our Server ",
+	"party-size": 12,
+	"ffa-series-length": 24,
+	"clean-exit-time": 0,
+	"warns": {
+		"enable": true,
+		"after-warn-kick-msg": "You Will Eat A Ban If You Made This Again ",
+		"warn-cooldown-time": 30,
+		"max-warn-count": 3,
+		"warn-msg":"Don't Abuse Or Bettering" 
+	},
+	"in-game-chat": true,
+	"public-party": true,
+	"playlist-shuffle": true,
+	"team-chat": true,
+	"voting": {
+		"enable": true,
+		"default-kick-voting": true,
+		"show-kick-vote-starter-name": true
+	},
+	"auto-team-balance": true,
+	"queue": false,
+	"tenet": false,
+	"coop": {
+		"enable": false,
+		"level": "OnSlaught Training",
+		"campaign": "Easy",
+		"min-players-to-exit": 2
+	},
+	"character-chooser": true,
+	"colorful-maps": true,
+	"colorful-explosion": true,
+	"contribute-data": true,
+	"hit-text": true,
+	"tag-animation": true,
+	"top-5-effect": true,
+	"hp-tag": true,
+	"rank": true,
+	"stats": true,
+	"auth-clients": true,
+	"effects": true,
+	"anti-id-revealer": false,
+	"chat-commands": true,
+	"stumbled-score-screen": true,
+	"tags": true,
+	"teams": [
+		{
+			"name": "Vortex",
+			"color": "#000"
+		},
+		{
+			"name": "Honor",
+			"color": "#fff"
+		}
+	],
+	"screen-msgs": {
+		"enable": true,
+		"message-1": "Don't Abuse Anyone Or U Will Eat A Kick",
+		"message-2": "If U Completed Abusing Or U Will Eat A Ban",
+		"message-3": "Respect Anthers plz",
+		"message-4": "U Have 3 Times To Abuse",
+		"message-5": "If u Abuse U Will Eat A warn",
+		"message-6": "To Clear All Warns Stop Abusing For 30 minutes",
+		"message-7": "Download Mods From Our Discord Server",
+		"message-8": "Give Us Your Feedback About Our Servers"
+	},
+	"afk-settings": {
+		"afk-remove": false,
+		"kick-idle-from-lobby": false,
+		"in-game-idle": 300,
+		"lobby-idle": 400
+	},
+	"auto-night": {
+		"auto-night-start": "7:30 PM",
+		"auto-night-end": "5:30 PM",
+		"fireflies": false,
+		"random-fireflies": false
+	},
+	"server-website": {
+		"enable": true,
+		"server-password": "VortexAndHonor"
+	},
+	"hook": {
+		"discord-hook": false,
+		"web-hook-url": ""
+	},
+	"discord-bot": {
+		"enable": false,
+		"live-chat": false,
+		"log-channel": "",
+		"live-stats-channel": "",
+		"token": ""
+	},
+	"powerups": {
+		"enable": true,
+		"powerup-name": true,
+		"powerup-shield": true,
+		"powerup-gravity": true,
+		"health-shield-ptg": 72,
+		"powerups-scale": 1,
+		"powerups-time": true,
+		"powerups-quantity": {
+			"curse": 2,
+			"ice-bomb": 2,
+			"fire-bomb": 2,
+			"ice-man": 2,
+			"healing-bomb": 2,
+			"fly-bomb": 2,
+			"health": 2,
+			"impact-bomb": 2,
+			"expansive-bomb": 2,
+			"mine-bomb": 2,
+			"punch": 2,
+			"speed": 2,
+			"shield": 2,
+			"tank-shield": 2,
+			"triple-bomb": 2,
+			"sticky-bomb": 2,
+			"goodbye": 2
+		}
+	},
+	"player-mod": {
+		"default-gloves": true,
+		"default-shield": false,
+		"default-bomb-count":2,
+		"default-bomb": "normal"
+	},
+	"leader-board": {
+		"enable": true,
+		"bars-behind-names": false
+	},
+	"max-accounts-per-id": 2,
+	"max-players-per-device": 2,
+	"mikirog": true,
+	"min-age-to-chat": 72,
+	"wan-msg": "Don't Make This Again",
+	"same-character-for-team": false,
+	"white-list": false,
+	"stats-reset-after": 31,
+	"use-v2-account": false,
+	"new-result-board": true,
+	"regular-welcome-msg": "Hello My Friend",
+	"bomb-types": [
+		"normal",
+		"ice",
+		"impact",
+		"fly",
+		"sticky",
+		"mine",
+		"expansive"
+	],
+	"players-roles": {
+		"pd-u23423424nkn": "lead-stuff",
+		"pd-u42n4lna": "owner",
+		"pd-4je3kl3k": "admin"
+	},
+	"players-tags-and-effects": {
+		"pb-u23423424nkn": {
+			"tag": "ZadKiel",
+			"effect": "idk"
+		},
+		"pb-u42n4lna": {
+			"tag": "VorTex",
+			"effect": "idk"
+		},
+		"pb-IF4GUWhbCA==": {
+			"tag": "𝕲𝕳『𝕴𝕾𝕷𝕬𝕸』",
+			"effect": "fire"
+		}
+	}
+}

@@ -13,33 +13,36 @@ label.radio-box {
 		display: none;
 	}
 	.toggle-radio-box {
+		@include circle(30px);
 		padding: 0;
 		display: block;
-		transition: var(--animation-duration,$animation-duration);
+		transition: var(--main-animation-duration, $main-animation-duration);
 		position: relative;
-		background-color: #bbb ;
+		background-color: var(--color-7, get-item-from-list($main-colors, 7));
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		@include circle(25px);
-		border: 2px solid #bbb;
+		border: 2px solid var(--color-7, get-item-from-list($main-colors, 7));
 		// border-radius: 50px;
 		cursor: pointer;
 		&::after {
 			content: "";
-			transition: var(--animation-duration,$animation-duration);
-			@include circle(13px);
-			background-color: var(--main-color,$main-color);
-			transform: scale(0);
+			transition: var(--main-animation-duration, $main-animation-duration);
+			@include circle(15px);
+			background-color: var(--main-color, $main-color);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0);
 		}
 	}
 	.toggle-radio:checked + .toggle-radio-box {
 		// background-color: $main-color;
-		border: 2px solid var(--main-color,$main-color);
+		border-color: var(--main-color, $main-color);
 		&::after {
 			// content: "\f00c";
-			color: var(--main-color,$main-color);
-			transform: scale(1);
+			color: var(--main-color, $main-color);
+			transform: translate(-50%, -50%) scale(1);
 		}
 	}
 }

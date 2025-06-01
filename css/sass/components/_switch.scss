@@ -12,19 +12,11 @@ label.switch {
 		appearance: none;
 		display: none;
 	}
-	.toggle-checkbox:checked + .toggle-switch {
-		background-color: var(--main-color,$main-color);
-		&::after {
-			content: "\f00c";
-			color: var(--main-color,$main-color);
-			left: 35px;
-		}
-	}
 	.toggle-switch {
 		display: block;
-		transition: var(--animation-duration,$animation-duration);
+		transition: var(--main-animation-duration, $main-animation-duration);
 		position: relative;
-		background-color: var(--color-7,get-item-by-index($main-colors,7));
+		background-color: var(--color-7, get-item-by-index($main-colors, 7));
 		width: 60px;
 		height: 30px;
 		border-radius: 50px;
@@ -34,7 +26,7 @@ label.switch {
 			font-family: "Font Awesome 6 Free";
 			font-weight: 900;
 			color: #777;
-			transition: var(--animation-duration,$animation-duration);
+			transition: var(--main-animation-duration, $main-animation-duration);
 			@include circle(20px);
 			background-color: white;
 			position: absolute;
@@ -44,6 +36,14 @@ label.switch {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+	}
+	.toggle-checkbox:checked + .toggle-switch {
+		background-color: var(--main-color, $main-color);
+		&::after {
+			content: "\f00c";
+			color: var(--main-color, $main-color);
+			left: 35px;
 		}
 	}
 }

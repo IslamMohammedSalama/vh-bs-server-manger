@@ -504,5 +504,16 @@ let elesToSaveData = [
 		type: "number-chooser",
 		settingIds: ["stats-reset-after"],
 	},
+	// Color Inputs
+	{
+		id: "#first-team-color",
+		type: "color-selector",
+		settingIds: ["teams", 0, "color"],
+	},
+	// {
+	// 	id: "#first-team-color",
+	// 	type: "number-chooser",
+	// 	settingIds: ["teams",0,"color"],
+	// },
 ];
 export { elesToSaveData };

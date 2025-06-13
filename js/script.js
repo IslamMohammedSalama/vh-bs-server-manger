@@ -30,15 +30,15 @@ if (!localStorage.getItem("config")) {
 
 let config = JSON.parse(localStorage.getItem("config"));
 
-if (localStorage.getItem("theme")) {
-	functions.theme(localStorage.getItem("theme"));
-	document.getElementById("dark-mode").checked =
-		localStorage.getItem("theme") === "dark" ? true : false;
-} else {
-	functions.theme("dark");
-	localStorage.setItem("theme", "dark");
-	document.getElementById("dark-mode").checked = true;
-}
+// if (localStorage.getItem("theme")) {
+// 	functions.theme(localStorage.getItem("theme"));
+// 	document.getElementById("dark-mode").checked =
+// 		localStorage.getItem("theme") === "dark" ? true : false;
+// } else {
+// 	functions.theme("dark");
+// 	localStorage.setItem("theme", "dark");
+// 	document.getElementById("dark-mode").checked = true;
+// }
 // Initialize from URL on page load
 window.onload = function () {
 	functions.initializeFromURL();

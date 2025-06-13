@@ -12,7 +12,7 @@
 		"after-warn-kick-msg": "You Will Eat A Ban If You Made This Again ",
 		"warn-cooldown-time": 30,
 		"max-warn-count": 3,
-		"warn-msg":"Don't Abuse Or Bettering" 
+		"warn-msg": "Don't Abuse Or Bettering"
 	},
 	"in-game-chat": true,
 	"public-party": true,
@@ -127,7 +127,7 @@
 	"player-mod": {
 		"default-gloves": true,
 		"default-shield": false,
-		"default-bomb-count":2,
+		"default-bomb-count": 2,
 		"default-bomb": "normal"
 	},
 	"leader-board": {

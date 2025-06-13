@@ -8,7 +8,30 @@ $main-placeholder-color: #ccc;
 $main-padding-size: 13px;
 $main-border-radius-size: 20px;
 $main-input-text-color: #222;
+
 :root {
+	--main-padding-size: 13px;
+	--main-border-radius-size: 20px;
+	--main-color: #0d6efd;
+	--main-alt-color: rgb(75, 145, 224);
+	--main-animation-duration: 0.35s;
+	// Light Mode
+	--main-background-color: #fff;
+	--main-text-color: black;
+	--color-0: #fff;
+	--color-1: #eee;
+	--color-2: #e5e5e5;
+	--color-3: #eee;
+	--color-4: #ddd;
+	--color-5: #d5d5d5;
+	--color-6: #ccc;
+	--color-7: #bbb;
+	--color-8: #aaa;
+	--main-placeholder-color: #555;
+	--main-input-text-color: #222;
+}
+
+.dark-mode {
 	--main-background-color: #222;
 	--color-0: #222;
 	--color-1: #333;
@@ -20,11 +43,6 @@ $main-input-text-color: #222;
 	--color-7: #777;
 	--color-8: #717171;
 	--main-placeholder-color: #555;
-	--main-padding-size: 13px;
-	--main-border-radius-size: 20px;
-	--main-color: #0d6efd;
-	--main-alt-color: rgb(75, 145, 224);
-	--main-text-color: white;
 	--main-input-text-color: #222;
-	--main-animation-duration: 0.35s;
+	--main-text-color: white;
 }

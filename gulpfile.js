@@ -10,8 +10,13 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 import connect from "gulp-connect";
+import cache from "gulp-cache";
+import noop from "gulp-noop";
+import newer from "gulp-newer";
+
 // import babel from "gulp-babel";
 const sass = gulpSass(dartSass);
+const isProduction = process.env.NODE_ENV === "production";
 
 // File paths
 const paths = {
@@ -26,7 +31,7 @@ const paths = {
 		destPath: "dist/css/style.min.css",
 	},
 	js: {
-		src: ["js/**/*.js", "!js/sw.js"],
+		src: ["js/**/*.js"],
 		dest: "dist/js",
 		destPath: "dist/js/script.min.js",
 	},
@@ -35,18 +40,18 @@ const paths = {
 // HTML task
 gulp.task("html", () =>
 	gulp
-		.src(paths.html.src)
+		.src(paths.html.src, { since: gulp.lastRun("html") })
 		.pipe(pug())
 		// .pipe(gulp.dest(paths.html.dest))
 		.pipe(gulp.dest(paths.html.dest))
-		.pipe(
-			gulpNotify({
-				title: "Html Compile",
-				message: "Html Compile completed successfully!",
-				onLast: true,
-				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-			})
-		)
+		// .pipe(
+		// 	gulpNotify({
+		// 		title: "Html Compile",
+		// 		message: "Html Compile completed successfully!",
+		// 		onLast: true,
+		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+		// 	})
+		// )
 		.pipe(connect.reload())
 );
 
@@ -60,27 +65,29 @@ gulp.task("clean:html", function () {
 // CSS task
 gulp.task("css", () =>
 	gulp
-		.src(paths.css.src, { base: "css" })
-		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true })) // Boolean instead of string
+		.src(paths.css.src, { base: "css", since: gulp.lastRun("css") })
 		.pipe(
-			sass({
-				style: "compressed", // Updated property name
-			}).on("error", sass.logError) // Error handling
-		)
+			isProduction
+				? noop()
+				: sourcemaps.init({ largeFile: true, loadMaps: true })
+		) // Boolean instead of string
+		.pipe(cache(sass({ style: "compressed" })))
+		.on("error", sass.logError) // Error handling
+
 		.pipe(autoprefixer())
 		.pipe(gulpConcat("style.min.css"))
-		.pipe(sourcemaps.write("maps"))
+		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
 		// .pipe(gulp.dest(paths.styles.dest))
 		.pipe(gulp.dest(paths.css.dest))
 		.pipe(connect.reload())
-		.pipe(
-			gulpNotify({
-				title: "Css Compile",
-				message: "Css Compile completed successfully!",
-				onLast: true,
-				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-			})
-		)
+		// .pipe(
+		// 	gulpNotify({
+		// 		title: "Css Compile",
+		// 		message: "Css Compile completed successfully!",
+		// 		onLast: true,
+		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+		// 	})
+		// )
 );
 
 // New: Specific clean task for HTML output
@@ -93,30 +100,44 @@ gulp.task("clean:css", function () {
 // JavaScript task
 gulp.task("js", () =>
 	gulp
-		.src("js/*.js", { base: "js" })
-		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true }))
-		.pipe(terser())
-		.pipe(gulpConcat("script.min.js"))
-		.pipe(sourcemaps.write("maps"))
-		.pipe(gulp.dest(paths.js.dest))
-		.pipe(connect.reload())
-		// .pipe(gulp.dest(paths.scripts.dest))
+		.src(["js/*.js", "!js/dark_mode.js"], {
+			base: "js",
+			since: gulp.lastRun("js"),
+		})
 		.pipe(
-			gulpNotify({
-				title: "Js Compile",
-				message: "JavaScript Compile completed successfully!",
-				onLast: true,
-				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-			})
+			isProduction
+				? noop()
+				: sourcemaps.init({ largeFile: true, loadMaps: true })
 		)
+		.pipe(cache(terser()))
+		.pipe(gulpConcat("script.min.js"))
+		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
+		.pipe(connect.reload())
+		.pipe(gulp.dest(paths.js.dest))
+		// .pipe(
+		// 	gulpNotify({
+		// 		title: "Js Compile",
+		// 		message: "JavaScript Compile completed successfully!",
+		// 		onLast: true,
+		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+		// 	})
+		// )
+);
+
+gulp.task("js:dark", () =>
+	gulp.src("js/dark_mode.js").pipe(gulp.dest(paths.js.dest))
 );
 
 gulp.task("js-libs", () =>
 	gulp
 		.src("js/lib/**/*.js")
-		.pipe(sourcemaps.init({ largeFile: true, loadMaps: true }))
+		.pipe(
+			isProduction
+				? noop()
+				: sourcemaps.init({ largeFile: true, loadMaps: true })
+		)
 		.pipe(terser())
-		.pipe(sourcemaps.write("maps"))
+		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/js/lib"))
 		.pipe(connect.reload())
 );
@@ -152,15 +173,17 @@ gulp.task("assets", () =>
 			nodir: false,
 			encoding: false,
 		})
+		.pipe(newer("dist")) // Skip unchanged files
+
 		.pipe(gulp.dest("dist"))
-		.pipe(
-			gulpNotify({
-				title: "Assets Move",
-				message: "Build completed successfully!",
-				onLast: true,
-				// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-			})
-		)
+		// .pipe(
+		// 	gulpNotify({
+		// 		title: "Assets Move",
+		// 		message: "Build completed successfully!",
+		// 		onLast: true,
+		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
+		// 	})
+		// )
 );
 gulp.task(
 	"compress",
@@ -192,9 +215,9 @@ gulp.task("connect", function (done) {
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
 	gulp.watch("css/**/*.scss", gulp.series("css"));
-	// gulp.watch("js/sw.js", gulp.series("sw-js"));
-	gulp.watch(paths.js.src, gulp.series("js-libs"));
-	gulp.watch(paths.js.src, gulp.series("js"));
+	gulp.watch("js/dark_mode.js", gulp.series("js:dark"));
+	gulp.watch("js/lib/**.js", gulp.series("js-libs"));
+	gulp.watch("js/**.js", gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {
@@ -210,6 +233,7 @@ gulp.task(
 			"html",
 			"css",
 			"js",
+			"js:dark",
 			"js-libs",
 			// "sw-js",
 			"assets"

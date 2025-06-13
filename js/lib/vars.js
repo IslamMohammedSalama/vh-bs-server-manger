@@ -6,6 +6,11 @@ let elesToSaveData = [
 		settingIds: ["server-name"],
 	},
 	{
+		id: "#playlist-code",
+		type: "input",
+		settingIds: ["playlist-code"],
+	},
+	{
 		id: "#host-device-name",
 		type: "input",
 		settingIds: ["host-device-name"],
@@ -145,6 +150,11 @@ let elesToSaveData = [
 		id: "#colorful-explosion",
 		type: "switch",
 		settingIds: ["colorful-explosion"],
+	},
+	{
+		id: "#auto-team-balance",
+		type: "switch",
+		settingIds: ["auto-team-balance"],
 	},
 	{
 		id: "#colorful-maps",
@@ -504,16 +514,27 @@ let elesToSaveData = [
 		type: "number-chooser",
 		settingIds: ["stats-reset-after"],
 	},
-	// Color Inputs
+	// Color Choosers
 	{
 		id: "#first-team-color",
 		type: "color-selector",
 		settingIds: ["teams", 0, "color"],
 	},
-	// {
-	// 	id: "#first-team-color",
-	// 	type: "number-chooser",
-	// 	settingIds: ["teams",0,"color"],
-	// },
+	{
+		id: "#second-team-color",
+		type: "color-selector",
+		settingIds: ["teams", 1, "color"],
+	},
+	// Time Choosers
+	{
+		id: "#start-time-auto-night",
+		type: "time",
+		settingIds: ["auto-night", "auto-night-start"],
+	},
+	{
+		id: "#end-time-auto-night",
+		type: "time",
+		settingIds: ["auto-night", "auto-night-end"],
+	},
 ];
 export { elesToSaveData };

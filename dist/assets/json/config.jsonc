@@ -76,8 +76,8 @@
 		"lobby-idle": 400
 	},
 	"auto-night": {
-		"auto-night-start": "7:30 PM",
-		"auto-night-end": "5:30 PM",
+		"auto-night-start": "7:30",
+		"auto-night-end": "5:30",
 		"fireflies": false,
 		"random-fireflies": false
 	},

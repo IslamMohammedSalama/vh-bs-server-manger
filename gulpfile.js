@@ -10,7 +10,7 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 import connect from "gulp-connect";
-import cache from "gulp-cache";
+// import cache from "gulp-cache";
 import noop from "gulp-noop";
 import newer from "gulp-newer";
 
@@ -42,7 +42,6 @@ gulp.task("html", () =>
 	gulp
 		.src(paths.html.src, { since: gulp.lastRun("html") })
 		.pipe(pug())
-		// .pipe(gulp.dest(paths.html.dest))
 		.pipe(gulp.dest(paths.html.dest))
 		// .pipe(
 		// 	gulpNotify({
@@ -65,13 +64,15 @@ gulp.task("clean:html", function () {
 // CSS task
 gulp.task("css", () =>
 	gulp
-		.src(paths.css.src, { base: "css", since: gulp.lastRun("css") })
+		.src(paths.css.src, { base: "css",
+			//  since: gulp.lastRun("css") 
+			})
 		.pipe(
 			isProduction
 				? noop()
 				: sourcemaps.init({ largeFile: true, loadMaps: true })
 		) // Boolean instead of string
-		.pipe(cache(sass({ style: "compressed" })))
+		.pipe(sass({ style: "compressed" }))
 		.on("error", sass.logError) // Error handling
 
 		.pipe(autoprefixer())
@@ -102,14 +103,14 @@ gulp.task("js", () =>
 	gulp
 		.src(["js/*.js", "!js/dark_mode.js"], {
 			base: "js",
-			since: gulp.lastRun("js"),
+			// since: gulp.lastRun("js"),
 		})
 		.pipe(
 			isProduction
 				? noop()
 				: sourcemaps.init({ largeFile: true, loadMaps: true })
 		)
-		.pipe(cache(terser()))
+		.pipe(terser())
 		.pipe(gulpConcat("script.min.js"))
 		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
 		.pipe(connect.reload())

@@ -87,6 +87,10 @@ function loadSettings() {
 			case "color-selector":
 				element.value = value || "";
 				break;
+			case "time":
+				element.value = value || "";
+				break;
+				
 		}
 	});
 }
@@ -106,8 +110,10 @@ function storeElesValues() {
 				? "click"
 				: "color-selector"
 				? "input"
+				: "time"
+				? "input"
 				: "";
-		if (ele.type === "color-selector") {
+		if (ele.type === "color-selector" || ele.type === "time") {
 			el.oninput = (ev) => {
 				let value = ev.target.value;
 				let current = config;
@@ -135,6 +141,8 @@ function storeElesValues() {
 					const key = ele.settingIds[i];
 					current[key] = current[key] || {};
 					current = current[key];
+					console.log(key);
+					console.log(current);
 				}
 				current[ele.settingIds[ele.settingIds.length - 1]] = value;
 

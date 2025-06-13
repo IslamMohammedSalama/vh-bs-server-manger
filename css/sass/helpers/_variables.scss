@@ -2,9 +2,9 @@ $main-animation-duration: 0.35s;
 $main-color: #0d6efd;
 $main-alt-color: rgb(75, 145, 224);
 $main-text-color: white;
-$main-background-color: #222;
-$main-colors: #222, #333, #444, #454545, #4e4e4e, #555, #666, #777, #717171;
-$main-placeholder-color: #ccc;
+$main-background-color: #fff;
+$main-colors: #fff, #eee, #e5e5e5, #ededed, #ddd, #d5d5d5, #ccc, #bbb, #aaa;
+$main-placeholder-color: #555;
 $main-padding-size: 13px;
 $main-border-radius-size: 20px;
 $main-input-text-color: #222;
@@ -21,7 +21,7 @@ $main-input-text-color: #222;
 	--color-0: #fff;
 	--color-1: #eee;
 	--color-2: #e5e5e5;
-	--color-3: #eee;
+	--color-3: #ededed;
 	--color-4: #ddd;
 	--color-5: #d5d5d5;
 	--color-6: #ccc;
@@ -32,7 +32,7 @@ $main-input-text-color: #222;
 }
 
 .dark-mode {
-	--main-background-color: #222;
+	--main-background-color: #ac7b7b;
 	--color-0: #222;
 	--color-1: #333;
 	--color-2: #444;
@@ -42,7 +42,7 @@ $main-input-text-color: #222;
 	--color-6: #666;
 	--color-7: #777;
 	--color-8: #717171;
-	--main-placeholder-color: #555;
+	--main-placeholder-color: #ccc;
 	--main-input-text-color: #222;
 	--main-text-color: white;
 }

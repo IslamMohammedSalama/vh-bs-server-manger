@@ -14,6 +14,10 @@ body,
 	font-family: "Cairo", sans-serif;
 }
 
+body {
+	transition: none;
+}
+
 a {
 	color: var(--main-text-color, $main-text-color);
 	text-decoration-line: none;

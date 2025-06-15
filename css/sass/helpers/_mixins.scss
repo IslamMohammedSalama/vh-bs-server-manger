@@ -9,11 +9,13 @@
 		@content;
 	}
 }
+
 @mixin middle-screens {
 	@media (min-width: 992px) {
 		@content;
 	}
 }
+
 @mixin large-screens {
 	@media (min-width: 1200px) {
 		@content;
@@ -22,15 +24,19 @@
 
 @mixin circle($diameter, $force: "false") {
 	border-radius: 50% !important;
-	@if $force == "false" {
+
+	@if $force =="false" {
 		width: $diameter;
 		height: $diameter;
-	}@else if $force == "true"{
+	}
+
+	@else if $force =="true" {
 		min-width: $diameter;
 		min-height: $diameter;
 		max-width: $diameter;
 		max-height: $diameter;
 	}
+
 	@else {
 		@error "Not Valid"
 	}

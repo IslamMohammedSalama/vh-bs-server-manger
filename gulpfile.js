@@ -10,7 +10,6 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 import connect from "gulp-connect";
-// import cache from "gulp-cache";
 import noop from "gulp-noop";
 import newer from "gulp-newer";
 
@@ -40,7 +39,7 @@ const paths = {
 // HTML task
 gulp.task("html", () =>
 	gulp
-		.src(paths.html.src, { since: gulp.lastRun("html") })
+		.src(paths.html.src,)
 		.pipe(pug())
 		.pipe(gulp.dest(paths.html.dest))
 		// .pipe(
@@ -65,7 +64,6 @@ gulp.task("clean:html", function () {
 gulp.task("css", () =>
 	gulp
 		.src(paths.css.src, { base: "css",
-			//  since: gulp.lastRun("css") 
 			})
 		.pipe(
 			isProduction
@@ -91,7 +89,7 @@ gulp.task("css", () =>
 		// )
 );
 
-// New: Specific clean task for HTML output
+// New: Specific clean task for Css output
 gulp.task("clean:css", function () {
 	return gulp
 		.src(paths.css.destPath, { read: false, allowEmpty: true })
@@ -103,7 +101,6 @@ gulp.task("js", () =>
 	gulp
 		.src(["js/*.js", "!js/dark_mode.js"], {
 			base: "js",
-			// since: gulp.lastRun("js"),
 		})
 		.pipe(
 			isProduction
@@ -150,14 +147,14 @@ gulp.task("sw-js", () =>
 		.pipe(connect.reload())
 );
 
-// New: Specific clean task for HTML output
+// New: Specific clean task for Js output
 gulp.task("clean:js", function () {
 	return gulp
 		.src(paths.js.destPath, { read: false, allowEmpty: true })
 		.pipe(clean());
 });
 
-// New: Specific clean task for HTML output
+// New: Specific clean task for Assets output
 gulp.task("clean:assets", function () {
 	return gulp
 		.src("dist/assets/", { read: false, allowEmpty: true })
@@ -216,13 +213,13 @@ gulp.task("connect", function (done) {
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
 	gulp.watch("css/**/*.scss", gulp.series("css"));
-	gulp.watch("js/dark_mode.js", gulp.series("js:dark"));
+	// gulp.watch("js/dark_mode.js", gulp.series("js:dark"));
 	gulp.watch("js/lib/**.js", gulp.series("js-libs"));
 	gulp.watch("js/**.js", gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {
-	return gulp.src(["dist/*"], { read: false, allowEmpty: true }).pipe(clean());
+	return gulp.src(["dist/*"], { read: false, allowEmpty: true ,}).pipe(clean());
 });
 
 // Build task (runs all tasks)
@@ -234,7 +231,7 @@ gulp.task(
 			"html",
 			"css",
 			"js",
-			"js:dark",
+			// "js:dark",
 			"js-libs",
 			// "sw-js",
 			"assets"

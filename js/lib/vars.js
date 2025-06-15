@@ -1,6 +1,11 @@
 let elesToSaveData = [
 	// Inputs
 	{
+		id: "#website-password",
+		type: "input",
+		settingIds: ["server-website", "server-password"],
+	},
+	{
 		id: "#server-name",
 		type: "input",
 		settingIds: ["server-name"],
@@ -528,13 +533,21 @@ let elesToSaveData = [
 	// Time Choosers
 	{
 		id: "#start-time-auto-night",
-		type: "time",
+		type: "time-selector",
 		settingIds: ["auto-night", "auto-night-start"],
 	},
 	{
 		id: "#end-time-auto-night",
-		type: "time",
+		type: "time-selector",
 		settingIds: ["auto-night", "auto-night-end"],
 	},
 ];
-export { elesToSaveData };
+
+let radioElesToSaveData = [
+	{
+		group: "default-bomb",
+		settingIds: ["player-mod", "default-bomb"],
+		elesSelector: "data-bombname",
+	},
+];
+export { elesToSaveData, radioElesToSaveData };

@@ -16,7 +16,7 @@ window.addEventListener("popstate", function (event) {
 		document.body.classList.remove("disable-scrolling");
 	}
 });
-
+let config;
 if (!localStorage.getItem("config")) {
 	fetch("./assets/json/config.jsonc")
 		.then((res, rej) => res.json())
@@ -24,21 +24,12 @@ if (!localStorage.getItem("config")) {
 			localStorage.setItem("config", JSON.stringify(result));
 			functions.loadSettings();
 		});
+	config = JSON.parse(localStorage.getItem("config"));
 } else {
 	functions.loadSettings();
+	config = JSON.parse(localStorage.getItem("config"));
 }
 
-let config = JSON.parse(localStorage.getItem("config"));
-
-// if (localStorage.getItem("theme")) {
-// 	functions.theme(localStorage.getItem("theme"));
-// 	document.getElementById("dark-mode").checked =
-// 		localStorage.getItem("theme") === "dark" ? true : false;
-// } else {
-// 	functions.theme("dark");
-// 	localStorage.setItem("theme", "dark");
-// 	document.getElementById("dark-mode").checked = true;
-// }
 // Initialize from URL on page load
 window.onload = function () {
 	functions.initializeFromURL();
@@ -50,10 +41,14 @@ document
 	.forEach((btn) => (btn.onclick = (ev) => ev.preventDefault()));
 
 // Login Screen And Auto Login Logic
-if (localStorage.getItem("password") === "VortexAndHonor") {
+if (
+	localStorage.getItem("password") ===
+	config["server-website"]["server-password"]
+) {
 	document.body.classList.remove("disable-scrolling");
 } else {
-	document.body.className = "disable-scrolling";
+	history.pushState({ screen: "" }, "", `${window.location.origin}`);
+	document.body.classList.add("disable-scrolling");
 	let loginScreen = document.createElement("div");
 	loginScreen.className = "login-screen";
 	loginScreen.id = "login-screen";
@@ -91,12 +86,15 @@ if (localStorage.getItem("password") === "VortexAndHonor") {
 	).onclick = async (ev) => {
 		ev.preventDefault();
 		let password = loginScreen.querySelector("#login-password");
-		if (password.value === "VortexAndHonor") {
+		if (password.value === config["server-website"]["server-password"]) {
 			document.body.classList.remove("disable-scrolling");
 			loginScreen.style.opacity = "0";
 			await functions.delay(350);
 			loginScreen.remove();
-			localStorage.setItem("password", "VortexAndHonor");
+			localStorage.setItem(
+				"password",
+				config["server-website"]["server-password"]
+			);
 		} else {
 			loginScreen.querySelector(".wrong-password-text").style.opacity = "1";
 		}
@@ -378,7 +376,7 @@ document.querySelectorAll(".toggle-radio-box").forEach((element) => {
 		document.querySelectorAll(".toggle-radio-box").forEach((ele) => {
 			ele.previousElementSibling.checked = false;
 		});
-		element.previousElementSibling.checked = true;
+		element.previousElementSibling.click();
 	};
 });
 
@@ -635,5 +633,3 @@ document.querySelector(".reset-btn").onclick = async (ev) => {
 };
 
 functions.storeElesValues();
-
-

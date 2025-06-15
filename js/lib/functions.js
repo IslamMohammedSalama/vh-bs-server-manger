@@ -65,39 +65,70 @@ function initializeFromURL() {
 	}
 }
 
+// Load Settings Function
 function loadSettings() {
 	const config = JSON.parse(localStorage.getItem("config")) || {};
 	const elements = vars.elesToSaveData;
+	const radioEles = vars.radioElesToSaveData;
+	radioEles.forEach((ele) => {
+		document
+			.querySelectorAll(`[data-group="${ele.group}"]`)
+			.forEach((radEle) => (radEle.checked = false));
+		const value = ele.settingIds.reduce((obj, key) => obj?.[key], config);
+		let el = document.querySelector(`[${ele.elesSelector}=${value}]`);
+		el.checked = true;
+	});
 
 	elements.forEach((ele) => {
 		const element = document.querySelector(ele.id);
 		if (!element) return;
-
+		// console.log(ele)
 		const value = ele.settingIds.reduce((obj, key) => obj?.[key], config);
 		switch (ele.type) {
 			case "input":
-				element.value = value || "";
+				element.value = value;
 				break;
 			case "switch":
 				element.checked = Boolean(value);
 				break;
 			case "number-chooser":
-				element.textContent = value || "";
+				element.textContent = value;
 				break;
 			case "color-selector":
-				element.value = value || "";
+				element.value = value;
 				break;
-			case "time":
-				element.value = value || "";
+			case "time-selector":
+				element.value = value;
 				break;
-				
 		}
 	});
 }
-
+// Store Elements Values
 function storeElesValues() {
 	const elements = vars.elesToSaveData;
 	const config = JSON.parse(localStorage.getItem("config")) || {};
+	const radioEles = vars.radioElesToSaveData;
+	radioEles.forEach((ele) => {
+		let radioEls = document.querySelectorAll(`[data-group="${ele.group}"]`);
+
+		radioEls.forEach(
+			(radioEle) =>
+				(radioEle.onclick = (ev) => {
+					radioEls.forEach((radEle) => (radEle.checked = false));
+					radioEle.checked = true;
+					let current = config;
+					let value = radioEle.dataset.bombname;
+					console.log(value);
+					for (let i = 0; i < ele.settingIds.length - 1; i++) {
+						const key = ele.settingIds[i];
+						current[key] = current[key] || {};
+						current = current[key];
+					}
+					current[ele.settingIds[ele.settingIds.length - 1]] = value;
+					localStorage.setItem("config", JSON.stringify(config));
+				})
+		);
+	});
 
 	elements.forEach((ele) => {
 		const el = document.querySelector(ele.id);
@@ -110,7 +141,7 @@ function storeElesValues() {
 				? "click"
 				: "color-selector"
 				? "input"
-				: "time"
+				: "time-selector"
 				? "input"
 				: "";
 		if (ele.type === "color-selector" || ele.type === "time") {
@@ -141,8 +172,6 @@ function storeElesValues() {
 					const key = ele.settingIds[i];
 					current[key] = current[key] || {};
 					current = current[key];
-					console.log(key);
-					console.log(current);
 				}
 				current[ele.settingIds[ele.settingIds.length - 1]] = value;
 

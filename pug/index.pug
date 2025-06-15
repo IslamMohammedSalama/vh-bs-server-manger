@@ -48,6 +48,22 @@ html(lang="en")
 			href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
 			)
 	body
+		//- script(src="js/dark_mode.js" type="text/javascript" defer) 
+		script.
+			let themeName = localStorage.getItem("theme");
+			if (themeName === "dark") {
+				//- document.body.style.transition = "0s";
+				document.body.classList.add("dark-mode");
+				addEventListener("DOMContentLoaded", () => {
+				document.body.style.transition = "var(--main-animation-duration)";
+					document.getElementById("dark-mode").checked = true;
+				});
+			} else if (themeName === "light") {
+				addEventListener("DOMContentLoaded", () => {
+					document.getElementById("dark-mode").checked = false;
+				});
+			}
+
 		//- Home Screen
 		+home
 		//- Overview Screen
@@ -72,7 +88,6 @@ html(lang="en")
 		+change-server
 		//- Website Settings
 		+website-settings
-		script(src="js/dark_mode.js" type="text/javascript" defer async) 
 		script(src="js/script.min.js" async defer type="module")
 		script(src="js/lib/functions.js" async defer type="module")
 		script(src="js/lib/vars.js" async defer type="module")

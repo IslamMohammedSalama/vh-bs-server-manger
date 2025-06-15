@@ -499,9 +499,9 @@ mixin server-settings
               li 
                 form(action) 
                   label.password-form.d-flex.align-items-center
-                    span.me-auto Website Password:
-                    .d-flex   
-                      input.me-1.d-block#website-password(type="password", name="website-password" placeholder="Type Your Server Password" value="VortexAndHonor")
+                    span.me-1 Website Password:
+                    .d-flex.flex-grow-1
+                      input.me-1.d-block.w-100#website-password(type="password", name="website-password" placeholder="Type Your Server Password" value="VortexAndHonor")
                       button.show-or-hide.circle: i.fa-solid.fa-eye
         .overley
       //- Coop Settings
@@ -921,43 +921,43 @@ mixin server-settings
                   label.radio-box
                     span Normal Bomb
                     span
-                      input#normal-bomb.toggle-radio(type="radio", name="bomb" checked)
+                      input#normal-bomb.toggle-radio(type="radio", name="bomb" checked data-group="default-bomb" data-bombname="normal")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Ice Bomb
                     span
-                      input#ice-bomb.toggle-radio(type="radio", name="ice-bomb")
+                      input#ice-bomb.toggle-radio(type="radio", name="ice-bomb" data-group="default-bomb" data-bombname="ice")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Fire Bomb
                     span
-                      input#fire-bomb.toggle-radio(type="radio", name="fire-bomb")
+                      input#fire-bomb.toggle-radio(type="radio", name="fire-bomb" data-group="default-bomb" data-bombname="fire")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Impact Bomb
                     span
-                      input#impact-bomb.toggle-radio(type="radio", name="impact-bomb")
+                      input#impact-bomb.toggle-radio(type="radio", name="impact-bomb" data-group="default-bomb" data-bombname="impact")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Sticky Bomb
                     span
-                      input#sticky-bomb.toggle-radio(type="radio", name="sticky-bomb")
+                      input#sticky-bomb.toggle-radio(type="radio", name="sticky-bomb" data-group="default-bomb" data-bombname="sticky")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Expansive Bomb
                     span
-                      input#expansive-bomb.toggle-radio(type="radio", name="expansive-bomb")
+                      input#expansive-bomb.toggle-radio(type="radio", name="expansive-bomb" data-group="default-bomb" data-bombname="expansive")
                       button.toggle-radio-box
                 li
                   label.radio-box
                     span Mine Bomb
                     span
-                      input#mine-bomb.toggle-radio(type="radio", name="mine-bomb")
+                      input#mine-bomb.toggle-radio(type="radio", name="mine-bomb" data-group="default-bomb" data-bombname="mine")
                       button.toggle-radio-box
         .overley
       //- After Warn Kick Message

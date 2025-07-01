@@ -1,5 +1,4 @@
 import * as functions from "./lib/functions.js";
-import * as vars from "./lib/vars.js";
 
 // Handle browser back/forward buttons
 window.addEventListener("popstate", function (event) {
@@ -16,18 +15,20 @@ window.addEventListener("popstate", function (event) {
 		document.body.classList.remove("disable-scrolling");
 	}
 });
-let config;
+
 if (!localStorage.getItem("config")) {
-	fetch("./assets/json/config.jsonc")
-		.then((res, rej) => res.json())
+	fetch("assets/json/config.jsonc")
+		.then((res) => res.json())
 		.then((result) => {
 			localStorage.setItem("config", JSON.stringify(result));
 			functions.loadSettings();
-		});
-	config = JSON.parse(localStorage.getItem("config"));
+			functions.loadRoles();
+		})
+		.then((res) => functions.showLoginScreen());
 } else {
 	functions.loadSettings();
-	config = JSON.parse(localStorage.getItem("config"));
+	functions.loadRoles();
+	functions.showLoginScreen();
 }
 
 // Initialize from URL on page load
@@ -39,67 +40,6 @@ window.onload = function () {
 document
 	.querySelectorAll("button")
 	.forEach((btn) => (btn.onclick = (ev) => ev.preventDefault()));
-
-// Login Screen And Auto Login Logic
-if (
-	localStorage.getItem("password") ===
-	config["server-website"]["server-password"]
-) {
-	document.body.classList.remove("disable-scrolling");
-} else {
-	history.pushState({ screen: "" }, "", `${window.location.origin}`);
-	document.body.classList.add("disable-scrolling");
-	let loginScreen = document.createElement("div");
-	loginScreen.className = "login-screen";
-	loginScreen.id = "login-screen";
-	loginScreen.style.opacity = "1";
-	loginScreen.innerHTML = ` 
-	<div class="popup-window">
-		<div class="popup-header"><h5>Login</h5></div>
-		<div class="body">
-			<form action">
-				<label class="password-form d-flex align-items-center flex-column"
-					><span class="me-auto">Enter Your Password:</span>
-					<div class="d-flex w-100 mt-1">
-						<input
-							class="me-1 d-block w-100"
-							id="login-password"
-							type="password"
-							name="login-password"
-							placeholder="Password"
-						/>
-						<button class="show-or-hide circle">
-						<i class="fa-solid fa-eye"></i>
-						</button>
-						</div>
-						<div class="wrong-password-text"> Wrong Password</div>
-						<button class="login w-100">Login</button></label
-						>
-						</form>
-		</div>
-	</div>
-	<div class="overley"></div>
-	`;
-	document.body.children[0].before(loginScreen);
-	loginScreen.querySelector(
-		"#login-screen > div.popup-window > div.body > form > label > button.login"
-	).onclick = async (ev) => {
-		ev.preventDefault();
-		let password = loginScreen.querySelector("#login-password");
-		if (password.value === config["server-website"]["server-password"]) {
-			document.body.classList.remove("disable-scrolling");
-			loginScreen.style.opacity = "0";
-			await functions.delay(350);
-			loginScreen.remove();
-			localStorage.setItem(
-				"password",
-				config["server-website"]["server-password"]
-			);
-		} else {
-			loginScreen.querySelector(".wrong-password-text").style.opacity = "1";
-		}
-	};
-}
 
 // Navigate To Screens
 let navs = document.querySelectorAll(
@@ -118,89 +58,20 @@ screens.forEach((theScreen) => {
 	let header = theScreen.querySelector(".header");
 	header.querySelector(".back").onclick = async () => {
 		history.back();
-		// history.pushState({screen:""},"",`${window.location.pathname}`)
 		theScreen.style.left = "100dvw";
 		document.body.classList.remove("disable-scrolling");
 		await functions.delay(350);
 		theScreen.style.display = "none";
 	};
-	if (header.children[2]) {
-		try {
-			header.querySelector(".add").onclick = (ev) => {
-				let newPlayerIndex =
-					theScreen.querySelector(".container").children.length + 1;
-				let newPlayer = theScreen
-					.querySelector(".container ul:last-child")
-					.cloneNode();
-				newPlayer.innerHTML = theScreen.classList.contains(
-					"effects-and-tag-management-screen"
-				)
-					? `
-								<ul>
-					<li><span>Player Number ${newPlayerIndex} :</span></li>
-					<li>
-						<label class="form">
-							<span>Player pb </span
-							><textarea
-								class="player-${newPlayerIndex}-pb"
-								id="player-${newPlayerIndex}-pb-effect"
-								placeholder="Enter Player pb"
-							></textarea>
-						</label>
-					</li>
-					<li>
-						<label class="form"
-							><span>Player Tag Name</span
-							><textarea
-								class="player-${newPlayerIndex}-tag"
-								id="player-${newPlayerIndex}-tag"
-								placeholder="Enter Player Tag"
-							></textarea>
-						</label>
-					</li>
-					<li>
-						<label class="form"
-							><span>Player Effect Name</span
-							><textarea
-								class="player-${newPlayerIndex}-effect"
-								id="player-${newPlayerIndex}-effect"
-								placeholder="Enter Player Effect"
-							></textarea>
-						</label>
-					</li>
-				</ul>
-				`
-					: theScreen.classList.contains("rules-management-screen")
-					? `
-						<ul>
-			<li><span>Player Number ${newPlayerIndex} :</span></li>
-			<li>
-				<label class="form">
-					<span>Player pb </span
-					><textarea
-						class="player-${newPlayerIndex}-pb"
-						id="player-${newPlayerIndex}-pb-rules"
-						placeholder="Enter Player pb"
-					></textarea>
-				</label>
-			</li>
-			<li>
-				<label class="form"
-					><span>Rule Name</span
-					><textarea
-						class="player-${newPlayerIndex}-rule-name"
-						id="player-${newPlayerIndex}-rule-name"
-						placeholder="Enter Player Effect"
-					></textarea>
-				</label>
-			</li>
-		</ul>
+	// Add New Element
+	if (header.querySelector(".add")) {
+		header.querySelector(".add").onclick = (ev) => {
+			if (theScreen.classList.contains("effects-and-tag-management-screen")) {
 
-				`
-					: null;
-				theScreen.querySelector(".container").appendChild(newPlayer);
-			};
-		} catch (error) {}
+			} else if (theScreen.classList.contains("roles-management-screen")) {
+				functions.createNewRoleBlock()
+			}
+		};
 	}
 });
 
@@ -309,36 +180,6 @@ document
 		};
 	});
 
-// Setup Popups
-let popupOpeners = document.querySelectorAll("li.popup > button");
-popupOpeners.forEach((popupOpener) => {
-	popupOpener.onclick = async () => {
-		let popupWin = popupOpener.nextElementSibling;
-		let overley = popupWin.nextElementSibling;
-		popupWin.style.display = "flex";
-		overley.style.display = "block";
-		await functions.delay(0);
-		popupWin.style.opacity = "1";
-		overley.style.opacity = "1";
-		popupWin.style.transform = "translate(-50%, -50%) scale(1)";
-		popupWin.querySelector(" .close ").onclick = async () => {
-			popupWin.style.opacity = "0";
-			overley.style.opacity = "0";
-			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
-			await functions.delay(350);
-			popupWin.style.display = "none";
-			overley.style.display = "none";
-		};
-		overley.onclick = async () => {
-			popupWin.style.opacity = "0";
-			overley.style.opacity = "0";
-			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
-			await functions.delay(350);
-			popupWin.style.display = "none";
-			overley.style.display = "none";
-		};
-	};
-});
 
 // Show/Hide Password Logic
 let showAndHidePassword = document.querySelector(".show-or-hide");
@@ -371,13 +212,13 @@ document.querySelectorAll(".toggle-radio-box").forEach((element) => {
 		});
 		element.previousElementSibling.checked = true;
 	};
-	element.onclick = function (ev) {
+	element.addEventListener("click", function (ev) {
 		ev.preventDefault();
 		document.querySelectorAll(".toggle-radio-box").forEach((ele) => {
 			ele.previousElementSibling.checked = false;
 		});
 		element.previousElementSibling.click();
-	};
+	});
 });
 
 // Players Management And OverView Listing From Json File
@@ -420,8 +261,12 @@ fetch("assets/json/players.jsonc")
 							<i class="fa-solid fa-ellipsis-vertical"></i>
 						</button>
 						<div class="menu">
-							<button>Mute</button>
-							<button>Ban</button>
+							<button class="${row.muted ? "unmute-" + row.id : "mute-" + row.id}">${
+				row.muted ? "UnMute" : "Mute"
+			}</button>
+							<button class="${row.banned ? "unban-" + row.id : "ban-" + row.id}">${
+				row.banned ? "UnBan" : "Ban"
+			}</</button>
 						</div>
 					</td>
 				</tr>
@@ -483,24 +328,31 @@ fetch("assets/json/players.jsonc")
 
 		document.querySelectorAll("tbody .menu button").forEach((element) => {
 			element.onclick = async (ev) => {
+				let id = element.className.split("-")[1];
+				let action = element.className.split("-")[0];
+				let who;
+				for (const key of result) {
+					if (key.id == id) {
+						who = key.name;
+					}
+				}
 				ev.preventDefault();
 				let popup = document.createElement("div");
-				popup.className = "popup-window";
+				popup.classList.add("popup-window");
+				popup.classList.add("alert");
 				popup.innerHTML = `
 	<div class="popup-header">
 			<h5>Alert</h5>
 	</div>
 	<div class="body">
-		<span class="text-center w-100 d-block">${
-			element.parentElement.parentElement.parentElement.children[1].textContent
-		} Was ${
-					element.textContent === "Mute"
+		<span class="text-center w-100 d-block">${who} Was ${
+					action === "mute"
 						? "Muted"
-						: element.textContent === "UnMute"
+						: action === "unmute"
 						? "UnMuted"
-						: element.textContent === "Ban"
+						: action === "ban"
 						? "Banned"
-						: element.textContent === "UnBan"
+						: action === "unban"
 						? "UnBanned"
 						: "Nothing"
 				}</span>
@@ -508,14 +360,24 @@ fetch("assets/json/players.jsonc")
 	</div>
 	`;
 				element.textContent =
-					element.textContent === "Mute"
+					action === "mute"
 						? "UnMute"
-						: element.textContent === "UnMute"
+						: action === "unmute"
 						? "Mute"
-						: element.textContent === "Ban"
+						: action === "ban"
 						? "UnBan"
-						: element.textContent === "UnBan"
+						: action === "unban"
 						? "Ban"
+						: "Nothing";
+				element.className =
+					action === "mute"
+						? "unmute-" + id
+						: action === "unmute"
+						? "mute-" + id
+						: action === "ban"
+						? "unban-" + id
+						: action === "unban"
+						? "ban-" + id
 						: "Nothing";
 				let overley = document.createElement("div");
 				overley.className = "overley";
@@ -550,6 +412,7 @@ fetch("assets/json/players.jsonc")
 			};
 		});
 	});
+
 // Change Theme Logic
 document.getElementById("dark-mode").onclick = (ev) => {
 	if (ev.target.checked) {
@@ -562,6 +425,36 @@ document.getElementById("dark-mode").onclick = (ev) => {
 		localStorage.setItem("theme", "light");
 	}
 };
+// Setup Popups
+let popupOpeners = document.querySelectorAll("li.popup > button");
+popupOpeners.forEach((popupOpener) => {
+	popupOpener.addEventListener("click", async () => {
+		let popupWin = popupOpener.nextElementSibling;
+		let overley = popupWin.nextElementSibling;
+		popupWin.style.display = "flex";
+		overley.style.display = "block";
+		await functions.delay(0);
+		popupWin.style.opacity = "1";
+		overley.style.opacity = "1";
+		popupWin.style.transform = "translate(-50%, -50%) scale(1)";
+		popupWin.querySelector(" .close ").onclick = async () => {
+			popupWin.style.opacity = "0";
+			overley.style.opacity = "0";
+			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
+			await functions.delay(350);
+			popupWin.style.display = "none";
+			overley.style.display = "none";
+		};
+		overley.onclick = async () => {
+			popupWin.style.opacity = "0";
+			overley.style.opacity = "0";
+			popupWin.style.transform = "translate(-50%, -50%) scale(0)";
+			await functions.delay(350);
+			popupWin.style.display = "none";
+			overley.style.display = "none";
+		};
+	});
+});
 
 // Reset Settings Logic
 
@@ -615,12 +508,8 @@ document.querySelector(".reset-btn").onclick = async (ev) => {
 	};
 
 	resetBtn.onclick = async (ev) => {
-		fetch("./assets/json/config.jsonc")
-			.then(
-				(res) => res.json(),
-				(rej) => console.error(`Error When Get The Config ${rej}`)
-			)
-			.then((result) => localStorage.setItem("config", JSON.stringify(result)));
+		localStorage.clear();
+		location.reload();
 		popup.style.opacity = "0";
 		overley.style.opacity = "0";
 		popup.style.transform = "translate(-50%, -50%) scale(0)";
@@ -631,5 +520,63 @@ document.querySelector(".reset-btn").onclick = async (ev) => {
 		popup.remove();
 	};
 };
+
+// Search On Files Logic
+
+document.querySelector(".server-logs-screen button.search").onclick = async (
+	ev
+) => {
+	ev.preventDefault();
+	let textToSearch = document.getElementById("string-search").value.trim();
+	if (textToSearch === "") {
+		return;
+	}
+	let selectedCheckBox = document.querySelector(
+		".server-logs-screen form input:checked"
+	);
+	if (selectedCheckBox.classList.contains("logs-file")) {
+		let textFile = await (await fetch("assets/txt-files/logs.txt")).text();
+		document.getElementById("results").innerHTML = "";
+		let linesOfFile = textFile.split("\n");
+		linesOfFile.forEach((line) => {
+			if (line.includes(textToSearch)) {
+				let newHtmlLine = line
+					.split(textToSearch)
+					.join(`<span>${textToSearch}</span>`);
+				let newLineEle = document.createElement("p");
+				newLineEle.innerHTML = newHtmlLine;
+				document.getElementById("results").append(newLineEle);
+			}
+		});
+	} else if (selectedCheckBox.classList.contains("errors-file")) {
+		let textFile = await (await fetch("assets/txt-files/errors.txt")).text();
+		document.getElementById("results").innerHTML = "";
+		let linesOfFile = textFile.split("\n");
+		linesOfFile.forEach((line) => {
+			if (line.includes(textToSearch)) {
+				let newHtmlLine = line
+					.split(textToSearch)
+					.join(`<span>${textToSearch}</span>`);
+				let newLineEle = document.createElement("p");
+				newLineEle.innerHTML = newHtmlLine;
+				document.getElementById("results").append(newLineEle);
+			}
+		});
+	} else {
+		throw new Error("This File Not Found");
+	}
+};
+
+// Change The Text Of Combobox Button On Check Any Radio Box
+
+document.querySelectorAll(".select-combobox").forEach((combobox) => {
+	let popupWin = combobox.nextElementSibling;
+	popupWin.querySelectorAll("label.radio-box").forEach(
+		(label) =>
+			(label.querySelector(".toggle-radio").onclick = () => {
+				combobox.children[0].textContent = label.children[0].textContent;
+			})
+	);
+});
 
 functions.storeElesValues();

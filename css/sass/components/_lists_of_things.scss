@@ -7,6 +7,13 @@ ul {
 		span {
 			text-align: left;
 		}
+		> div:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: var(--main-padding-size, $main-padding-size);
+		}
 		transition: var(--main-animation-duration, $main-animation-duration);
 		display: flex;
 		justify-content: space-between;
@@ -57,6 +64,7 @@ ul {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
+			// background-color: ;
 			@include small-screens {
 				align-items: center;
 				> textarea {
@@ -125,6 +133,11 @@ ul {
 			&:hover {
 				background-color: var(--color-6, get-item-by-index($main-colors, 6));
 			}
+		}
+		button.select-combobox {
+			width: fit-content;
+			padding: 10px;
+			border-radius: 20px;
 		}
 	}
 }

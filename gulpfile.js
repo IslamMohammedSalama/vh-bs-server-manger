@@ -13,7 +13,6 @@ import connect from "gulp-connect";
 import noop from "gulp-noop";
 import newer from "gulp-newer";
 
-// import babel from "gulp-babel";
 const sass = gulpSass(dartSass);
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -39,17 +38,9 @@ const paths = {
 // HTML task
 gulp.task("html", () =>
 	gulp
-		.src(paths.html.src,)
+		.src(paths.html.src)
 		.pipe(pug())
 		.pipe(gulp.dest(paths.html.dest))
-		// .pipe(
-		// 	gulpNotify({
-		// 		title: "Html Compile",
-		// 		message: "Html Compile completed successfully!",
-		// 		onLast: true,
-		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-		// 	})
-		// )
 		.pipe(connect.reload())
 );
 
@@ -63,8 +54,7 @@ gulp.task("clean:html", function () {
 // CSS task
 gulp.task("css", () =>
 	gulp
-		.src(paths.css.src, { base: "css",
-			})
+		.src(paths.css.src, { base: "css" })
 		.pipe(
 			isProduction
 				? noop()
@@ -76,17 +66,8 @@ gulp.task("css", () =>
 		.pipe(autoprefixer())
 		.pipe(gulpConcat("style.min.css"))
 		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
-		// .pipe(gulp.dest(paths.styles.dest))
 		.pipe(gulp.dest(paths.css.dest))
 		.pipe(connect.reload())
-		// .pipe(
-		// 	gulpNotify({
-		// 		title: "Css Compile",
-		// 		message: "Css Compile completed successfully!",
-		// 		onLast: true,
-		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-		// 	})
-		// )
 );
 
 // New: Specific clean task for Css output
@@ -112,14 +93,6 @@ gulp.task("js", () =>
 		.pipe(isProduction ? noop() : sourcemaps.write("maps"))
 		.pipe(connect.reload())
 		.pipe(gulp.dest(paths.js.dest))
-		// .pipe(
-		// 	gulpNotify({
-		// 		title: "Js Compile",
-		// 		message: "JavaScript Compile completed successfully!",
-		// 		onLast: true,
-		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-		// 	})
-		// )
 );
 
 gulp.task("js:dark", () =>
@@ -171,22 +144,11 @@ gulp.task("assets", () =>
 			nodir: false,
 			encoding: false,
 		})
-		.pipe(newer("dist")) // Skip unchanged files
-
 		.pipe(gulp.dest("dist"))
-		// .pipe(
-		// 	gulpNotify({
-		// 		title: "Assets Move",
-		// 		message: "Build completed successfully!",
-		// 		onLast: true,
-		// 		// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
-		// 	})
-		// )
 );
 gulp.task(
 	"compress",
 	() => gulp.src("dist/**/*").pipe(zip("website.zip")).pipe(gulp.dest("."))
-	// .pipe(notify());
 );
 
 gulp.task("build-msg", function () {
@@ -195,7 +157,6 @@ gulp.task("build-msg", function () {
 			title: "Gulp Build",
 			message: "Build completed successfully!",
 			onLast: true,
-			// icon: "./assets/imgs/favicon.ico", // Optional: if you have a specific icon
 		})
 	); // Trigger the notification
 });
@@ -213,13 +174,12 @@ gulp.task("connect", function (done) {
 gulp.task("watch", () => {
 	gulp.watch("pug/**/*.pug", gulp.series("html")); // Watch all pug files
 	gulp.watch("css/**/*.scss", gulp.series("css"));
-	// gulp.watch("js/dark_mode.js", gulp.series("js:dark"));
 	gulp.watch("js/lib/**.js", gulp.series("js-libs"));
 	gulp.watch("js/**.js", gulp.series("js"));
 	gulp.watch(["assets/**/*", "webfonts/**/*"], gulp.series("assets")); // Watch assets and webfonts
 });
 gulp.task("clean", function () {
-	return gulp.src(["dist/*"], { read: false, allowEmpty: true ,}).pipe(clean());
+	return gulp.src(["dist/*"], { read: false, allowEmpty: true }).pipe(clean());
 });
 
 // Build task (runs all tasks)
@@ -231,9 +191,7 @@ gulp.task(
 			"html",
 			"css",
 			"js",
-			// "js:dark",
 			"js-libs",
-			// "sw-js",
 			"assets"
 		),
 		"compress",
@@ -247,5 +205,5 @@ gulp.task(
 	gulp.series(
 		"build", // Step 1: Clean + compile everything
 		gulp.parallel("connect", "watch") // Step 2 & 3: Serve & Watch simultaneously
-	)
+	) 
 );

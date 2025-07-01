@@ -51,11 +51,11 @@
 	"teams": [
 		{
 			"name": "Vortex",
-			"color": "#000"
+			"color": "#00ff00"
 		},
 		{
 			"name": "Honor",
-			"color": "#fff"
+			"color": "#ffff00"
 		}
 	],
 	"screen-msgs": {
@@ -76,8 +76,8 @@
 		"lobby-idle": 400
 	},
 	"auto-night": {
-		"auto-night-start": "7:30",
-		"auto-night-end": "5:30",
+		"auto-night-start": "07:30:00",
+		"auto-night-end": "05:30:00",
 		"fireflies": false,
 		"random-fireflies": false
 	},
@@ -154,19 +154,19 @@
 		"mine",
 		"expansive"
 	],
-	"players-roles": {
-		"pd-u23423424nkn": "lead-stuff",
-		"pd-u42n4lna": "owner",
-		"pd-4je3kl3k": "admin"
-	},
+	"players-roles": [
+		{ "id": "pb-u42n4lna==", "role": "owner" },
+		{ "id": "pb-u23423424nkn==", "role": "lead-staff" },
+		{ "id": "pb-4je3kl3k==", "role": "admin" }
+	],
 	"players-tags-and-effects": {
-		"pb-u23423424nkn": {
+		"pb-u23423424nkn==": {
 			"tag": "ZadKiel",
-			"effect": "idk"
+			"effect": "shield"
 		},
-		"pb-u42n4lna": {
+		"pb-u42n4lna==": {
 			"tag": "VorTex",
-			"effect": "idk"
+			"effect": "shield"
 		},
 		"pb-IF4GUWhbCA==": {
 			"tag": "𝕲𝕳『𝕴𝕾𝕷𝕬𝕸』",

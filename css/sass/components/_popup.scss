@@ -14,10 +14,14 @@
 	// transform: translate(-50%, -50%) ;
 	height: fit-content;
 	width: 500px;
+
 	max-height: 95dvh;
 	background-color: var(--main-background-color, $main-background-color);
 	border-radius: var(--main-border-radius, $main-border-radius-size);
 	padding: var(--main-padding-size, $main-padding-size);
+	&.alert {
+		width: 300px;
+	}
 	> .popup-header {
 		display: flex;
 

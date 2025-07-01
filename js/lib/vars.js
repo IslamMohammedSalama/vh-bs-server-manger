@@ -522,23 +522,23 @@ let elesToSaveData = [
 	// Color Choosers
 	{
 		id: "#first-team-color",
-		type: "color-selector",
+		type: "color-chooser",
 		settingIds: ["teams", 0, "color"],
 	},
 	{
 		id: "#second-team-color",
-		type: "color-selector",
+		type: "color-chooser",
 		settingIds: ["teams", 1, "color"],
 	},
 	// Time Choosers
 	{
 		id: "#start-time-auto-night",
-		type: "time-selector",
+		type: "time-chooser",
 		settingIds: ["auto-night", "auto-night-start"],
 	},
 	{
 		id: "#end-time-auto-night",
-		type: "time-selector",
+		type: "time-chooser",
 		settingIds: ["auto-night", "auto-night-end"],
 	},
 ];

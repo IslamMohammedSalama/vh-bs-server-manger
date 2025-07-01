@@ -3,30 +3,46 @@
 		"rank": "1",
 		"name": "ZadKiel",
 		"kills": "2000",
-		"score": "40000"
+		"score": "40000",
+		"banned": false,
+		"muted": false,
+		"id":1
 	},
 	{
 		"rank": "2",
 		"name": "Sara",
 		"kills": "1750",
-		"score": "35000"
+		"score": "35000",
+		"banned": false,
+		"muted": false,
+		"id":2
+
 	},
 	{
 		"rank": "3",
 		"name": "VorTex",
 		"kills": "1500",
-		"score": "30000"
+		"score": "30000",
+		"banned": false,
+		"muted": false,
+		"id":3
 	},
 	{
 		"rank": "4",
 		"name": "Dest",
 		"kills": "1000",
-		"score": "20000"
+		"score": "20000",
+		"banned": false,
+		"muted": false,
+		"id":4
 	},
 	{
 		"rank": "5",
 		"name": "Islam",
 		"kills": "250",
-		"score": "500"
+		"score": "500",
+		"banned": true,
+		"muted": true,
+		"id":5
 	}
 ]

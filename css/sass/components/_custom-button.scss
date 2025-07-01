@@ -3,6 +3,7 @@
 @use "../helpers/functions" as *;
 button,
 input[type="submit"] {
+
 	padding: calc(var(--main-padding-size, $main-padding-size) / 2)
 		var(--main-padding-size, $main-padding-size);
 	display: flex;

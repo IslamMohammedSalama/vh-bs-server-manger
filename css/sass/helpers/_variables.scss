@@ -1,5 +1,5 @@
 $main-animation-duration: 0.35s;
-$main-color: #0d6efd;
+$main-color: #0075ff;
 $main-alt-color: rgb(75, 145, 224);
 $main-text-color: white;
 $main-background-color: #fff;
@@ -12,8 +12,9 @@ $main-input-text-color: #222;
 :root {
 	--main-padding-size: 13px;
 	--main-border-radius-size: 20px;
-	--main-color: #0d6efd;
+	--main-color: #0075ff;
 	--main-alt-color: rgb(75, 145, 224);
+	// --main-animation-duration: 60s;
 	--main-animation-duration: 0.35s;
 	// Light Mode
 	--main-background-color: #fff;

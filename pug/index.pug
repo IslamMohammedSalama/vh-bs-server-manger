@@ -8,7 +8,7 @@ include includes/quick-tools-screen.pug
 include includes/player-management-screen.pug
 include includes/import-and-export-server-settings-screen.pug
 include includes/effects-and-tag-management-screen.pug
-include includes/rules-management-screen.pug
+include includes/roles-management-screen.pug
 include includes/server-logs-screen.pug
 include includes/change-server-screen.pug
 include includes/website-settings-screen.pug
@@ -19,7 +19,7 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(name="description",content="VH Bs Server Settings Manger")
-		title Server Manger (Beta)
+		title VH Server Manger (Beta)
 		//- Page Logo 
 		link(rel="shortcut icon", href="assets/imgs/favicon.ico", type="image/x-icon")
 		//- Main Css File
@@ -48,11 +48,9 @@ html(lang="en")
 			href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
 			)
 	body
-		//- script(src="js/dark_mode.js" type="text/javascript" defer) 
 		script.
 			let themeName = localStorage.getItem("theme");
 			if (themeName === "dark") {
-				//- document.body.style.transition = "0s";
 				document.body.classList.add("dark-mode");
 				addEventListener("DOMContentLoaded", () => {
 				document.body.style.transition = "var(--main-animation-duration)";
@@ -74,8 +72,8 @@ html(lang="en")
 		+player-management
 		//- Server Settings
 		+server-settings
-		//- Rules Management Screen
-		+rules-management
+		//- Roles Management Screen
+		+roles-management
 		//- Quick Tools
 		+quick-tools
 		//- Server Logs

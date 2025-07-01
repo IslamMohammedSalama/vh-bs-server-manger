@@ -3,17 +3,40 @@ mixin server-logs
     //- Header
     +header-of-screen("Server Logs")
     //- body
-    .container 
+    .container.body
       ul
         li
           label.form
             span String To Search On Logs File
             textarea#string-search(name="" placeholder="Enter a String")
-        li
-          label.form
+        li.popup
             span File To Search On It 
-            //- I Will Change It Soon To Combobox
-            textarea#filename(name="" placeholder="Enter a Filename")
+            button.select-combobox
+              span logs.txt
+            .popup-window
+              .popup-header
+                h5 File Chooser
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                form
+                  ul 
+                    li
+                      label.radio-box
+                        span logs.txt
+                        span
+                          input#logs-file.toggle-radio.file.logs-file(type="radio", name="logs-file" checked )
+                          button.toggle-radio-box
+                    li
+                      label.radio-box
+                        span errors.txt
+                        span
+                          input#errors-file.toggle-radio.file.errors-file(type="radio", name="errors-file")
+                          button.toggle-radio-box
+            .overley
+        li 
+          div.w-100 
+            button.me-auto.ms-auto.mb-2.mt-2.search Search 
       .service-container 
         h4.text-center Result:
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        div.results#results

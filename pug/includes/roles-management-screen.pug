@@ -3,84 +3,85 @@ mixin roles-management
     //- Header
     +header-of-screen-and-add-btn("Roles Management")
     //- body Start From Here
-    .container.body
-      ul
-        li 
-          span Player Number 1 :
-        li 
-          label.form 
-            span Player pb 
-            textarea.player-1-pb#player-1-pb-roles(placeholder="Enter Player pb")
-        li.popup
-          span Role: 
-          button.select-combobox
-            span Owner
-          .popup-window
-            .popup-header
-              h5 Role Chooser
-              button.close.circle
-                i.fa.fa-close
-            .body.mt-2
-              form
-                ul 
-                  li
-                    label.radio-box
-                      span Owner
-                      span
-                        input#owner-role-1.toggle-radio.role.owner-role-1(type="radio", name="owner-role-1" data-group="role-1" data-role="owner" checked )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Co-Owner
-                      span
-                        input#co-owner-role-1.toggle-radio.role.co-owner-role-1(type="radio", name="co-owner-role-1" data-group="role-1" data-role="co-owner"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Lead Staff
-                      span
-                        input#lead-staff-role-1.toggle-radio.role.lead-staff-role-1(type="radio", name="lead-staff-role-1" data-group="role-1" data-role="lead-staff"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Moderator
-                      span
-                        input#moderator-role-1.toggle-radio.role.moderator-role-1(type="radio", name="moderator-role-1" data-group="role-1" data-role="moderator"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Trial Moderator
-                      span
-                        input#trial-moderator-role-1.toggle-radio.role.trial-moderator-role-1(type="radio", name="trial-moderator-role-1" data-group="role-1" data-role="trial-moderator"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Senior Complain Staff
-                      span
-                        input#senior-complain-staff-role-1.toggle-radio.role.senior-complain-staff-role-1(type="radio", name="senior-complain-staff-role-1" data-group="role-1" data-role="senior-complain-staff"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Complain Staff
-                      span
-                        input#complain-staff-role-1.toggle-radio.role.complain-staff-role-1(type="radio", name="complain-staff-role-1" data-group="role-1" data-role="complain-staff"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Trial Complain Staff
-                      span
-                        input#trial-complain-staff-role-1.toggle-radio.role.trial-complain-staff-role-1(type="radio", name="trial-complain-staff-role-1" data-group="role-1" data-role="trial-complain-staff"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span Admin
-                      span
-                        input#admin-role-1.toggle-radio.role.trial-complain-staff-role-1(type="radio", name="admin-role-1" data-group="role-1" data-role="admin"  )
-                        button.toggle-radio-box
-                  li
-                    label.radio-box
-                      span VIP
-                      span
-                        input#vip-role-1.toggle-radio.role.vip-role-1(type="radio", name="vip-role-1" data-group="role-1" data-role="vip"  )
-                        button.toggle-radio-box
-          .overley
+    .body
+      .container
+        ul
+          li 
+            span Player Number 1 :
+          li 
+            label.form 
+              span Player pb 
+              textarea.player-1-pb#player-1-pb-roles(placeholder="Enter Player pb")
+          li.popup
+            span Role: 
+            button.select-combobox
+              span Owner
+            .popup-window
+              .popup-header
+                h5 Role Chooser
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                form
+                  ul 
+                    li
+                      label.radio-box
+                        span Owner
+                        span
+                          input#owner-role-1.toggle-radio.role.owner-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="owner" checked )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Co-Owner
+                        span
+                          input#co-owner-role-1.toggle-radio.role.co-owner-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="co-owner"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Lead Staff
+                        span
+                          input#lead-staff-role-1.toggle-radio.role.lead-staff-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="lead-staff"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Moderator
+                        span
+                          input#moderator-role-1.toggle-radio.role.moderator-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="moderator"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Trial Moderator
+                        span
+                          input#trial-moderator-role-1.toggle-radio.role.trial-moderator-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="trial-moderator"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Senior Complain Staff
+                        span
+                          input#senior-complain-staff-role-1.toggle-radio.role.senior-complain-staff-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="senior-complain-staff"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Complain Staff
+                        span
+                          input#complain-staff-role-1.toggle-radio.role.complain-staff-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="complain-staff"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Trial Complain Staff
+                        span
+                          input#trial-complain-staff-role-1.toggle-radio.role.trial-complain-staff-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="trial-complain-staff"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Admin
+                        span
+                          input#admin-role-1.toggle-radio.role.trial-complain-staff-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="admin"  )
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span VIP
+                        span
+                          input#vip-role-1.toggle-radio.role.vip-role-1(type="radio", name="player-role-1"  data-group="role-1" data-role="vip"  )
+                          div.toggle-radio-box
+            .overlay

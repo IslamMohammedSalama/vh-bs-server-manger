@@ -1,0 +1,10 @@
+@use "../helpers/variables" as *;
+.home-screen {
+	h1 {
+		font-size: 20px;
+	}
+	ul li a {
+		padding: var(--main-padding-size, $main-padding-size);
+		border-radius: var(--main-border-radius-size, $main-border-radius-size);
+	}
+}

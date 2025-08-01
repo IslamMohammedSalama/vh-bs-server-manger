@@ -1,0 +1,29 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/functions" as *;
+
+ .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    .container {
+      padding: var(--main-padding-size, $main-padding-size);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      // box-shadow: 0 5px 40px var(--color-0,get-item-by-index($main-colors, 0));
+      > .back {
+        + span {
+          margin-right: auto;
+          margin-left: auto;
+          text-align: center;
+          // position: absolute;
+          // left: 50%;
+          // transform: translateX(-50%);
+          @include mobile-screens {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }

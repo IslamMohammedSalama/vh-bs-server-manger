@@ -1,13 +1,15 @@
 mixin header-of-screen(title = "Screen Title") 
   //- Header
-  .header.p-realtive.container
-    button.circle.back(aria-label="Back"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-    span= title
+  .header
+    .container.p-realtive
+      button.circle.back(aria-label="Back"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
+      span= title
 
 mixin header-of-screen-and-add-btn(title = "Screen Title") 
   //- Header
-  .header.p-realtive.container
-    button.circle.back(aria-label="Back"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
-    span= title
-    button.circle.add(aria-label="Black"): i(class="fa-solid fa-plus fa-sm")
+  .header
+    .container.p-realtive
+      button.circle.back(aria-label="Back"): i(class="fa-solid fa-chevron-right fa-rotate-180 fa-sm")
+      span= title
+      button.circle.add(aria-label="Black"): i(class="fa-solid fa-plus fa-sm")
 

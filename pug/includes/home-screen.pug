@@ -1,13 +1,15 @@
 mixin home
-  .container.body.home-screen#home
-    h1.header(class="text-center pt-3 pb-3") Welcome To VH Server Manger
-    ul
-      each item in navsNames
-        li(class=item.class)
-          button 
-            span= item.name
-            i(class="fa-solid fa-angle-right")
-      li.discord
-        a(href="https://discord.gg/jNeqw9zmY6",
-        class="d-flex justify-content-between align-items-center w-100") Discord
-          i(class="fa-solid fa-angle-right")
+  .home-screen#home
+    .body
+      .container
+        h1(class="text-center pt-3 pb-3") Welcome To VH Server Manger
+        ul
+          each item in navsNames
+            li(class=item.class)
+              button 
+                span= item.name
+                i(class="fa-solid fa-angle-right")
+          li.discord
+            a(href="https://discord.gg/jNeqw9zmY6",
+            class="d-flex justify-content-between align-items-center w-100") Discord
+              i(class="fa-solid fa-angle-right")

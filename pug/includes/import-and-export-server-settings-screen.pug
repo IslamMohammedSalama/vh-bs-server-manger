@@ -1,21 +1,23 @@
 mixin import-and-export-server-settings 
   .import-and-export-settings-screen.screen#import-and-export-settings
 
-    +header-of-screen("Import/Export Server Settings")
+    +header-of-screen("Import And Export Server Settings")
     //- Body
-    ul.container.body
-      li 
-        form
-          span Upload Your Settings
-          button.upload-btn Upload
-          input(
-            type="file",
-            name="json-file",
-            id="json-file",
-            accept=".json,.jsonc",
-            hidden
-          )
-      li
-        form
-          span Export Your Settings 
-          button.export-btn Export
+    .body
+      .container
+        ul
+          li 
+            form
+              span Upload Your Settings
+              button.upload-btn Upload
+              input(
+                type="file",
+                name="json-file",
+                id="json-file",
+                accept=".json,.jsonc",
+                hidden
+              )
+          li
+            form
+              span Export Your Settings 
+              button.export-btn Export

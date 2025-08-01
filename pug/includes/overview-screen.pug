@@ -1,58 +1,59 @@
 mixin overview
   .overview-screen.screen#overview 
     +header-of-screen("Overview")
-    .container.body
-      //- Current And Next Map
-      .current-and-next-game(class="d-flex flex-wrap service-container")
-        h4(class="mx-auto text-center w-100") Current And Next Map
-        .d-flex(class=" justify-content-between flex-column w-100 flex-lg-row")
-          .current-map(class="text-center") Current Map : 
-            span Game @ Map
-          .next-map(class="text-center") Next Map : 
-            span Game @ Map
-      .service-container(class=" mt-2 overflow-x-auto overflow-y-hidden p-relative")
-        h4(class="text-center mx-auto w-100") Top Players
-        table.mx-auto
-          thead
-            tr
-              th Rank.
-              th Name
-              th Score
-              th Kills
-          tbody
-            tr
-                td 1.
-                td Islam
-                td 200
-                td 200
-            tr
-                td 2.
-                td Text
-                td 200
-                td 200
-            tr
-                td 3.
-                td Anyone
-                td 20000
-                td 20000
-            tr
-                td 4.
-                td Testing
-                td 200000000
-                td 2004564231567876354
-            tr
-                td 5.
-                td Testing
-                td 200000000
-                td 200678987645
-      //- Server Teams Status
-      div(class="service-container mt-2 stats p-2")
-        h3.text-center Server Name : AnyThing
-        p.text-center Dual Team Session
-        div(class="d-flex align-center justify-content-between")
-          .text-center
-            p.fs-3 Islam : 
-            p.fs-3 0
-          .text-center
-            p.fs-3 Rocky : 
-            p.fs-3 0
+    .body
+      .container
+        //- Current And Next Map
+        .current-and-next-game(class="d-flex flex-wrap service-container")
+          h4(class="mx-auto text-center w-100") Current And Next Map
+          .d-flex(class=" justify-content-between flex-column w-100 flex-lg-row")
+            .current-map(class="text-center") Current Map : 
+              span Game @ Map
+            .next-map(class="text-center") Next Map : 
+              span Game @ Map
+        .service-container(class=" mt-2 overflow-x-auto overflow-y-hidden p-relative")
+          h4(class="text-center mx-auto w-100") Top Players
+          table.mx-auto
+            thead
+              tr
+                th Rank.
+                th Name
+                th Score
+                th Kills
+            tbody
+              tr
+                  td 1.
+                  td Islam
+                  td 200
+                  td 200
+              tr
+                  td 2.
+                  td Text
+                  td 200
+                  td 200
+              tr
+                  td 3.
+                  td Anyone
+                  td 20000
+                  td 20000
+              tr
+                  td 4.
+                  td Testing
+                  td 200000000
+                  td 2004564231567876354
+              tr
+                  td 5.
+                  td Testing
+                  td 200000000
+                  td 200678987645
+        //- Server Teams Status
+        div(class="service-container mt-2 stats p-2")
+          h3.text-center Server Name : AnyThing
+          p.text-center Dual Team Session
+          div(class="d-flex align-center justify-content-between")
+            .text-center
+              p.fs-3 Islam : 
+              p.fs-3 0
+            .text-center
+              p.fs-3 Rocky : 
+              p.fs-3 0

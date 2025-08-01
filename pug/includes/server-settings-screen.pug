@@ -3,1005 +3,1007 @@ mixin server-settings
     //- Header
     +header-of-screen("Server Settings")
     //- body
-    ul.container.body
-      //- Sever Name
-      li
-        form(action="")
-          label.form
-            span Server Name:
-            textarea#server-name(placeholder="Type Your Server Name Here", name="server-name") Vortex Vs Honor 
-      //- Host Device Name
-      li
-        form(action="")
-          label.form
-            span Host Device Name:
-            textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name") 1.7.20
-      //- Host Name
-      li
-        form(action="")
-          label.form
-            span Host Name:
-            textarea#host-name(placeholder="Type Your Host Name Here", name="host-name") Vortex And Honor
-      //- Playlist Code
-      li
-        form(action="")
-          label.form
-            span Playlist Code:
-            input#playlist-code(placeholder="Type Server Playlist Code", name="playlist-code" value="412158") 
-      //- First Time Join Message
-      li
-        form(action="")
-          label.form
-            span First Time Join Message:
-            textarea#first-join-msg(placeholder="Type Your Join Message Here", name="first-join-msg") Welcome To Our Server 
-      //- After Warn Kick Message
-      li
-        form(action="")
-          label.form
-            span After Warn Kick Message:
-            textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here") You Will Eat A Ban If You Made This Again 
-      //- party Size
-      li.number-chooser
-        span Party Size:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.max-party-size#max-party-size(data-min="2") 12
-          button.circle
-            i.fa-solid.fa-minus
-      //- party Size
-      li.number-chooser
-        span FFA Series Length:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.ffa-series-length#ffa-series-length(data-min="1") 24
-          button.circle
-            i.fa-solid.fa-minus
-      //- Clean Exit Time
-      li.number-chooser
-        span Clean Exit Time:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.clean-exit-time#clean-exit-time(data-min="0") 0 
-          button.circle
-            i.fa-solid.fa-minus
-      //- Warn Cooldown
-      li.number-chooser
-        span Warn Cooldown Time:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.warn-cooldown-time#warn-cooldown-time(data-min="1") 30
-          button.circle
-            i.fa-solid.fa-minus
-      //- Allow In Game Chat
-      li
-        form(action="")
-          label.switch
-            span Allow In Game Chat
-            span
-              input#in-game-chat.toggle-checkbox(type="checkbox", name="in-game-chat" checked)
-              button.toggle-switch
-      //- Public Party
-      li
-        form(action="")
-          label.switch
-            span Public Party
-            span
-              input#public-party.toggle-checkbox(type="checkbox", name="public-party" checked)
-              button.toggle-switch
-      //- Playlist Shuffle
-      li
-        form(action="")
-          label.switch
-            span Playlist Shuffle
-            span
-              input#playlist-shuffle.toggle-checkbox(type="checkbox", name="playlist-shuffle" checked)
-              button.toggle-switch
-      //- Allow Team Chat
-      li
-        form(action="")
-          label.switch
-            span Allow Team Chat:
-            span
-              input#team-chat.toggle-checkbox(type="checkbox", name="team-chat" checked)
-              button.toggle-switch
-      //- Allow Votes
-      li
-        form(action="")
-          label.switch
-            span Allow Votes:
-            span
-              input#votes.toggle-checkbox(type="checkbox", name="votes" checked)
-              button.toggle-switch
-      //- Enable Default Kick Voting
-      li
-        form(action="")
-          label.switch
-            span Enable Default Kick Voting:
-            span
-              input#default-kick-voting.toggle-checkbox(type="checkbox", name="default-kick-voting" checked)
-              button.toggle-switch
-      //- Auto Team Balance
-      li
-        form(action="")
-          label.switch
-            span Auto Team Balance:
-            span
-              input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance" checked)
-              button.toggle-switch
-      //- Auto Team Balance
-      li
-        form(action="")
-          label.switch
-            span Enable Queue :
-            span
-              input#queue.toggle-checkbox(type="checkbox", name="queue")
-              button.toggle-switch
-      //- Enable Telnet
-      li
-        form(action="")
-          label.switch
-            span Enable Telnet :
-            span
-              input#telnet.toggle-checkbox(type="checkbox", name="telnet")
-              button.toggle-switch
-      //- Coop Level
-      li
-        form(action="")
-          label.form
-            span Coop Level:
-            textarea#coop-level(placeholder="Type Your Coop Level Name Here", name="coop-level") OnSlaught Training
-      //- Coop Campaign
-      li
-        form(action="")
-          label.form
-            span Coop Campaign:
-            textarea#coop-campaign(placeholder="Type Your Coop Level Name Here", name="coop-campaign") Easy
-      //- Character Chooser
-      li
-        form(action="")
-          label.switch
-            span Character Chooser:
-            span
-              input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser" checked)
-              button.toggle-switch
-      //- Colorful Explosions
-      li
-        form(action="")
-          label.switch
-            span Colorful Explosion:
-            span
-              input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion" checked)
-              button.toggle-switch
-      //- Colorful Maps
-      li
-        form(action="")
-          label.switch
-            span Colorful Maps
-            span
-              input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps" checked)
-              button.toggle-switch
-      //- Contribute Data
-      li
-        form(action="")
-          label.switch
-            span Contribute Data:
-            span
-              input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data" checked)
-              button.toggle-switch
-      //- Enable Hit Text
-      li
-        form(action="")
-          label.switch
-            span Enable Hit Text:
-            span
-              input#hit-text.toggle-checkbox(type="checkbox", name="hit-text" checked)
-              button.toggle-switch
-      //- Enable Tag Animation
-      li
-        form(action="")
-          label.switch
-            span Enable Tag Animation:
-            span
-              input#tag-animation.toggle-checkbox(type="checkbox", name="tag-animation" checked)
-              button.toggle-switch
-      //- Enable Top 5 Effects
-      li
-        form(action="")
-          label.switch
-            span Enable Top 5 Effects:
-            span
-              input#top-5-effects.toggle-checkbox(type="checkbox", name="top-5-effects" checked)
-              button.toggle-switch
-      //- Enable Effects
-      li
-        form(action="")
-          label.switch
-            span Enable Effects:
-            span
-              input#effects.toggle-checkbox(type="checkbox", name="effects" checked)
-              button.toggle-switch
-      //- Enable HP Tag
-      li
-        form(action="")
-          label.switch
-            span Enable HP Tag:
-            span
-              input#hp-tag.toggle-checkbox(type="checkbox", name="hp-tag" checked)
-              button.toggle-switch
-      //- Enable Rank
-      li
-        form(action="")
-          label.switch
-            span Enable Rank:
-            span
-              input#rank.toggle-checkbox(type="checkbox", name="rank" checked)
-              button.toggle-switch
-      //- Enable Stats
-      li
-        form(action="")
-          label.switch
-            span Enable Stats:
-            span
-              input#stats.toggle-checkbox(type="checkbox", name="stats" checked)
-              button.toggle-switch
-      //- Authenticate Clients
-      li
-        form(action="")
-          label.switch
-            span Authenticate Clients:
-            span
-              input#auth-clients.toggle-checkbox(type="checkbox", name="auth-clients" checked)
-              button.toggle-switch
-      //- Anti Id Revealer Switch Toggler
-      li
-        form(action="")
-          label.switch
-            span Anti Id Revealer:
-            span
-              input#anti-id-revealer.toggle-checkbox(type="checkbox", name="anti-id-revealer")
-              button.toggle-switch
-      //- Show Kick Vote Starter Name
-      li
-        form(action="")
-          label.switch
-            span Show Kick Vote Starter Name:
-            span
-              input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name" checked)
-              button.toggle-switch
-      //- Chat Commands Or Broadcast Commands
-      li
-        form(action="")
-          label.switch
-            span Chat Commands (Or Broadcast Commands):
-            span
-              input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands" checked)
-              button.toggle-switch
-      //- Stumbled Score Screen
-      li
-        form(action="")
-          label.switch
-            span Stumbled Score Screen:
-            span
-              input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen" checked)
-              button.toggle-switch
-      //- Enable Tags
-      li
-        form(action="")
-          label.switch
-            span Enable Tags:
-            span
-              input#tags.toggle-checkbox(type="checkbox", name="tags" checked)
-              button.toggle-switch
-      //- Teams Settings
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Teams Settings
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Teams:
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            //- First Team
-            ul
-              li
-                form(action="")
-                  label.form
-                    span First Team Name:
-                    textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name") Vortex
-              li
-                form(action="")
-                  label.form
-                    span First Team Color:
-                    input#first-team-color(type="color", name="first-team-color" value="#00ffff")
-            //- Second Team
-            ul.mt-2
-              li
-                form(action="")
-                  label.form
-                    span Second Team Name:
-                    textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name") Honor
-              li
-                form(action="")
-                  label.form
-                    span Second Team Color:
-                    input#second-team-color(type="color", name="second-team-color" value="#eeff00")
-        .overley
-      //- Score Screen Announcement
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Score Screen Announcement
-          i.fa-solid.fa-angle-right
-        .popup-window
-          .popup-header
-            h5 Score Screen Announcement
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              //- Enable Score Screen Announcement
-              li
-                form(action="")
-                  label.switch
-                    span Enable 
-                    span
-                      input#score-screen-announcement.toggle-checkbox(type="checkbox", name="score-screen-announcement" checked)
-                      button.toggle-switch
-              li
-                form(action="")
-                  label.form
-                    span Message 1:
-                    textarea#message-1.screen-msg(placeholder="Type Your Message 1 Here", name="message-1")
-              li
-                form(action="")
-                  label.form
-                    span Message 2:
-                    textarea#message-2.screen-msg(placeholder="Type Your Message 2 Here", name="message-2")
-              li
-                form(action="")
-                  label.form
-                    span Message 3:
-                    textarea#message-3.screen-msg(placeholder="Type Your Message 3 Here", name="message-3")
-              li
-                form(action="")
-                  label.form
-                    span Message 4:
-                    textarea#message-4.screen-msg(placeholder="Type Your Message 4 Here", name="message-4")
-              li
-                form(action="")
-                  label.form
-                    span Message 5:
-                    textarea#message-5.screen-msg(placeholder="Type Your Message 5 Here", name="message-5")
-              li
-                form(action="")
-                  label.form
-                    span Message 6:
-                    textarea#message-6.screen-msg(placeholder="Type Your Message 6 Here", name="message-6")
-              li
-                form(action="")
-                  label.form
-                    span Message 7:
-                    textarea#message-7.screen-msg(placeholder="Type Your Message 7 Here", name="message-7")
-              li
-                form(action="")
-                  label.form
-                    span Message 8:
-                    textarea#message-8.screen-msg(placeholder="Type Your Message 8 Here", name="message-8")
-        .overley
-      //- Afk Remove
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Afk Remove 
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Afk Remove
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Afk Remove:
-                    span
-                      input#afk-remove.toggle-checkbox(type="checkbox", name="afk-remove")
-                      button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Kick Idle From Lobby:
-                    span
-                      input#kick-from-lobby.toggle-checkbox(type="checkbox", name="kick-from-lobby")
-                      button.toggle-switch
-              li.number-chooser
-                span In Game Idle Time In Sec:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.in-game-idle#in-game-idle(data-min="1") 1
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span Lobby Idle Time In Sec:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.lobby-idle#lobby-idle(data-min="1") 1
-                  button.circle
-                    i.fa-solid.fa-minus
-        .overley
-      //- Auto Night Mode
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Auto Night Mode 
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Auto Night Mode
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.form
-                    span  Start Time:
-                    input.start-time-auto-night#start-time-auto-night(type="time", name="start-time-auto-night")
-              li
-                form(action="")
-                  label.form
-                    span  End Time:
-                    input.end-time-auto-night#end-time-auto-night(type="time", name="end-time-auto-night")
-              li
-                form(action="")
-                  label.switch
-                    span Enable Fireflies:
-                    span
-                      input#fireflies.toggle-checkbox(type="checkbox", name="fireflies")
-                      button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Enable Random Fireflies:
-                    span
-                      input#random-fireflies.toggle-checkbox(type="checkbox", name="random-fireflies")
-                      button.toggle-switch
-        .overley
-      //- Server Website Settings
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Server Website
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Server Website
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Enable Website:
-                    span
-                      input#srv-website.toggle-checkbox(type="checkbox", name="srv-website")
-                      button.toggle-switch
-              li 
-                form(action) 
-                  label.password-form.d-flex.align-items-center
-                    span.me-1 Website Password:
-                    .d-flex.flex-grow-1
-                      input.me-1.d-block.w-100#website-password(type="password", name="website-password" placeholder="Type Your Server Password" value="VortexAndHonor")
-                      button.show-or-hide.circle: i.fa-solid.fa-eye
-        .overley
-      //- Coop Settings
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Coop With Less Players
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Coop With Less Players
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Enable Coop:
-                    span
-                      input#coop.toggle-checkbox(type="checkbox", name="coop")
-                      button.toggle-switch
-              li.number-chooser
-                span Minimum Players To Exit:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.min-players-to-exit-coop#min-player-to-exit-coop(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-        .overley
-      //- Discord Web Hooks
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Discord Web Hook
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Discord Web Hook
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Enable Hook:
-                    span
-                      input#web-hook.toggle-checkbox(type="checkbox", name="web-hook")
-                      button.toggle-switch
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Web Hook Url:
-                    input.me-1.d-block#web-hook-url(type="text", name="web-hook-url" placeholder="Type Your Url" value="0")
-        .overley
-      //- Discord Bot
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Discord Bot
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Discord Bot
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Enable Bot:
-                    input#discord-bot.toggle-checkbox(type="checkbox", name="discord-bot")
-                    button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Live Chat:
-                    input#discord-bot-live-chat.toggle-checkbox(type="checkbox", name="discord-bot-live-chat")
-                    button.toggle-switch
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Live Stats Channel Id:
-                    input.me-1.d-block#live-stats-channel-id(type="text", name="live-stats-channel-id" placeholder="Type Your Url" value="0")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Log Channel Id:
-                    input.me-1.d-block#log-channel-id(type="text", name="log-channel-id" placeholder="Type Your Url" value="0")
-              li 
-                form(action) 
-                  label.form.d-flex.align-items-center
-                    span.me-auto Token:
-                    input.me-1.d-block#discord-bot-token(type="text", name="discord-bot-token" placeholder="Type Your Url" value="0")
-        .overley
-      //- Powerups Settings
-      li.popup 
-        button.d-flex.justify-content-between.w-100
-          span Powerups 
-          i.fa-solid.fa-angle-right
-        .popup-window  
-          .popup-header
-            h5 Powerups 
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul.mb-3
-              li
-                form(action="")
-                  label.switch
-                    span Enable Powerups:
-                    input#powerups.toggle-checkbox(type="checkbox", name="powerups")
-                    button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Powerup Name:
-                    input#powerups-name.toggle-checkbox(type="checkbox", name="powerup-name")
-                    button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Powerup Time:
-                    input#powerups-time.toggle-checkbox(type="checkbox", name="powerup-time")
-                    button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Powerup Shield:
-                    input#powerups-shield.toggle-checkbox(type="checkbox", name="powerup-shield")
-                    button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Powerup Gravity:
-                    input#powerups-gravity.toggle-checkbox(type="checkbox", name="powerup-gravity")
-                    button.toggle-switch
-              li.number-chooser
-                span.me-auto Heath Damage PTG: 
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.health-damage#health-damage(data-min="2") 72
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Powerup Scale:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.powerups-scale#powerups-scale(data-min="1") 1
-                  button.circle
-                    i.fa-solid.fa-minus
-            ul.mb-2
-              li 
-                span Quantity:
-              li.number-chooser
-                span.me-auto Curse:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.curse-quantity#curse-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Fire Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.fire-bomb-quantity#fire-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Fly Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.fly-bomb-quantity#fly-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Goodbye:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.goodbye-quantity#goodbye-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Healing Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.healing-bomb-quantity#healing-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Health:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.health-quantity#health-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Ice Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.ice-bomb-quantity#ice-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Ice man:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.ice-man-quantity#ice-man-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Impact Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.impact-bomb-quantity#impact-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Expansive Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.expansive-bomb-quantity#expansive-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Mine Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.mine-bomb-quantity#mine-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Punch:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.punch-quantity#punch-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Shield:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.shield-quantity#shield-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Speed:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.speed-quantity#speed-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Sticky Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.sticky-bomb-quantity#sticky-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Tank Shield:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.tank-shield-quantity#tank-shield-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-              li.number-chooser
-                span.me-auto Triple Bomb:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.triple-bomb-quantity#triple-bomb-quantity(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-        .overley
-      //- Leader Board Settings
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Leader Board
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Leader Board
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul
-              li
-                form(action="")
-                  label.switch
-                    span Enable Leader Board:
-                    span
-                      input#leader-board.toggle-checkbox(type="checkbox", name="leader-board")
-                      button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Bars Behind Names:
-                    span
-                      input#leader-board-bars.toggle-checkbox(type="checkbox", name="leader-board-bars")
-                      button.toggle-switch
-        .overley
-      //- Max Account Per Id
-      li.number-chooser
-        span Max Account Per Id:  
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.max-accounts-per-id#max-accounts-per-id(data-min="2") 2
-          button.circle
-            i.fa-solid.fa-minus
-      //- Max Players Per Device
-      li.number-chooser
-        span Max Players Per Device:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle 
-            i.fa-solid.fa-plus
-          span.counter.max-players-per-devices#max-players-per-device(data-min="2") 5
-          button.circle
-            i.fa-solid.fa-minus
-      //- Max Warn Count
-      li.number-chooser
-        span Max Warn Count:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.max-warn-count#max-warn-count(data-min="2") 2
-          button.circle
-            i.fa-solid.fa-minus
-      //- Enable Mikirog Quick Turn 
-      li
-        form(action="")
-          label.switch
-            span Enable MikiRog Quick Turn:
-            span
-              input#mikirog.toggle-checkbox(type="checkbox", name="mikirog" checked)
-              button.toggle-switch
-      //- Min Age to Chat 
-      li.number-chooser
-        span Min Age To Chat In Hours:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.min-age-to-chat#min-age-to-chat(data-min="2") 72
-          button.circle
-            i.fa-solid.fa-minus
-      //- New Result Board
-      li
-        form(action="")
-          label.switch
-            span New Result Board:
-            span
-              input#new-result-board.toggle-checkbox(type="checkbox", name="new-result-board" checked)
-              button.toggle-switch
-      //- Player Mods
-      li.popup
-        button.d-flex.justify-content-between.w-100
-          span Player Mod
-          i.fa-solid.fa-angle-right
-        //- Popup
-        .popup-window
-          .popup-header
-            h5 Player Mod
-            button.close.circle
-              i.fa.fa-close
-          .body.mt-2
-            ul.mb-4
-              li
-                form(action="")
-                  label.switch
-                    span Default Gloves:
-                    span
-                      input#gloves.toggle-checkbox(type="checkbox", name="gloves" checked)
-                      button.toggle-switch
-              li
-                form(action="")
-                  label.switch
-                    span Default Shield:
-                    span
-                      input#shield.toggle-checkbox(type="checkbox", name="shield")
-                      button.toggle-switch
-              li.number-chooser
-                span.me-auto Default Bomb Count:
-                span.d-flex.justify-content-between.align-items-center
-                  button.circle
-                    i.fa-solid.fa-plus
-                  span.counter.default-bomb-count#default-bomb-count(data-min="2") 2
-                  button.circle
-                    i.fa-solid.fa-minus
-            form
-              ul 
-                li
-                  span Default Bomb 
-                li
-                  label.radio-box
-                    span Normal Bomb
-                    span
-                      input#normal-bomb.toggle-radio(type="radio", name="bomb" checked data-group="default-bomb" data-bombname="normal")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Ice Bomb
-                    span
-                      input#ice-bomb.toggle-radio(type="radio", name="ice-bomb" data-group="default-bomb" data-bombname="ice")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Fire Bomb
-                    span
-                      input#fire-bomb.toggle-radio(type="radio", name="fire-bomb" data-group="default-bomb" data-bombname="fire")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Impact Bomb
-                    span
-                      input#impact-bomb.toggle-radio(type="radio", name="impact-bomb" data-group="default-bomb" data-bombname="impact")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Sticky Bomb
-                    span
-                      input#sticky-bomb.toggle-radio(type="radio", name="sticky-bomb" data-group="default-bomb" data-bombname="sticky")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Expansive Bomb
-                    span
-                      input#expansive-bomb.toggle-radio(type="radio", name="expansive-bomb" data-group="default-bomb" data-bombname="expansive")
-                      button.toggle-radio-box
-                li
-                  label.radio-box
-                    span Mine Bomb
-                    span
-                      input#mine-bomb.toggle-radio(type="radio", name="mine-bomb" data-group="default-bomb" data-bombname="mine")
-                      button.toggle-radio-box
-        .overley
-      //- After Warn Kick Message
-      li
-        form(action="")
-          label.form
-            span Warn Message:
-            textarea#warn-msg.warn-msg(placeholder="Type Your Warn Message Here") Don't Make This Again
-      //- Same Character For Team
-      li
-        form(action="")
-          label.switch
-            span Same Character For Team:
-            span
-              input#same-char-for-team.toggle-checkbox(type="checkbox", name="same-chat-for-team")
-              button.toggle-switch
-      //- Enable White List
-      li
-        form(action="")
-          label.switch
-            span Enable White List:
-            span
-              input#white-list.toggle-checkbox(type="checkbox", name="white-list")
-              button.toggle-switch
-      //- Stats Reset After Days
-      li.number-chooser
-        span.me-auto Stats Reset After Days:
-        span.d-flex.justify-content-between.align-items-center
-          button.circle
-            i.fa-solid.fa-plus
-          span.counter.stats-reset#stats-reset(data-min="1") 31
-          button.circle
-            i.fa-solid.fa-minus
-      //- Use V2 Account
-      li
-        form(action="")
-          label.switch
-            span Use V2 Account:
-            span
-              input#use-v2-account.toggle-checkbox(type="checkbox", name="use-v2-account")
-              button.toggle-switch
-      //- Regular Welcome Message
-      li 
-        form(action) 
-          label.form.d-flex.align-items-center
-            span.me-auto Regular Welcome Message:
-            textarea.me-1.d-block#regular-welcome-msg( name="regular-welcome-msg" placeholder="Type Your msg" ) Hello My Friend
+    .body
+      .container
+        ul
+          //- Sever Name
+          li
+            form(action="")
+              label.form
+                span Server Name:
+                textarea#server-name(placeholder="Type Your Server Name Here", name="server-name") Vortex Vs Honor 
+          //- Host Device Name
+          li
+            form(action="")
+              label.form
+                span Host Device Name:
+                textarea#host-device-name(placeholder="Type Your Host Device Name Here", name="host-device-name") 1.7.20
+          //- Host Name
+          li
+            form(action="")
+              label.form
+                span Host Name:
+                textarea#host-name(placeholder="Type Your Host Name Here", name="host-name") Vortex And Honor
+          //- Playlist Code
+          li
+            form(action="")
+              label.form
+                span Playlist Code:
+                input#playlist-code(placeholder="Type Server Playlist Code", name="playlist-code" value="412158") 
+          //- First Time Join Message
+          li
+            form(action="")
+              label.form
+                span First Time Join Message:
+                textarea#first-join-msg(placeholder="Type Your Join Message Here", name="first-join-msg") Welcome To Our Server 
+          //- After Warn Kick Message
+          li
+            form(action="")
+              label.form
+                span After Warn Kick Message:
+                textarea#kick-msg.kick-msg(placeholder="Type Your Kick Message Here") You Will Eat A Ban If You Made This Again 
+          //- party Size
+          li.number-chooser
+            span Party Size:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.max-party-size#max-party-size(data-min="2") 12
+              button.circle
+                i.fa-solid.fa-minus
+          //- party Size
+          li.number-chooser
+            span FFA Series Length:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.ffa-series-length#ffa-series-length(data-min="1") 24
+              button.circle
+                i.fa-solid.fa-minus
+          //- Clean Exit Time
+          li.number-chooser
+            span Clean Exit Time:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.clean-exit-time#clean-exit-time(data-min="0") 0 
+              button.circle
+                i.fa-solid.fa-minus
+          //- Warn Cooldown
+          li.number-chooser
+            span Warn Cooldown Time:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.warn-cooldown-time#warn-cooldown-time(data-min="1") 30
+              button.circle
+                i.fa-solid.fa-minus
+          //- Allow In Game Chat
+          li
+            form(action="")
+              label.switch
+                span Allow In Game Chat
+                span
+                  input#in-game-chat.toggle-checkbox(type="checkbox", name="in-game-chat" checked)
+                  div.toggle-switch
+          //- Public Party
+          li
+            form(action="")
+              label.switch
+                span Public Party
+                span
+                  input#public-party.toggle-checkbox(type="checkbox", name="public-party" checked)
+                  div.toggle-switch
+          //- Playlist Shuffle
+          li
+            form(action="")
+              label.switch
+                span Playlist Shuffle
+                span
+                  input#playlist-shuffle.toggle-checkbox(type="checkbox", name="playlist-shuffle" checked)
+                  div.toggle-switch
+          //- Allow Team Chat
+          li
+            form(action="")
+              label.switch
+                span Allow Team Chat:
+                span
+                  input#team-chat.toggle-checkbox(type="checkbox", name="team-chat" checked)
+                  div.toggle-switch
+          //- Allow Votes
+          li
+            form(action="")
+              label.switch
+                span Allow Votes:
+                span
+                  input#votes.toggle-checkbox(type="checkbox", name="votes" checked)
+                  div.toggle-switch
+          //- Enable Default Kick Voting
+          li
+            form(action="")
+              label.switch
+                span Enable Default Kick Voting:
+                span
+                  input#default-kick-voting.toggle-checkbox(type="checkbox", name="default-kick-voting" checked)
+                  div.toggle-switch
+          //- Auto Team Balance
+          li
+            form(action="")
+              label.switch
+                span Auto Team Balance:
+                span
+                  input#auto-team-balance.toggle-checkbox(type="checkbox", name="auto-team-balance" checked)
+                  div.toggle-switch
+          //- Auto Team Balance
+          li
+            form(action="")
+              label.switch
+                span Enable Queue :
+                span
+                  input#queue.toggle-checkbox(type="checkbox", name="queue")
+                  div.toggle-switch
+          //- Enable Telnet
+          li
+            form(action="")
+              label.switch
+                span Enable Telnet :
+                span
+                  input#telnet.toggle-checkbox(type="checkbox", name="telnet")
+                  div.toggle-switch
+          //- Coop Level
+          li
+            form(action="")
+              label.form
+                span Coop Level:
+                textarea#coop-level(placeholder="Type Your Coop Level Name Here", name="coop-level") OnSlaught Training
+          //- Coop Campaign
+          li
+            form(action="")
+              label.form
+                span Coop Campaign:
+                textarea#coop-campaign(placeholder="Type Your Coop Level Name Here", name="coop-campaign") Easy
+          //- Character Chooser
+          li
+            form(action="")
+              label.switch
+                span Character Chooser:
+                span
+                  input#character-chooser.toggle-checkbox(type="checkbox", name="character-chooser" checked)
+                  div.toggle-switch
+          //- Colorful Explosions
+          li
+            form(action="")
+              label.switch
+                span Colorful Explosion:
+                span
+                  input#colorful-explosion.toggle-checkbox(type="checkbox", name="colorful-explosion" checked)
+                  div.toggle-switch
+          //- Colorful Maps
+          li
+            form(action="")
+              label.switch
+                span Colorful Maps
+                span
+                  input#colorful-maps.toggle-checkbox(type="checkbox", name="colorful-maps" checked)
+                  div.toggle-switch
+          //- Contribute Data
+          li
+            form(action="")
+              label.switch
+                span Contribute Data:
+                span
+                  input#contribute-data.toggle-checkbox(type="checkbox", name="contribute-data" checked)
+                  div.toggle-switch
+          //- Enable Hit Text
+          li
+            form(action="")
+              label.switch
+                span Enable Hit Text:
+                span
+                  input#hit-text.toggle-checkbox(type="checkbox", name="hit-text" checked)
+                  div.toggle-switch
+          //- Enable Tag Animation
+          li
+            form(action="")
+              label.switch
+                span Enable Tag Animation:
+                span
+                  input#tag-animation.toggle-checkbox(type="checkbox", name="tag-animation" checked)
+                  div.toggle-switch
+          //- Enable Top 5 Effects
+          li
+            form(action="")
+              label.switch
+                span Enable Top 5 Effects:
+                span
+                  input#top-5-effects.toggle-checkbox(type="checkbox", name="top-5-effects" checked)
+                  div.toggle-switch
+          //- Enable Effects
+          li
+            form(action="")
+              label.switch
+                span Enable Effects:
+                span
+                  input#effects.toggle-checkbox(type="checkbox", name="effects" checked)
+                  div.toggle-switch
+          //- Enable HP Tag
+          li
+            form(action="")
+              label.switch
+                span Enable HP Tag:
+                span
+                  input#hp-tag.toggle-checkbox(type="checkbox", name="hp-tag" checked)
+                  div.toggle-switch
+          //- Enable Rank
+          li
+            form(action="")
+              label.switch
+                span Enable Rank:
+                span
+                  input#rank.toggle-checkbox(type="checkbox", name="rank" checked)
+                  div.toggle-switch
+          //- Enable Stats
+          li
+            form(action="")
+              label.switch
+                span Enable Stats:
+                span
+                  input#stats.toggle-checkbox(type="checkbox", name="stats" checked)
+                  div.toggle-switch
+          //- Authenticate Clients
+          li
+            form(action="")
+              label.switch
+                span Authenticate Clients:
+                span
+                  input#auth-clients.toggle-checkbox(type="checkbox", name="auth-clients" checked)
+                  div.toggle-switch
+          //- Anti Id Revealer Switch Toggler
+          li
+            form(action="")
+              label.switch
+                span Anti Id Revealer:
+                span
+                  input#anti-id-revealer.toggle-checkbox(type="checkbox", name="anti-id-revealer")
+                  div.toggle-switch
+          //- Show Kick Vote Starter Name
+          li
+            form(action="")
+              label.switch
+                span Show Kick Vote Starter Name:
+                span
+                  input#show-kick-vote-starter-name.toggle-checkbox(type="checkbox", name="show-kick-vote-starter-name" checked)
+                  div.toggle-switch
+          //- Chat Commands Or Broadcast Commands
+          li
+            form(action="")
+              label.switch
+                span Chat Commands (Or Broadcast Commands):
+                span
+                  input#chat-commands.toggle-checkbox(type="checkbox", name="chat-commands" checked)
+                  div.toggle-switch
+          //- Stumbled Score Screen
+          li
+            form(action="")
+              label.switch
+                span Stumbled Score Screen:
+                span
+                  input#stumbled-score-screen.toggle-checkbox(type="checkbox", name="stumbled-score-screen" checked)
+                  div.toggle-switch
+          //- Enable Tags
+          li
+            form(action="")
+              label.switch
+                span Enable Tags:
+                span
+                  input#tags.toggle-checkbox(type="checkbox", name="tags" checked)
+                  div.toggle-switch
+          //- Teams Settings
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Teams Settings
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Teams:
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                //- First Team
+                ul
+                  li
+                    form(action="")
+                      label.form
+                        span First Team Name:
+                        textarea#first-team-name(placeholder="Type Your First Team Name Here", name="first-team-name") Vortex
+                  li
+                    form(action="")
+                      label.form
+                        span First Team Color:
+                        input#first-team-color(type="color", name="first-team-color" value="#00ffff")
+                //- Second Team
+                ul.mt-2
+                  li
+                    form(action="")
+                      label.form
+                        span Second Team Name:
+                        textarea#second-team-name(placeholder="Type Your Second Team Name Here", name="second-team-name") Honor
+                  li
+                    form(action="")
+                      label.form
+                        span Second Team Color:
+                        input#second-team-color(type="color", name="second-team-color" value="#eeff00")
+            .overlay
+          //- Score Screen Announcement
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Score Screen Announcement
+              i.fa-solid.fa-angle-right
+            .popup-window
+              .popup-header
+                h5 Score Screen Announcement
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  //- Enable Score Screen Announcement
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable 
+                        span
+                          input#score-screen-announcement.toggle-checkbox(type="checkbox", name="score-screen-announcement" checked)
+                          div.toggle-switch
+                  li
+                    form(action="")
+                      label.form
+                        span Message 1:
+                        textarea#message-1.screen-msg(placeholder="Type Your Message 1 Here", name="message-1")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 2:
+                        textarea#message-2.screen-msg(placeholder="Type Your Message 2 Here", name="message-2")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 3:
+                        textarea#message-3.screen-msg(placeholder="Type Your Message 3 Here", name="message-3")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 4:
+                        textarea#message-4.screen-msg(placeholder="Type Your Message 4 Here", name="message-4")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 5:
+                        textarea#message-5.screen-msg(placeholder="Type Your Message 5 Here", name="message-5")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 6:
+                        textarea#message-6.screen-msg(placeholder="Type Your Message 6 Here", name="message-6")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 7:
+                        textarea#message-7.screen-msg(placeholder="Type Your Message 7 Here", name="message-7")
+                  li
+                    form(action="")
+                      label.form
+                        span Message 8:
+                        textarea#message-8.screen-msg(placeholder="Type Your Message 8 Here", name="message-8")
+            .overlay
+          //- Afk Remove
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Afk Remove 
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Afk Remove
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Afk Remove:
+                        span
+                          input#afk-remove.toggle-checkbox(type="checkbox", name="afk-remove")
+                          div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Kick Idle From Lobby:
+                        span
+                          input#kick-from-lobby.toggle-checkbox(type="checkbox", name="kick-from-lobby")
+                          div.toggle-switch
+                  li.number-chooser
+                    span In Game Idle Time In Sec:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.in-game-idle#in-game-idle(data-min="1") 1
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span Lobby Idle Time In Sec:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.lobby-idle#lobby-idle(data-min="1") 1
+                      button.circle
+                        i.fa-solid.fa-minus
+            .overlay
+          //- Auto Night Mode
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Auto Night Mode 
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Auto Night Mode
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.form
+                        span  Start Time:
+                        input.start-time-auto-night#start-time-auto-night(type="time", name="start-time-auto-night")
+                  li
+                    form(action="")
+                      label.form
+                        span  End Time:
+                        input.end-time-auto-night#end-time-auto-night(type="time", name="end-time-auto-night")
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Fireflies:
+                        span
+                          input#fireflies.toggle-checkbox(type="checkbox", name="fireflies")
+                          div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Random Fireflies:
+                        span
+                          input#random-fireflies.toggle-checkbox(type="checkbox", name="random-fireflies")
+                          div.toggle-switch
+            .overlay
+          //- Server Website Settings
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Server Website
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Server Website
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Website:
+                        span
+                          input#srv-website.toggle-checkbox(type="checkbox", name="srv-website")
+                          div.toggle-switch
+                  li 
+                    form(action) 
+                      label.password-form.d-flex.align-items-center
+                        span.me-1 Website Password:
+                        .d-flex.flex-grow-1
+                          input.me-1.d-block.w-100#website-password(type="password", name="website-password" placeholder="Type Your Server Password" value="VortexAndHonor")
+                          button.show-or-hide.circle: i.fa-solid.fa-eye
+            .overlay
+          //- Coop Settings
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Coop With Less Players
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Coop With Less Players
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Coop:
+                        span
+                          input#coop.toggle-checkbox(type="checkbox", name="coop")
+                          div.toggle-switch
+                  li.number-chooser
+                    span Minimum Players To Exit:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.min-players-to-exit-coop#min-player-to-exit-coop(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+            .overlay
+          //- Discord Web Hooks
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Discord Web Hook
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Discord Web Hook
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Hook:
+                        span
+                          input#web-hook.toggle-checkbox(type="checkbox", name="web-hook")
+                          div.toggle-switch
+                  li 
+                    form(action) 
+                      label.form.d-flex.align-items-center
+                        span.me-auto Web Hook Url:
+                        input.me-1.d-block#web-hook-url(type="text", name="web-hook-url" placeholder="Type Your Url" value="0")
+            .overlay
+          //- Discord Bot
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Discord Bot
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Discord Bot
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Bot:
+                        input#discord-bot.toggle-checkbox(type="checkbox", name="discord-bot")
+                        div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Live Chat:
+                        input#discord-bot-live-chat.toggle-checkbox(type="checkbox", name="discord-bot-live-chat")
+                        div.toggle-switch
+                  li 
+                    form(action) 
+                      label.form.d-flex.align-items-center
+                        span.me-auto Live Stats Channel Id:
+                        input.me-1.d-block#live-stats-channel-id(type="text", name="live-stats-channel-id" placeholder="Type Your Url" value="0")
+                  li 
+                    form(action) 
+                      label.form.d-flex.align-items-center
+                        span.me-auto Log Channel Id:
+                        input.me-1.d-block#log-channel-id(type="text", name="log-channel-id" placeholder="Type Your Url" value="0")
+                  li 
+                    form(action) 
+                      label.form.d-flex.align-items-center
+                        span.me-auto Token:
+                        input.me-1.d-block#discord-bot-token(type="text", name="discord-bot-token" placeholder="Type Your Url" value="0")
+            .overlay
+          //- Powerups Settings
+          li.popup 
+            button.d-flex.justify-content-between.w-100
+              span Powerups 
+              i.fa-solid.fa-angle-right
+            .popup-window  
+              .popup-header
+                h5 Powerups 
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul.mb-3
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Powerups:
+                        input#powerups.toggle-checkbox(type="checkbox", name="powerups")
+                        div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Powerup Name:
+                        input#powerups-name.toggle-checkbox(type="checkbox", name="powerup-name")
+                        div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Powerup Time:
+                        input#powerups-time.toggle-checkbox(type="checkbox", name="powerup-time")
+                        div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Powerup Shield:
+                        input#powerups-shield.toggle-checkbox(type="checkbox", name="powerup-shield")
+                        div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Powerup Gravity:
+                        input#powerups-gravity.toggle-checkbox(type="checkbox", name="powerup-gravity")
+                        div.toggle-switch
+                  li.number-chooser
+                    span.me-auto Heath Damage PTG: 
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.health-damage#health-damage(data-min="2") 72
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Powerup Scale:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.powerups-scale#powerups-scale(data-min="1") 1
+                      button.circle
+                        i.fa-solid.fa-minus
+                ul.mb-2
+                  li 
+                    span Quantity:
+                  li.number-chooser
+                    span.me-auto Curse:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.curse-quantity#curse-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Fire Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.fire-bomb-quantity#fire-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Fly Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.fly-bomb-quantity#fly-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Goodbye:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.goodbye-quantity#goodbye-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Healing Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.healing-bomb-quantity#healing-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Health:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.health-quantity#health-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Ice Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.ice-bomb-quantity#ice-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Ice man:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.ice-man-quantity#ice-man-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Impact Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.impact-bomb-quantity#impact-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Expansive Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.expansive-bomb-quantity#expansive-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Mine Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.mine-bomb-quantity#mine-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Punch:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.punch-quantity#punch-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Shield:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.shield-quantity#shield-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Speed:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.speed-quantity#speed-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Sticky Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.sticky-bomb-quantity#sticky-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Tank Shield:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.tank-shield-quantity#tank-shield-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                  li.number-chooser
+                    span.me-auto Triple Bomb:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.triple-bomb-quantity#triple-bomb-quantity(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+            .overlay
+          //- Leader Board Settings
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Leader Board
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Leader Board
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul
+                  li
+                    form(action="")
+                      label.switch
+                        span Enable Leader Board:
+                        span
+                          input#leader-board.toggle-checkbox(type="checkbox", name="leader-board")
+                          div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Bars Behind Names:
+                        span
+                          input#leader-board-bars.toggle-checkbox(type="checkbox", name="leader-board-bars")
+                          div.toggle-switch
+            .overlay
+          //- Max Account Per Id
+          li.number-chooser
+            span Max Account Per Id:  
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.max-accounts-per-id#max-accounts-per-id(data-min="2") 2
+              button.circle
+                i.fa-solid.fa-minus
+          //- Max Players Per Device
+          li.number-chooser
+            span Max Players Per Device:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle 
+                i.fa-solid.fa-plus
+              span.counter.max-players-per-devices#max-players-per-device(data-min="2") 5
+              button.circle
+                i.fa-solid.fa-minus
+          //- Max Warn Count
+          li.number-chooser
+            span Max Warn Count:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.max-warn-count#max-warn-count(data-min="2") 2
+              button.circle
+                i.fa-solid.fa-minus
+          //- Enable Mikirog Quick Turn 
+          li
+            form(action="")
+              label.switch
+                span Enable MikiRog Quick Turn:
+                span
+                  input#mikirog.toggle-checkbox(type="checkbox", name="mikirog" checked)
+                  div.toggle-switch
+          //- Min Age to Chat 
+          li.number-chooser
+            span Min Age To Chat In Hours:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.min-age-to-chat#min-age-to-chat(data-min="2") 72
+              button.circle
+                i.fa-solid.fa-minus
+          //- New Result Board
+          li
+            form(action="")
+              label.switch
+                span New Result Board:
+                span
+                  input#new-result-board.toggle-checkbox(type="checkbox", name="new-result-board" checked)
+                  div.toggle-switch
+          //- Player Mods
+          li.popup
+            button.d-flex.justify-content-between.w-100
+              span Player Mod
+              i.fa-solid.fa-angle-right
+            //- Popup
+            .popup-window
+              .popup-header
+                h5 Player Mod
+                button.close.circle
+                  i.fa.fa-close
+              .body.mt-2
+                ul.mb-4
+                  li
+                    form(action="")
+                      label.switch
+                        span Default Gloves:
+                        span
+                          input#gloves.toggle-checkbox(type="checkbox", name="gloves" checked)
+                          div.toggle-switch
+                  li
+                    form(action="")
+                      label.switch
+                        span Default Shield:
+                        span
+                          input#shield.toggle-checkbox(type="checkbox", name="shield")
+                          div.toggle-switch
+                  li.number-chooser
+                    span.me-auto Default Bomb Count:
+                    span.d-flex.justify-content-between.align-items-center
+                      button.circle
+                        i.fa-solid.fa-plus
+                      span.counter.default-bomb-count#default-bomb-count(data-min="2") 2
+                      button.circle
+                        i.fa-solid.fa-minus
+                form
+                  ul 
+                    li
+                      span Default Bomb 
+                    li
+                      label.radio-box
+                        span Normal Bomb
+                        span
+                          input#normal-bomb.toggle-radio(type="radio", name="bomb" data-group="default-bomb" checked data-bombname="normal")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Ice Bomb
+                        span
+                          input#ice-bomb.toggle-radio(type="radio", name="ice-bomb" data-group="default-bomb" data-bombname="ice")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Fire Bomb
+                        span
+                          input#fire-bomb.toggle-radio(type="radio", name="fire-bomb" data-group="default-bomb" data-bombname="fire")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Impact Bomb
+                        span
+                          input#impact-bomb.toggle-radio(type="radio", name="impact-bomb" data-group="default-bomb" data-bombname="impact")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Sticky Bomb
+                        span
+                          input#sticky-bomb.toggle-radio(type="radio", name="sticky-bomb" data-group="default-bomb" data-bombname="sticky")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Expansive Bomb
+                        span
+                          input#expansive-bomb.toggle-radio(type="radio", name="expansive-bomb" data-group="default-bomb" data-bombname="expansive")
+                          div.toggle-radio-box
+                    li
+                      label.radio-box
+                        span Mine Bomb
+                        span
+                          input#mine-bomb.toggle-radio(type="radio", name="mine-bomb" data-group="default-bomb" data-bombname="mine")
+                          div.toggle-radio-box
+            .overlay
+          //- After Warn Kick Message
+          li
+            form(action="")
+              label.form
+                span Warn Message:
+                textarea#warn-msg.warn-msg(placeholder="Type Your Warn Message Here") Don't Make This Again
+          //- Same Character For Team
+          li
+            form(action="")
+              label.switch
+                span Same Character For Team:
+                span
+                  input#same-char-for-team.toggle-checkbox(type="checkbox", name="same-chat-for-team")
+                  div.toggle-switch
+          //- Enable White List
+          li
+            form(action="")
+              label.switch
+                span Enable White List:
+                span
+                  input#white-list.toggle-checkbox(type="checkbox", name="white-list")
+                  div.toggle-switch
+          //- Stats Reset After Days
+          li.number-chooser
+            span.me-auto Stats Reset After Days:
+            span.d-flex.justify-content-between.align-items-center
+              button.circle
+                i.fa-solid.fa-plus
+              span.counter.stats-reset#stats-reset(data-min="1") 31
+              button.circle
+                i.fa-solid.fa-minus
+          //- Use V2 Account
+          li
+            form(action="")
+              label.switch
+                span Use V2 Account:
+                span
+                  input#use-v2-account.toggle-checkbox(type="checkbox", name="use-v2-account")
+                  div.toggle-switch
+          //- Regular Welcome Message
+          li 
+            form(action) 
+              label.form.d-flex.align-items-center
+                span.me-auto Regular Welcome Message:
+                textarea.me-1.d-block#regular-welcome-msg( name="regular-welcome-msg" placeholder="Type Your msg" ) Hello My Friend

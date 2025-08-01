@@ -4,12 +4,14 @@ mixin change-server
     //- header
     +header-of-screen("Change Server")
     //- body
-    ul.container.body
-      li
-        label.form
-          span Server Ip
-          textarea#server-id(name="" placeholder="Type Your Server Ip")
-      li
-        label.form
-          span Server Ip Port
-          textarea#server-id-port(name="" placeholder="Type Your Server Ip Port")
+    .body
+      .container
+        ul
+          li
+            label.form
+              span Server Ip
+              textarea#server-id(name="" placeholder="Type Your Server Ip")
+          li
+            label.form
+              span Server Ip Port
+              textarea#server-id-port(name="" placeholder="Type Your Server Ip Port")

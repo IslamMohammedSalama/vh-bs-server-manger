@@ -37,7 +37,7 @@
 		}
 		td:hover {
 			border: 1px solid var(--main-color, $main-color);
-			color: var(--main-color, $main-color);
+			// color: var(--main-color, $main-color);
 		}
 		@for $i from 1 through 4 {
 			&:has(tbody > tr > *:nth-child(#{$i}):hover)

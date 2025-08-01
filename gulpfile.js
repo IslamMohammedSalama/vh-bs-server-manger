@@ -10,8 +10,9 @@ import clean from "gulp-clean";
 import zip from "gulp-zip";
 import gulpNotify from "gulp-notify";
 import connect from "gulp-connect";
-import noop from "gulp-noop";
-import newer from "gulp-newer";
+import { fileURLToPath } from "url";
+import path, { dirname } from "path";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const sass = gulpSass(dartSass);
 const isProduction = process.env.NODE_ENV === "production";
@@ -146,9 +147,8 @@ gulp.task("assets", () =>
 		})
 		.pipe(gulp.dest("dist"))
 );
-gulp.task(
-	"compress",
-	() => gulp.src("dist/**/*").pipe(zip("website.zip")).pipe(gulp.dest("."))
+gulp.task("compress", () =>
+	gulp.src("dist/**/*").pipe(zip("website.zip")).pipe(gulp.dest("."))
 );
 
 gulp.task("build-msg", function () {
@@ -157,6 +157,7 @@ gulp.task("build-msg", function () {
 			title: "Gulp Build",
 			message: "Build completed successfully!",
 			onLast: true,
+			icon: path.join(__dirname, "assets/imgs/favicon.ico"),
 		})
 	); // Trigger the notification
 });
@@ -187,13 +188,7 @@ gulp.task(
 	"build",
 	gulp.series(
 		"clean",
-		gulp.parallel(
-			"html",
-			"css",
-			"js",
-			"js-libs",
-			"assets"
-		),
+		gulp.parallel("html", "css", "js", "js-libs", "assets"),
 		"compress",
 		"build-msg"
 	)
@@ -205,5 +200,5 @@ gulp.task(
 	gulp.series(
 		"build", // Step 1: Clean + compile everything
 		gulp.parallel("connect", "watch") // Step 2 & 3: Serve & Watch simultaneously
-	) 
+	)
 );

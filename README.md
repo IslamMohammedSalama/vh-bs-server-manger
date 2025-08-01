@@ -15,13 +15,13 @@ Then Don't Edit on `dist/index.html` , `dist/css/style.min.css` And `dist/js/scr
 For Start Development This Is The Command You Will Use
 
 ```sh
- NODE_ENV=development gulp
+NODE_ENV=development gulp
 ```
 
-For Build The Project U Will Type
+For Build The ProJect U Will Type
 
 ```sh
- NODE_ENV=production gulp build
+NODE_ENV=production gulp build
 ```
 
-**Note** : After Push On This Project (Or Make Anything) run `npm run deploy` to Refresh changes On gh-pages branch
+**Note** : After Push On This ProJect (Or Make Anything) run `npm run deploy` to Refresh changes On gh-pages branch

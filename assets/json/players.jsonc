@@ -1,48 +1,92 @@
 [
-	{
-		"rank": "1",
-		"name": "ZadKiel",
-		"kills": "2000",
-		"score": "40000",
-		"banned": false,
-		"muted": false,
-		"id":1
-	},
-	{
-		"rank": "2",
-		"name": "Sara",
-		"kills": "1750",
-		"score": "35000",
-		"banned": false,
-		"muted": false,
-		"id":2
-
-	},
-	{
-		"rank": "3",
-		"name": "VorTex",
-		"kills": "1500",
-		"score": "30000",
-		"banned": false,
-		"muted": false,
-		"id":3
-	},
-	{
-		"rank": "4",
-		"name": "Dest",
-		"kills": "1000",
-		"score": "20000",
-		"banned": false,
-		"muted": false,
-		"id":4
-	},
-	{
-		"rank": "5",
-		"name": "Islam",
-		"kills": "250",
-		"score": "500",
-		"banned": true,
-		"muted": true,
-		"id":5
-	}
+  {
+    "rank": "1",
+    "name": "ZadKiel",
+    "kills": "2000",
+    "score": "40000",
+    "banned": false,
+    "muted": false,
+    "id": 1
+  },
+  {
+    "rank": "2",
+    "name": "Sara",
+    "kills": "1750",
+    "score": "35000",
+    "banned": false,
+    "muted": false,
+    "id": 2
+  },
+  {
+    "rank": "3",
+    "name": "VorTex",
+    "kills": "1500",
+    "score": "30000",
+    "banned": false,
+    "muted": false,
+    "id": 3
+  },
+  {
+    "rank": "4",
+    "name": "Dest",
+    "kills": "1000",
+    "score": "20000",
+    "banned": false,
+    "muted": false,
+    "id": 4
+  },
+  {
+    "rank": "5",
+    "name": "Islam",
+    "kills": "250",
+    "score": "500",
+    "banned": true,
+    "muted": true,
+    "id": 5
+  },
+  {
+    "rank": "6",
+    "name": "honor",
+    "kills": "250",
+    "score": "500",
+    "banned": false,
+    "muted": false,
+    "id": 6
+  },
+  {
+    "rank": "7",
+    "name": "naruto",
+    "kills": "250",
+    "score": "500",
+    "banned": false,
+    "muted": false,
+    "id": 7
+  },
+  {
+    "rank": "8",
+    "name": "oiiai",
+    "kills": "250",
+    "score": "500",
+    "banned": false,
+    "muted": false,
+    "id": 8
+  },
+  {
+    "rank": "9",
+    "name": "hikaru",
+    "kills": "250",
+    "score": "500",
+    "banned": false,
+    "muted": false,
+    "id": 9
+  },
+  {
+    "rank": "10",
+    "name": "flaffypal",
+    "kills": "250",
+    "score": "500",
+    "banned": false,
+    "muted": false,
+    "id": 10
+  }
 ]

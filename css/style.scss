@@ -1,22 +1,31 @@
-﻿@use "./sass/helpers/variables" as *;
+﻿//#region Import Helpers Files
+@use "./sass/helpers/variables" as *;
 @use "./sass/helpers/functions" as *;
 @use "./sass/helpers/mixins" as *;
 @use "./sass/helpers/global_rules" as *;
+//#endregion 
 
+//#region Import All Components Files
 @use "./sass/components/custom-button" as *;
 @use "./sass/components/input_filed" as *;
 @use "./sass/components/service_container" as *;
 @use "./sass/components/switch" as *;
-@use "./sass/components/radio" as *;
 @use "./sass/components/popup" as *;
+@use "./sass/components/radio" as *;
 @use "./sass/components/lists_of_things" as *;
+//#endregion 
 
-@use "./sass/layout/container" as *;
+//#region Import All Layouts Files
 @use "./sass/layout/screens" as *;
+@use "./sass/layout/container" as *;
+@use "./sass/layout/header" as *;
+//#endregion 
 
-@use "./sass/screens/login-screen.scss" as *;
-@use "./sass/screens/home-screen" as *;
+//#region Import All Screens Files 
+@use "./sass/screens/login" as *;
+@use "./sass/screens/home" as *;
 @use "./sass/screens/overview" as *;
 @use "./sass/screens/chat" as *;
 @use "./sass/screens/player_management" as *;
 @use "./sass/screens/server_logs" as *;
+//#endregion 
